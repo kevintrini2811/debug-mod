@@ -27,7 +27,7 @@ internal sealed class DebugUi : IDisposable
     {
         font = Object.FindObjectsOfType<TMP_Text>(true).FirstOrDefault(text => text.font != null)?.font
             ?? TMP_Settings.defaultFontAsset
-            ?? throw new InvalidOperationException("Keine UI-Schrift für Debug verfügbar.");
+            ?? throw new InvalidOperationException("No UI font is available for debug mode.");
         deck = !modal;
         root = new GameObject("FusionDebugUI");
         var canvas = root.AddComponent<Canvas>();

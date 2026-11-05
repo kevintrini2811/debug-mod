@@ -82,7 +82,7 @@ internal static class DebugSeedChooser
         screen.mDirty = true;
         screen.Visible = true;
         screen.mApp.ShowSeedChooserScreen();
-        Mod.Instance.LoggerInstance.Msg("Debug: Zombieauswahl geöffnet.");
+        Mod.Instance.LoggerInstance.Msg("Debug: Zombie selection opened.");
     }
 
     internal static PanelView? BoundPanel(SeedChooserScreen value)
@@ -229,7 +229,7 @@ internal static class DebugSeedChooser
             DebugPlantCards.CaptureBank(screen);
             phase = Phase.HidingPlants;
             screen.Visible = false;
-            Mod.Instance.LoggerInstance.Msg($"Debug: Pflanzen bestätigt; natives Panel {panel.Id}, Zustand {panel.State}.");
+            Mod.Instance.LoggerInstance.Msg($"Debug: Plants confirmed; native panel {panel.Id}, state {panel.State}.");
             screen.mApp.HideSeedChooserScreen();
         }
         else
@@ -251,7 +251,7 @@ internal static class DebugSeedChooser
             // ResetBank/AddChosenSeedToBank mark the native bank dirty. Its
             // next model tick rebuilds live entries with the restored identities.
             screen.mBoard.mSeedBank.UpdateWidth();
-            Mod.Instance.LoggerInstance.Msg($"Debug: Levelbank bereit; {count} Pflanzen, {screen.mBoard.mSeedBank.mNumPackets} Kartenplätze.");
+            Mod.Instance.LoggerInstance.Msg($"Debug: Seed bank ready; {count} plants, {screen.mBoard.mSeedBank.mNumPackets} card slots.");
         }
         return false;
     }

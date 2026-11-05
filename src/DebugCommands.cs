@@ -310,10 +310,22 @@ internal static class DebugCommands
                 var slot = skin.skeleton.DrawOrder.Items[i]; var bone = slot.Bone;
                 var region = slot.Attachment?.TryCast<Il2CppSpine.RegionAttachment>();
                 slots.Add(new { index = i, name = slot.Data.Name, attachment = slot.Attachment?.Name,
+                    setupAttachment = slot.Data.AttachmentName,
                     alpha = slot.A, bone = bone.Data.Name, a = bone.A, b = bone.B, c = bone.C, d = bone.D,
                     x = bone.WorldX, y = bone.WorldY, width = region?.Width, height = region?.Height });
             }
-        return new { slots, renderers = controller?.GetComponentsInChildren<Renderer>(true).Select(r => new {
+        var tracks = new List<object>();
+        var skins = new List<string>();
+        if (skin?.skeleton?.Data != null)
+            for (int i = 0; i < skin.skeleton.Data.Skins.Count; ++i)
+                skins.Add(skin.skeleton.Data.Skins.Items[i].Name);
+        if (skin?.state != null)
+            for (int i = 0; i < skin.state.Tracks.Count; ++i)
+                if (skin.state.Tracks.Items[i] is { } track)
+                    tracks.Add(new { index = i, animation = track.Animation?.Name, time = track.TrackTime });
+        return new { slots, tracks, skin = skin?.skeleton?.Skin?.Name,
+            skins,
+            renderers = controller?.GetComponentsInChildren<Renderer>(true).Select(r => new {
             name = r.name, enabled = r.enabled, active = r.gameObject.activeInHierarchy, order = r.sortingOrder,
             layer = r.sortingLayerID, sprite = r.TryCast<SpriteRenderer>()?.sprite?.name,
             x = r.transform.position.x, y = r.transform.position.y,

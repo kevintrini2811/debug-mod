@@ -33,7 +33,7 @@ internal sealed class DebugLevelPicker : IDisposable
             foreach (var group in root.GetComponentsInChildren<CanvasGroup>(true))
             { group.alpha = 1; group.interactable = group.blocksRaycasts = true; }
             var panel = root.transform.Find(panelPath);
-            panel.Find("HeaderText").GetComponent<TMP_Text>().text = string.IsNullOrEmpty(error) ? "Debug · Background wählen" : $"Debug: {error}";
+            panel.Find("HeaderText").GetComponent<TMP_Text>().text = string.IsNullOrEmpty(error) ? "Debug · Choose a background" : $"Debug: {error}";
             panel.Find("TrophyCounter").gameObject.SetActive(false);
             root.transform.Find("Canvas/Layout/Center/P_ControllerPrompt_Legend").gameObject.SetActive(false);
             var grid = panel.Find("Scroll View/ScrollViewport/GridLayout");

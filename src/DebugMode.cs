@@ -168,7 +168,7 @@ internal static partial class DebugMode
             }
         }
         var nightPool = backgrounds.FirstOrDefault(value => value.Type == BackgroundType.Fog);
-        if (nightPool != null) backgrounds.Add(new("Nachtpool · ohne Nebel", nightPool.Level, BackgroundType.Fog, true));
+        if (nightPool != null) backgrounds.Add(new("Night pool · no fog", nightPool.Level, BackgroundType.Fog, true));
         backgrounds.Sort((left, right) => left.Type.CompareTo(right.Type));
         zombies.Clear();
         picking = true; error = "";
@@ -235,7 +235,7 @@ internal static partial class DebugMode
             new DebugLevelPicker.Entry(background.Name, () => art!.Level(background.Level), Click(() =>
             {
                 backgroundIndex = index; Launch();
-                Mod.Instance.LoggerInstance.Msg($"Debug: Background {background.Name}; Kartenwahl geöffnet.");
+                Mod.Instance.LoggerInstance.Msg($"Debug: Background {background.Name}; card selection opened.");
             }))).ToArray(), ClosePicker, error);
     }
 
@@ -270,7 +270,7 @@ internal static partial class DebugMode
         try
         {
             DebugSeedChooser.Begin();
-            Mod.Instance.LoggerInstance.Msg($"Debug: Start {background.Name}; native Kartenwahl.");
+            Mod.Instance.LoggerInstance.Msg($"Debug: Start {background.Name}; native card selection.");
             chooser.m_gameplayService.SetCurrentLevelData(level);
             chooser.ChooseGameplay();
         }
@@ -309,7 +309,7 @@ internal static partial class DebugMode
         if (!Owns(value) || !launching || value.Board == null) return;
         board = value.Board;
         launching = false;
-        Mod.Instance.LoggerInstance.Msg("Debug: Board bereit; native Auswahl und Intro bleiben aktiv.");
+        Mod.Instance.LoggerInstance.Msg("Debug: Board ready; native selection and intro remain active.");
     }
 
     internal static void Started(GameplayActivity value)
@@ -335,8 +335,8 @@ internal static partial class DebugMode
             }, selectedZombie == index, badge: () => ZombieHeadArt(index));
         }
         if (!string.IsNullOrEmpty(error)) ui.Label(new Rect(10, 580, 1000, 30), error);
-        if (selectedZombie >= 0) ui.Label(new Rect(10, 610, 1000, 30), "Platzieren: " + ZombieName(selectedZombie)
-            + " | Rechter Rand: natürlicher Reiheneintritt");
+        if (selectedZombie >= 0) ui.Label(new Rect(10, 610, 1000, 30), "Place: " + ZombieName(selectedZombie)
+            + " | Right edge: natural lane entry");
     }
 
     internal static bool Placing => Owns(board) && (selectedZombie >= 0
@@ -391,7 +391,7 @@ internal static partial class DebugMode
                 if (allocated.mController != null) allocated.DieNoLoot();
                 else allocated.mDead = true;
             }
-            error = $"{type}: native Erzeugung in diesem Level nicht verfügbar.";
+            error = $"{type}: native spawning is unavailable in this level.";
             Mod.Instance.LoggerInstance.Warning($"Debug spawn {type}: {exception.Message}");
             selectedZombie = -1; refreshUi = true;
             return false;

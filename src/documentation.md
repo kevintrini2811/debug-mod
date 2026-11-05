@@ -1,10 +1,10 @@
-# Debug Mod 1.3.4: lokale Command-API
+# Debug Mod 1.3.4: local Command API
 
-## Voraussetzungen und Aufruf
+## Requirements and call
 
-Die installierte `DebugMod.dll` muss Version 1.3.4 haben. Starte PvZ Replanted normal über Steam. Die API wird beim Laden der Mod initialisiert und funktioniert auch unter Proton. Befehle werden im Unity-Hauptthread ausgeführt. Es wird kein Netzwerkport geöffnet.
+The `DebugMod.dll` installed must have version 1.3.4. Start PvZ Replanted normally via Steam. The API is initialized when the mod is loaded and also works under Proton. Commands are executed on the main Unity thread. No network port is opened.
 
-Der Client liegt im Quellprojekt unter `debug-mod/tools/debug_api.py`. Vom Arbeitsverzeichnis `/home/kevin/modding` aus:
+The client is located in the source project under `debug-mod/tools/debug_api.py`. From the working directory `/home/kevin/modding`:
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py status
@@ -12,18 +12,18 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py help
 python3 pvzreplanted/debug-mod/tools/debug_api.py COMMAND '{"argument":"value"}'
 ```
 
-Optional: `--game-dir '/anderer/Spielpfad'`, `--timeout 30`. Das zweite Positionsargument ist ein JSON-Objekt. Rückgaben sind JSON. Exitcode 0 bedeutet Erfolg; Exitcode 1 bedeutet Fehler. Vor Spielstart liefert der Client `GAME_NOT_READY`. Während des Starts zeigt `status` `ready: false` und `code: GAME_NOT_READY`. Ein sichtbarer Startbildschirm ist noch kein fertiges Hauptmenü. Mit `startup.continue` lässt sich dessen nativer Knopf „ZUM STARTEN KLICKEN!“ auslösen, auch unter Wayland ohne Eingabeautomation:
+Optional: `--game-dir '/anderer/Spielpfad'`, `--timeout 30`. The second position argument is a JSON object. Returns are JSON. Exit code 0 means success; Exit code 1 means error. Before the game starts, the client delivers `GAME_NOT_READY`. During startup, `status` shows `ready: false` and `code: GAME_NOT_READY`. A visible start screen is not yet a finished main menu. With `startup.continue` its native button “CLICK TO START!” trigger, even under Wayland without input automation:
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py startup.continue
 python3 pvzreplanted/debug-mod/tools/debug_api.py status
 ```
 
-Der Befehl löst ausschließlich den aktiven, bedienbaren `LoadBar`-Button im nativen `SplashScreenPanel` aus. Lade-, Profil- und Zustandswechsel bleiben beim Spiel. `STARTUP_NOT_READY` bedeutet, dass der Knopf fehlt oder noch nicht bedienbar ist. Nach `accepted: true` auf `status.ready: true` warten. Wiederholung im fertigen Hauptmenü liefert `alreadyReady: true`; während eines Levels wird `INVALID_STATE` gemeldet. Lizenz- und Profildialoge werden nicht automatisch bestätigt.
+The command only triggers the active, operable `LoadBar` button in the native `SplashScreenPanel`. Loading, profile and state changes remain in the game. `STARTUP_NOT_READY` means that the button is missing or cannot yet be operated. After `accepted: true` wait for `status.ready: true`. Repeat in the finished main menu delivers `alreadyReady: true`; `INVALID_STATE` is reported during a level. License and profile dialogs are not automatically confirmed.
 
-`accepted: true` bestätigt eine angeforderte Zustandsänderung. Levelwechsel, Intro und Kartenwahl laufen anschließend über das Spiel. Prüfe danach `status` beziehungsweise `chooser`. Ein Timeout beweist nicht, dass eine Mutation ausgeblieben ist. Prüfe den Zustand vor einer Wiederholung.
+`accepted: true` acknowledges a requested state change. Level changes, intros and card selection then run through the game. Then check `status` or `chooser`. A timeout does not prove that a mutation has not occurred. Check the condition before repeating.
 
-## Level und Minispiele
+## Levels and mini-games
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py levels
@@ -31,7 +31,7 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py level.start '{"index":0}'
 python3 pvzreplanted/debug-mod/tools/debug_api.py level.leave
 ```
 
-`levels` gibt alle vom Spiel bereitgestellten Leveldefinitionen aus: Adventure, Survival, Rätsel, Minispiele und weitere vorhandene Modi. Verwende deren `index`; Nummern können sich zwischen Spielversionen ändern. `level.start` benötigt das Hauptmenü oder die native Levelauswahl. Die native Auswahl entscheidet über ein vorhandenes gespeichertes Level, Spezial-Intros und den Ladeablauf. Zum Wechsel zuerst `level.leave` verwenden und auf das Hauptmenü warten. Ein gewählter Spezialmodus muss vom Spiel und den installierten Mods unterstützt werden.
+`levels` outputs all level definitions provided by the game: adventure, survival, puzzles, mini-games and other existing modes. Use their `index`; Numbers may change between game versions. `level.start` requires main menu or native level selection. The native selection decides on an existing saved level, special intros and the loading process. To switch, first use `level.leave` and wait for the main menu. A selected special mode must be supported by the game and the installed mods.
 
 ## Debug-Level
 
@@ -42,26 +42,26 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py chooser
 python3 pvzreplanted/debug-mod/tools/debug_api.py chooser.select '{"indices":[0,1,2],"confirm":true}'
 ```
 
-`debug.backgrounds` liefert Hintergründe und öffnet die bestehende Debug-Auswahl. `debug.start` verwendet deren Index. Der Debug-Level bleibt Besitzer seiner temporären Levelkopie und seines Speicherschutzes.
+`debug.backgrounds` provides backgrounds and opens the existing debug selection. `debug.start` uses their index. The debug level remains the owner of its temporary level copy and its memory protection.
 
-`chooser` liefert sämtliche aktuellen Auswahlobjekte mit Index, nativem Zustand und gegebenenfalls Modnamen. `ready: true` bestätigt zusätzlich ein fertig gebundenes, vollständig angezeigtes Panel ohne fliegende Karten. Warte darauf vor `chooser.select`; `visible` allein genügt nicht. Zu frühe Auswahl meldet `CHOOSER_NOT_READY`, bevor Karten geändert werden. In der Debug-Sitzung folgen zwei Phasen: zuerst Pflanzen, anschließend Zombies. Warte nach Bestätigung der Pflanzen, bis `chooser` `zombiePhase: true` meldet. Wähle dann die Zombies:
+`chooser` returns all current selection objects with index, native state and, if applicable, mod names. `ready: true` additionally confirms a fully bound, fully displayed panel with no flying cards. Wait for it before `chooser.select`; `visible` alone is not enough. Too early selection reports `CHOOSER_NOT_READY` before maps are changed. There are two phases in the debug session: first plants, then zombies. After confirming the plants, wait for `chooser` to report `zombiePhase: true`. Then choose the zombies:
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py chooser.select '{"indices":[0,1],"confirm":true}'
 ```
 
-Die Zombieauswahl darf leer sein: `{"indices":[],"confirm":true}`. Pro Debug-Leiste sind höchstens zehn Karten möglich. `confirm: false` ändert nur die Auswahl. `chooser.select` funktioniert auch bei der normalen Kartenwahl; dort gelten die native Kapazität und Verfügbarkeit. Versteckte native Pflanzen werden nicht still freigeschaltet.
+The zombie selection can be empty: `{"indices":[],"confirm":true}`. A maximum of ten cards are possible per debug bar. `confirm: false` only changes the selection. `chooser.select` also works with normal card selection; the native capacity and availability apply there. Hidden native plants are not unlocked silently.
 
-Im fertigen Debug-Level lässt sich die manuelle Zombieleiste ersetzen:
+The manual zombie bar can be replaced in the finished debug level:
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py catalog.zombies
 python3 pvzreplanted/debug-mod/tools/debug_api.py debug.roster '{"indices":[0,1,2]}'
 ```
 
-Hier sind die Indizes aus `catalog.zombies.debug` gemeint. Sie unterscheiden sich von den Indizes unter `registered`.
+This refers to the indices from `catalog.zombies.debug`. They differ from the indices under `registered`.
 
-## Pflanzenkarten und Kataloge
+## Plant cards and catalogs
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py catalog.plants
@@ -70,11 +70,11 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py bank
 python3 pvzreplanted/debug-mod/tools/debug_api.py bank.set '{"plants":["Peashooter","Sunflower","Wallnut"]}'
 ```
 
-Die Kataloge unterscheiden native Enum-Namen von registrierten Modvarianten. `catalog.plants` benötigt ein vorhandenes Board, weil Kosten und Modkataloge vom Level abhängen können. `bank.set` ersetzt Spieler-0-Karten im laufenden Level durch bis zu zehn native Pflanzen; die tatsächliche Packetkapazität darf nicht überschritten werden. Modvarianten wählst du über `chooser.select` oder platzierst sie direkt über den Katalog. Modkataloge werden beim Aufruf neu ermittelt; verwende Indizes aus derselben Spiel-/Modkonfiguration.
+The catalogs distinguish native enum names from registered mod variants. `catalog.plants` requires an existing board because costs and mod catalogs can depend on the level. `bank.set` replaces player 0 cards in the current level with up to ten native plants; the actual packet capacity must not be exceeded. You choose mod variants via `chooser.select` or place them directly via the catalog. Mod catalogs are re-determined when accessed; use indexes from the same game/mod configuration.
 
-## Platzieren und Umplatzieren
+## Placing and repositioning
 
-Koordinaten beginnen bei null: `col` ist 0 bis 8; `row` ist 0 bis 4 beziehungsweise 5. Die Rosterwahl begrenzt API-Platzierungen nicht. Regeln für Terrain, Unterstützung und Belegung bleiben aktiv.
+Coordinates start at zero: `col` is 0 to 8; `row` is 0 to 4 or 5. Roster choice does not limit API placements. Terrain, support and occupancy rules remain active.
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py plant.place '{"type":"Peashooter","col":2,"row":1}'
@@ -84,9 +84,9 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py plant.place '{"registered":0,"
 python3 pvzreplanted/debug-mod/tools/debug_api.py zombie.place '{"registered":0,"col":8,"row":1}'
 ```
 
-`registered` bezeichnet einen Eintrag aus `catalog.plants.registered` beziehungsweise `catalog.zombies.registered`. Bibliotheken und Fusion bleiben für Varianten, Initialisierung und spezielle Regeln zuständig. Beliebige native Marker werden nicht angenommen. `entrance: true` behält die natürliche Eintrittsposition des Zombies. Ungültige Zellen liefern `INVALID_CELL`; verletzte Platzierungsregeln liefern `INVALID_PLACEMENT` mit Begründung. Nicht jeder Sonderzombie lässt sich außerhalb seines nativen Modus erzeugen. Fehlgeschlagene Zombieerzeugung räumt die neu angelegten Zombies dieses Versuchs auf.
+`registered` denotes an entry from `catalog.plants.registered` or `catalog.zombies.registered`. Libraries and Fusion remain responsible for variants, initialization and special rules. Any native markers will not be accepted. `entrance: true` maintains the zombie's natural entry position. Invalid cells return `INVALID_CELL`; `INVALID_PLACEMENT` provides reasons for violating placement rules. Not every special zombie can be created outside of its native mode. Failed zombie creation clears up the newly created zombies of this attempt.
 
-Aktuelle IDs und Boardkennung erhältst du über `plants`, `zombies` und `status`. Verschieben und Entfernen verlangen die passende Boardkennung. Dadurch können alte IDs nach einem Levelwechsel keine anderen Einheiten verändern.
+You can get current IDs and board identification via `plants`, `zombies` and `status`. Moving and removing require the appropriate board ID. This means that old IDs cannot change other units after a level change.
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py plant.move '{"board":"BOARDKENNUNG","id":65537,"col":3,"row":1}'
@@ -95,9 +95,9 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py plant.remove '{"board":"BOARDK
 python3 pvzreplanted/debug-mod/tools/debug_api.py zombie.remove '{"board":"BOARDKENNUNG","id":65537}'
 ```
 
-Lawn Glove besitzt vorhandene Regeln für das Verschieben von Pflanzen und Stapeln. Ohne Lawn Glove unterstützt die API gewöhnliche Einzelpflanzen; abhängige Unterlagen, Sonderzustände und Zweifeldpflanzen werden geschützt. Zombies verwenden die native Reihen-, Pool- und Positionsaktualisierung.
+Lawn Glove has existing rules for moving plants and stacking. Without Lawn Glove, the API supports common individual plants; Dependent documents, special conditions and doubtful plants are protected. Zombies use native row, pool and position updating.
 
-## Ressourcen
+## resources
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py sun.set '{"amount":5000}'
@@ -106,11 +106,11 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py coins.profile.set '{"amount":1
 python3 pvzreplanted/debug-mod/tools/debug_api.py coins.profile.set '{"amount":1000,"persist":true}'
 ```
 
-`sun.set` erlaubt optional `player: 0` oder `1`. Im Debug-Level wird danach die automatische Rücksetzung auf 9990 für diese Sitzung abgeschaltet; dessen kostenlose Platzierung bleibt aktiv.
+`sun.set` allows optional `player: 0` or `1`. In the debug level, the automatic reset to 9990 is then switched off for this session; its free placement remains active.
 
-`coins.level.set` setzt den nativen Levelzähler `mCoinsCollected`. Das ist kein zusätzlicher Geldbeutel und keine Änderung bereits fliegender Münzobjekte. `coins.profile.set` verwendet native Profileinheiten: eine Einheit entspricht zehn angezeigten Münzen. Ohne `persist: true` wird nur der Arbeitsspeicher geändert; spätere native Speichervorgänge können diesen Wert übernehmen. `persist: true` ruft die native Profilspeicherung auf. Während der Debug-Sitzung ist diese explizite Speicherung gesperrt. Erstelle vor dauerhaften Profiländerungen eine Sicherung.
+`coins.level.set` sets the native level counter `mCoinsCollected`. This is not an additional wallet or change to coin items that are already flying. `coins.profile.set` uses native profile units: one unit is equal to ten displayed coins. Without `persist: true`, only the RAM is changed; later native saves can inherit this value. `persist: true` invokes native profile storage. This explicit storage is locked during the debug session. Make a backup before making permanent profile changes.
 
-## Zombiebudget und automatische Wellen in normalen Leveln
+## Zombie budget and automatic waves in normal levels
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py waves
@@ -118,9 +118,9 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py waves.set '{"budget":30,"types
 python3 pvzreplanted/debug-mod/tools/debug_api.py waves.set '{"firstWave":3,"budget":50,"types":["Normal","Football"]}'
 ```
 
-`budget` sind native Zombiepunkte pro noch nicht gespawnter Welle, keine Sonnenkosten oder Trefferpunkte. Die API füllt jede verbleibende Welle reihum mit den gewählten Typen, solange Punkte reichen. Sie aktualisiert auch die native Zombieauswahl `mZombieAllowed`. Sie meldet ausgegebene Punkte, Restbudget und den fertigen Plan. Das Budget ist eine Obergrenze; unteilbare Restpunkte bleiben übrig. Eine zu große Belegung wird vor dem Schreiben mit `WAVE_CAPACITY` abgelehnt. `firstWave` ist nullbasiert und darf keine bereits gestartete Welle bezeichnen. Ohne Angabe beginnt die Änderung bei der nächsten noch nicht gespawnten Welle (`mCurrentWave`). Bestehende Zombies bleiben bestehen. Spezialmodi und spätere Survival-Stufen können ihre native Tabelle erneut erzeugen. Im Debug-Level sind automatische Wellen abgeschaltet; dort dient `zombie.place` zum Erzeugen.
+`budget` is native zombie points per wave not yet spawned, no sun cost or hit points. The API fills each remaining wave with the chosen types in turn, as long as points last. It also updates the native zombie selection `mZombieAllowed`. It reports points spent, remaining budget and the finished plan. The budget is a ceiling; indivisible remaining points remain. An assignment that is too large will be rejected with `WAVE_CAPACITY` before writing. `firstWave` is zero-based and cannot denote a wave that has already started. If not specified, the change begins with the next wave that has not yet been spawned (`mCurrentWave`). Existing zombies remain. Special modes and later survival levels can regenerate their native table. In the debug level, automatic waves are switched off; `zombie.place` is used there to generate.
 
-## Freischalten, Sperren und Almanach
+## Unlock, Block and Almanac
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py unlock.plant '{"type":"Peashooter","unlocked":false}'
@@ -132,7 +132,7 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py almanac '{"unlockedOnly":true}
 python3 pvzreplanted/debug-mod/tools/debug_api.py unlocks.reset
 ```
 
-Overrides gelten bis zum Spielende oder `unlocks.reset`; sie verändern keine Adventure-Stufe, Käufe oder Erfolge. Pflanzenauswahl und Almanacheintrag sind getrennte Freischaltungen. Bereits geöffnete Pflanzenauswahlen gegebenenfalls erneut öffnen. Almanachdaten werden aktualisiert. Explizite Sperren haben Vorrang vor dem nativen Debug-Reveal. Für registrierte Varianten aus `almanac.plants` und `almanac.zombies` verwende stattdessen `owner` und `id` aus der Antwort:
+Overrides apply until the end of the game or `unlocks.reset`; they do not change adventure levels, purchases or achievements. Plant selection and almanac entry are separate activations. If necessary, reopen plant selections that have already been opened. Almanac data is updated. Explicit locks take precedence over native debug reveal. For registered variants from `almanac.plants` and `almanac.zombies`, use `owner` and `id` from the answer instead:
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py unlock.plant '{"owner":"fusion","id":"ID_AUS_ALMANAC","unlocked":true}'
@@ -140,9 +140,9 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py unlock.almanac '{"kind":"plant
 python3 pvzreplanted/debug-mod/tools/debug_api.py unlock.almanac '{"kind":"zombie","owner":"fusion","id":"ID_AUS_ALMANAC","duck":false,"unlocked":true}'
 ```
 
-Plant Library 1.0.4 und Zombie Library 1.1.4 besitzen dafür eigene sitzungsbezogene Overrides. Die Almanachlisten aktualisieren sich auch bei geöffnetem Mod-Almanach. Entenvarianten haben getrennte Sperren. `plantUnlocked` kann ohne geladenes Board `null` sein, wenn die normale Freischaltung ein profilabhängiges Board benötigt. Ohne diese Bibliotheksversionen bleiben die nativen API-Befehle verfügbar; Mod-Overrides melden `LIBRARY_API_UNAVAILABLE`.
+Plant Library 1.0.4 and Zombie Library 1.1.4 have their own session-related overrides for this. The almanac lists also update when the mod almanac is open. Duck variants have separate locks. `plantUnlocked` can be `null` without a loaded board if normal activation requires a profile-dependent board. Without these library versions, the native API commands remain available; Report mod overrides `LIBRARY_API_UNAVAILABLE`.
 
-## Zustandsabfragen
+## Status queries
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py board
@@ -153,17 +153,17 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py waves
 python3 pvzreplanted/debug-mod/tools/debug_api.py fps
 ```
 
-`board` gibt alle Spielfeldzellen mit Wasserstatus und IDs der dort befindlichen Pflanzen und Zombies aus. Zusätzlich enthält die Antwort Sonne pro aktivem Spieler, Profilmünzen und den Levelmünzzähler. Die vollständigen Einheitenlisten sind enthalten; Zombies außerhalb des sichtbaren Rasters bleiben in der Liste erhalten.
+`board` outputs all playing field cells with water status and IDs of the plants and zombies there. Additionally, the answer includes sun per active player, profile coins and the level coin counter. Full unit lists are included; Zombies outside the visible grid remain in the list.
 
-`almanac` enthält getrennte Listen `native`, `plants` und `zombies`. Die beiden letzten Listen liefern auch `owner`, `id` und gegebenenfalls `duck` für registrierte Modvarianten.
+`almanac` contains separate lists `native`, `plants` and `zombies`. The last two lists also provide `owner`, `id` and possibly `duck` for registered mod variants.
 
-Snapshots enthalten native skalare `m*`-Felder und `DataID`: beispielsweise Leben, maximale Leben, Rüstung, Position, Reihe, Phase, Zustand, Statustimer, Zielinformationen und Modmarker. Pflanzenaufladung steht bei den Bankkarten unter `mRefreshCounter`, `mRefreshTime` und `mRefreshing`; Angriffstimer gehören zum jeweiligen Pflanzenobjekt. Zombies enthalten zusätzlich den optionalen Augenzombie-Zustand `awake` und `aggressive`. Projektilsnapshots enthalten unter anderem Typ, Bewegung, Position, Geschwindigkeit und Ziel-ID. Timer und Zähler werden in nativen Einheiten ausgegeben; sie sind nicht automatisch Sekunden. Die verfügbaren Feldnamen hängen von der Spielversion ab. Fehler beim Lesen einzelner Felder werden am jeweiligen Feld ausgewiesen.
+Snapshots contain native `m*` and `DataID` scalar fields: for example, health, maximum health, armor, position, row, phase, condition, status timer, target information, and mod markers. Plant top-up is available for bank cards under `mRefreshCounter`, `mRefreshTime` and `mRefreshing`; Attack timers belong to the respective plant object. Zombies additionally include the optional eye zombie condition `awake` and `aggressive`. Projectile snapshots include, among other things, type, movement, position, speed and target ID. Timers and counters are output in native units; they are not automatically seconds. The available field names depend on the game version. Errors when reading individual fields are shown in the respective field.
 
-`waves` zeigt geplante Typen und den Spawn-Countdown. Noch nicht erzeugte Zombies haben keine Instanzleben, Statuseffekte oder aktive Phase. Solche Werte werden nicht erfunden. Zufalls- oder Spezialspawns außerhalb der Wellentabelle können erst nach ihrer nativen Planung beziehungsweise Erzeugung erscheinen.
+`waves` shows scheduled types and spawn countdown. Zombies that have not yet been spawned have no instance life, status effects, or active phase. Such values ​​are not invented. Random or special spawns outside of the wave table can only appear after they are natively planned or generated.
 
-`fps` misst gerenderte Bilder über Unitys unskalierte Framezeit, nicht durch externe Framegeneration ergänzte Bilder. `frame` zählt Renderframes; `simulationTick` enthält bei vorhandenem Board den nativen `mMainCounter`, sonst `null`. `tickSeconds` liefert das native Zeitintervall pro Tick. Vergleiche Simulationsticks nur bei gleicher `board`-Kennung. Damit lassen sich Renderleistung und tatsächlich erreichter Simulationsfortschritt getrennt messen.
+`fps` measures rendered images via Unity's unscaled frame time, not images supplemented by external frame generation. `frame` counts render frames; `simulationTick` contains the native `mMainCounter` if the board is present, otherwise `null`. `tickSeconds` returns the native time interval per tick. Compare simulation sticks only with the same `board` identifier. This allows rendering performance and actual simulation progress to be measured separately.
 
-## Screenshot, Geschwindigkeit und Einstellungen
+## Screenshot, speed and settings
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py screenshot
@@ -178,22 +178,22 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py pause '{"paused":true}'
 python3 pvzreplanted/debug-mod/tools/debug_api.py pause '{"paused":false}'
 ```
 
-`pause` besitzt genau einen eigenen Eintrag im nativen Pausezähler von `TimeUtil`. Wiederholtes Pausieren addiert keine weiteren Pausen. `paused` und `status.paused` melden `TimeUtil.IsTimePaused()`; `controlPaused` zeigt die API-eigene Pause. Fortsetzen, Boardwechsel, Boardende und API-Abschaltung geben ausschließlich diese eigene Pause frei. Andere Pausebesitzer bleiben erhalten. Die API benötigt dafür keinen sichtbaren Pausenknopf.
+`pause` has exactly one entry in the native pause counter of `TimeUtil`. Repeated pauses do not add additional pauses. `paused` and `status.paused` report `TimeUtil.IsTimePaused()`; `controlPaused` shows the API's own pause. Resume, board change, board end and API shutdown only release this own pause. Other break owners remain. The API does not require a visible pause button for this.
 
-Screenshots landen unter `UserData/DebugModApi/screenshots/`. Der Client wartet auf eine vollständige PNG-Datei und gibt deren Linux-Pfad zurück. Direkte Protokollnutzer erhalten zunächst `accepted: true` und müssen das Dateiende selbst abwarten.
+Screenshots end up under `UserData/DebugModApi/screenshots/`. The client waits for a complete PNG file and returns its Linux path. Direct protocol users first receive `accepted: true` and have to wait for the end of the file themselves.
 
-`speed` liefert die aktuellen nativen Geschwindigkeitsstufen und deren Indizes; installierte Speed-Mod-Erweiterungen sind enthalten. `speed` mit `index` verwendet die native Zeitsteuerung. Spielpause und bestehende Verlangsamung behalten deren Zuständigkeit; die Antwort enthält den wirksamen Wert der nativen Zeitsteuerung. Bei CPU-Überlast kann die tatsächlich erreichte Simulation langsamer sein; das lässt sich über `fps.simulationTick` und `fps.tickSeconds` messen.
+`speed` provides the current native speed levels and their indices; Installed speed mod extensions are included. `speed` with `index` uses native timing. Game pauses and existing slowdowns remain their responsibility; the response contains the effective value of the native timing. When the CPU is overloaded, the actual simulation achieved may be slower; this can be measured via `fps.simulationTick` and `fps.tickSeconds`.
 
-`settings` liefert alle nativen Einstellungen mit Typ, Schreibbarkeit und Enum-Werten. `settings.set` verwendet native Setter einschließlich deren Ereignissen und Speicherverhalten. Unterstützt sind Ton, Musik, Sprache, Fenstermodus, Auflösung, VSync, Vibration, hoher Kontrast, halbe Geschwindigkeit, Bildschirmwackeln, GameplaySpeed, Controllergeschwindigkeit und weitere schreibbare skalare Einstellungen. Lautstärken liegen zwischen 0 und 1. Historische Werte `PreviousResolution` und `PreviousWindowMode` bleiben geschützt. Änderungen können vom Spiel dauerhaft gespeichert werden.
+`settings` provides all native settings with type, writability and enum values. `settings.set` uses native setters including their events and storage behavior. Supported are sound, music, speech, window mode, resolution, VSync, vibration, high contrast, half speed, screen shake, gameplay speed, controller speed and other writable scalar settings. Volume levels are between 0 and 1. Historical values ​​`PreviousResolution` and `PreviousWindowMode` remain protected. Changes can be saved permanently by the game.
 
-## Dateiprotokoll für andere Clients
+## File protocol for other clients
 
-Basisverzeichnis: `<Spiel>/UserData/DebugModApi/`. `status.json` enthält Protokollversion, Modversion, Spielsession, PID und `updatedAt` in Unix-Millisekunden. Lebenszeichen älter als fünf Sekunden gelten als nicht verfügbar. `owner.lock` verhindert zwei API-Besitzer im selben Spielverzeichnis.
+Base directory: `<Spiel>/UserData/DebugModApi/`. `status.json` contains protocol version, mod version, game session, PID and `updatedAt` in Unix milliseconds. Signs of life older than five seconds are considered unavailable. `owner.lock` prevents two API owners in the same game directory.
 
-1. Lies die aktuelle `session` aus `status.json`.
-2. Erzeuge eine UUID als 32 Hexzeichen ohne Bindestriche.
-3. Schreibe JSON zunächst als temporäre Datei. Benenne sie atomar zu `requests/<UUID>.json` um.
-4. Lies die passende Datei aus `responses/<UUID>.json`. Entferne die Antwort nach dem Lesen.
+1. Read the current `session` from `status.json`.
+2. Generate a UUID as 32 hex characters without hyphens.
+3. First write JSON as a temporary file. Atomically rename it to `requests/<UUID>.json`.
+4. Read the appropriate file from `responses/<UUID>.json`. Remove the answer after reading.
 
 ```json
 {
@@ -205,7 +205,7 @@ Basisverzeichnis: `<Spiel>/UserData/DebugModApi/`. `status.json` enthält Protok
 }
 ```
 
-`expiresAt` muss in der nahen Zukunft liegen. Abgelaufene Anfragen werden ohne Ausführung abgelehnt. Neustarts erzeugen eine neue Session; alte Anfragen liefern `STALE_SESSION`. Die maximale Anfragegröße ist 64 KiB. Pro API-Durchlauf werden höchstens vier Anfragen verarbeitet. Benötigt ein Client eine bestimmte Reihenfolge, wartet er auf jede Antwort, bevor er den nächsten Befehl sendet. Mehrere Befehle bilden keine Transaktion.
+`expiresAt` must be in the near future. Expired requests are rejected without execution. Restarts create a new session; old requests return `STALE_SESSION`. The maximum request size is 64 KiB. A maximum of four requests are processed per API run. If a client requires a specific order, it waits for each response before sending the next command. Multiple commands do not form a transaction.
 
 ```json
 {"protocol":1,"id":"UUID","session":"SESSION","ok":true,"result":{"amount":5000}}
@@ -215,10 +215,10 @@ Basisverzeichnis: `<Spiel>/UserData/DebugModApi/`. `status.json` enthält Protok
 {"protocol":1,"id":"UUID","session":"SESSION","ok":false,"error":{"code":"INVALID_PLACEMENT","message":"NeedsPot"}}
 ```
 
-Wichtige Fehlercodes sind `GAME_NOT_READY`, `BOARD_NOT_READY`, `LEVEL_NOT_READY`, `MAIN_MENU_REQUIRED`, `CHOOSER_NOT_READY`, `INVALID_ARGUMENT`, `INVALID_CELL`, `INVALID_PLACEMENT`, `ENTITY_NOT_FOUND`, `STALE_BOARD`, `STALE_SESSION`, `REQUEST_EXPIRED`, `UNKNOWN_COMMAND`, `DEBUG_SAVE_PROTECTED`, `SAVE_FAILED` und `COMMAND_FAILED`. Die API nimmt keine beliebigen Methodenaufrufe, Shellbefehle oder Ausgabepfade an. Zugriff ist auf Prozesse mit Dateirechten im lokalen Spielverzeichnis begrenzt.
+Important error codes are `GAME_NOT_READY`, `BOARD_NOT_READY`, `LEVEL_NOT_READY`, `MAIN_MENU_REQUIRED`, `CHOOSER_NOT_READY`, `INVALID_ARGUMENT`, `INVALID_CELL`, `INVALID_PLACEMENT`, `ENTITY_NOT_FOUND`, `STALE_BOARD`, `STALE_SESSION`, `REQUEST_EXPIRED`, `UNKNOWN_COMMAND`, `DEBUG_SAVE_PROTECTED`, `SAVE_FAILED` and `COMMAND_FAILED`. The API does not accept arbitrary method calls, shell commands, or output paths. Access is limited to processes with file rights in the local game directory.
 
 
-## Prüfung und Installation
+## Testing and installation
 
 ```sh
 # Build ohne Spielstart:
@@ -230,70 +230,70 @@ rtk proxy python3 pvzreplanted/debug-mod/tools/install.py --only DebugMod PlantL
 # Offline-Clienttests ohne Spielstart:
 python3 -m unittest discover -s pvzreplanted/debug-mod/tools -p test_debug_api.py -v
 
-# Bewusster Laufzeittest im bereits gestarteten Spiel, ausgehend vom Hauptmenü:
+# Explicit runtime test in an already running game, starting from the main menu:
 python3 pvzreplanted/debug-mod/tools/smoke_debug_api.py
 ```
 
-Der Laufzeittest startet eine temporäre Debug-Sitzung, verändert deren Inhalt und beendet sie wieder. Er prüft unter anderem Auswahl, Platzierung, Umplatzierung, ungültige Eingaben, Ressourcen, native und registrierte Freischaltungen, Screenshot, Einstellungen und Geschwindigkeit. Der Test schreibt seine JSON-Antworten nach `debug-mod/validation/debug-runtime.json`. Er fordert keine dauerhafte Profilspeicherung an. Zusätzliche manuelle beziehungsweise ausgeführte Prüfungen stehen in `debug-mod/VALIDATION.md`.
+The runtime test starts a temporary debug session, changes its contents and ends it again. Among other things, it checks selection, placement, repositioning, invalid input, resources, native and registered activations, screenshot, settings and speed. The test writes its JSON responses to `debug-mod/validation/debug-runtime.json`. It does not request permanent profile storage. Additional manual or executed checks are in `debug-mod/VALIDATION.md`.
 
-Der Installer ersetzt ausschließlich die ausgewählten DLLs, aktualisiert betroffene Prüfsummen und sichert vorherige Dateien unter `debug-mod/backups/install-*`. Er startet das Spiel nicht. Zum Rückbau bei geschlossenem Spiel die Dateien anhand der dortigen `installation.json` wiederherstellen. Für die ursprüngliche DebugMod.dll 1.0.0 liegt der Backupstand unter `backups/install-20261103-125712-879568`. Die ursprünglichen Bibliotheken und deren Prüfsummen wurden unter `backups/install-20261103-130931-042599` gesichert. Bei einem vollständigen Rückbau beide Manifeste beachten; spätere Sicherungen enthalten Zwischenstände der API-Erweiterung.
+The installer only replaces the selected DLLs, updates affected checksums and backs up previous files under `debug-mod/backups/install-*`. It doesn't start the game. To restore the game when the game is closed, restore the files using the `installation.json` there. For the original DebugMod.dll 1.0.0, the backup level is below `backups/install-20261103-125712-879568`. The original libraries and their checksums were saved under `backups/install-20261103-130931-042599`. In the case of a complete dismantling, observe both manifestos; later backups contain intermediate versions of the API extension.
 
-## Reproduzierbare Kampflast im Debug-Level
+## Reproducible combat load at debug level
 
-`debug.zombie.set` verlangt eine aktuelle Boardkennung, eine aktive Zombie-ID und eine temporäre Debug-Sitzung. `health` setzt Körperleben und maximale Körperleben auf 1 bis 10000000. `freezeTicks` setzt nach nativer Vereisung deren Dauer auf 1 bis 1000000 Simulationsticks; 0 entfernt die Vereisung nativ. Mindestens eines der beiden Felder ist erforderlich. Beide Werte werden vor der ersten Änderung geprüft. Rüstung bleibt separat. Boardwechsel schützen alte IDs wie bei `zombie.move`.
+`debug.zombie.set` requires a current board ID, an active zombie ID and a temporary debug session. `health` sets body life and maximum body life to 1 to 1,000,000. `freezeTicks` sets the duration of native icing to 1 to 1,000,000 simulation ticks; 0 removes the icing natively. At least one of the two fields is required. Both values ​​are checked before the first change. Armor remains separate. Board changes protect old IDs like `zombie.move`.
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py debug.zombie.set '{"board":"BOARDKENNUNG","id":65537,"health":1000000,"freezeTicks":100000}'
 ```
 
-Damit bleiben Testziele während FPS-Vergleichen stehen und überleben viele Projektile. Die Sitzung verändert keine Spielstände.
+This means that test targets remain stationary during FPS comparisons and survive many projectiles. The session does not change scores.
 
-## Temporäre Zombieauswahl und UI-Prüfung
+## Temporary zombie selection and UI testing
 
-Debug Mod 1.2.2 ersetzt während der Zombieauswahl die nativen Dekorationen durch graue Kopien. Kartenkosten und Ressourcenzähler verwenden das vorhandene Hirn. Bestätigung und Abbruch stellen alle ausgeliehenen Image-Eigenschaften wieder her; gemeinsame native Texturen bleiben unverändert.
+Debug Mod 1.2.2 replaces the native decorations with gray copies during zombie selection. Card costs and resource counters use existing brains. Confirm and Cancel restore all borrowed image properties; common native textures remain unchanged.
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py debug.ui
 ```
 
-`debug.ui` verlangt eine temporäre Debug-Sitzung (`DEBUG_REQUIRED` außerhalb). Es liefert aktive Unity-Images mit `path`, `sprite`, `color` (RGBA), `width` und `height`. Der Befehl verändert weder UI noch Spielzustand. Thematische Sprites tragen das Präfix `DebugZombieChooser.`. Screenshot und UI-Snapshot können die Darstellung und deren Wiederherstellung getrennt prüfen.
+`debug.ui` requires a temporary debug session (`DEBUG_REQUIRED` outside). It delivers active Unity images with `path`, `sprite`, `color` (RGBA), `width` and `height`. The command does not change the UI or game state. Thematic sprites have the prefix `DebugZombieChooser.`. Screenshot and UI snapshot can check the appearance and its restoration separately.
 
-## Pflanzenzustand und Dünger im temporären Debug-Level
+## Plant condition and fertilizer in temporary debug level
 
-`debug.plant.set` verlangt die aktuelle Boardkennung, eine lebende Pflanzen-ID und `health` zwischen 1 und den aktuellen maximalen Lebenspunkten. Der Befehl verändert weder maximale Lebenspunkte noch Fähigkeitstimer. `debug.fertilize` verlangt dieselbe Boardkennung sowie gültige `col`-/`row`-Koordinaten. Er ruft den echten Düngerpfad von Plant Fusion auf; Heilung, Animation und Entwicklung bleiben dessen Verantwortung. Beide Befehle sind außerhalb temporärer Debug-Sitzungen gesperrt. Ohne Fusion meldet `debug.fertilize` `FUSION_API_UNAVAILABLE`.
+`debug.plant.set` requires the current board ID, a living plant ID and `health` between 1 and the current maximum health points. The command does not change maximum health or ability timers. `debug.fertilize` requires the same board ID and valid `col`/`row` coordinates. It calls Plant Fusion's real fertilizer path; Healing, animation and development remain his responsibility. Both commands are locked outside of temporary debug sessions. Without merger, `debug.fertilize` reports `FUSION_API_UNAVAILABLE`.
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py debug.plant.set '{"board":"BOARDKENNUNG","id":65537,"health":100}'
 python3 pvzreplanted/debug-mod/tools/debug_api.py debug.fertilize '{"board":"BOARDKENNUNG","col":2,"row":2}'
 ```
 
-Die Zombieleiste im laufenden Debug-Level verwendet dieselben exportierten grauen Roster- und Hirnzähler-Sprites wie die Zombieauswahl. Native Layoutmaße bestimmen Positionen und Kartengröße. Registrierte Fusion-Zombies verwenden Saatpakete aus transparenten Originalporträts mit demselben Hintergrund wie die nativen Zombies. Ihre Almanachrahmen bleiben im Almanach.
+The zombie bar in the running debug level uses the same exported gray roster and brain counter sprites as the zombie selection. Native layout dimensions determine positions and map size. Registered Fusion Zombies use seed packs of transparent original portraits with the same background as the native zombies. Your almanac frames remain in the almanac.
 
-`debug.difficulty` liest ausschließlich den für das aktuelle Debug-Board wirksamen Schwierigkeitsgrad aus Difficulty Mod. Ohne zuständige Difficulty Mod meldet es `Normal` (Wert 3). Es verändert weder Sitzung noch gespeicherte Vorgaben. Damit lassen sich Schadenserwartungen bei bestehenden Modifikatoren prüfen. Das API-Lebenszeichen meldet die tatsächlich geladene Debug-Mod-Version.
+`debug.difficulty` only reads the difficulty level effective for the current debug board from Difficulty Mod. Without a responsible Difficulty Mod, it reports `Normal` (value 3). It does not change the session or saved presets. This allows damage expectations for existing modifiers to be checked. The API life sign reports the debug mod version actually loaded.
 
 
-## Gespeicherte Effekte im temporären Debug-Level
+## Saved effects in temporary debug level
 
-`debug.items` liefert die aktuelle Boardkennung und skalare native Felder aller lebenden `GridItem`-Objekte. Der Befehl ist ausschließlich in temporären Debug-Sitzungen verfügbar und verändert keine Werte. Damit lassen sich beispielsweise gespeicherte Schildpunkte und ihre vollständige Empfänger-DataID vor und nach echten Treffern vergleichen. Feldkennungen bleiben Eigentum der jeweiligen Mod.
+`debug.items` returns the current board identifier and scalar native fields of all live `GridItem` objects. The command is only available in temporary debug sessions and does not change any values. This allows, for example, saved shield points and their complete receiver DataID to be compared before and after real hits. Field identifiers remain the property of the respective mod.
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py debug.items
 ```
 
-Debug Mod 1.2.3 gibt dem Sun Collector beim Zuschneiden seines rotierenden Symbols die ursprüngliche native Sonnengrafik. Die temporäre Hirngrafik der Zombieauswahl gelangt dadurch nicht in dessen Cache. Die Änderung liegt vollständig in Debug Mod; Sun Collector bleibt unverändert.
+Debug Mod 1.2.3 gives the Sun Collector the original native sun graphic when cropping its rotating icon. The temporary brain graphicic of the zombie selection does not end up in its cache. The change is entirely in Debug Mod; Sun Collector remains unchanged.
 
 
-## Direktstart für automatisierte Tests (1.3.0)
+## Direct start for automated tests (1.3.0)
 
-Starte Steam als Desktopbenutzer mit dem gewünschten Hintergrund:
+Start Steam as a desktop user with the desired background:
 
 ```sh
 rtk proxy runuser -u kevin -- env DISPLAY=:0 XDG_RUNTIME_DIR=/run/user/1000 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus steam -applaunch 3654560 --debug-level=Day
 ```
 
-Auch `--debug-level Night`, `Pool`, `Fog`, `Roof` sowie ein Index aus `debug.backgrounds` sind möglich. Der Parameter öffnet nach dem Laden ausschließlich eine temporäre Debug-Sitzung und bestätigt beide Kartenwahlen mit je einem Platzhalter: Peashooter und Normal-Zombie. Danach können `bank.set`, `debug.roster` und die Platzierungsbefehle die Testinhalte ersetzen. Warte auf `status.debug: true` und `status.scene: Playing`. Der Parameter überspringt keine Profil- oder Lizenzdialoge. Ungültige Hintergründe werden protokolliert; normale Boards werden niemals ersetzt.
+`--debug-level Night`, `Pool`, `Fog`, `Roof` and an index from `debug.backgrounds` are also possible. After loading, the parameter only opens a temporary debug session and confirms both map choices with a placeholder each: Peashooter and Normal Zombie. After that, `bank.set`, `debug.roster` and the placement commands can replace the test contents. Waiting for `status.debug: true` and `status.scene: Playing`. The parameter does not skip any profile or license dialogs. Invalid backgrounds are logged; normal boards are never replaced.
 
-## Spielende und optionale Mods
+## Game ending and optional mods
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py game.shutdown
@@ -304,13 +304,13 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py suncollector '{"enabled":false
 python3 pvzreplanted/debug-mod/tools/debug_api.py goldenbean.apply '{"board":"BOARDKENNUNG","id":65537}'
 ```
 
-`game.shutdown` schreibt zuerst die Antwort und ruft drei Renderframes später Unitys reguläres `Application.Quit` auf. Native Speicherregeln gelten weiter; temporäre Debug-Sitzungen behalten ihren Speicherschutz.
+`game.shutdown` writes the response first and calls Unity's regular `Application.Quit` three render frames later. Native storage rules still apply; temporary debug sessions retain their memory protection.
 
-`difficulty` benötigt eine installierte Difficulty Mod und deren laufendes Board. Werte: 1 Easy, 2 Medium, 3 Normal, 4 Harder, 5 Extreme. Änderung benötigt die aktuelle Boardkennung. Difficulty Mod 1.0.6 erlaubt auch Änderungen in normalen Leveln; ein so geänderter Lauf erhält keinen Difficulty-Pokal. Frühere Versionen erlauben ausschließlich temporäre Debug-Boards. Die gespeicherte Standardauswahl bleibt unverändert. `debug.difficulty` behält seine bisherige Diagnosefunktion einschließlich Normal-Fallback ohne Mod.
+`difficulty` requires an installed Difficulty Mod and its running board. Values: 1 Easy, 2 Medium, 3 Normal, 4 Harder, 5 Extreme. Change requires the current board ID. Difficulty Mod 1.0.6 also allows changes in normal levels; a run modified in this way will not receive a Difficulty Cup. Previous versions only allow temporary debug boards. The saved default selection remains unchanged. `debug.difficulty` retains its previous diagnostic function including normal fallback without mod.
 
-`suncollector` benötigt Sun Collector. Änderung setzt dessen tatsächlichen Schalter und löscht einen vorherigen Fehlerzustand. Die API speichert die Einstellung nicht ausdrücklich; ein späterer nativer Mod-Schalter kann sie speichern. `goldenbean.apply` verwendet den echten Plant-Fusion-Pfad einschließlich Geldbeutel, Kosten, Entwicklung und Ultimate. Es verbraucht keine künstlich erzeugte Bohne. Ungeeignete Pflanzen liefern `applied:false`. Fehlende optionale Mods liefern `MOD_NOT_INSTALLED` beziehungsweise `FUSION_API_UNAVAILABLE`.
+`suncollector` requires Sun Collector. Change sets its actual switch and clears a previous error condition. The API does not explicitly save the setting; a later native mod switch can save them. `goldenbean.apply` uses the real Plant Fusion path including wallet, cost, development and ultimate. It does not consume any artificially produced bean. Unsuitable plants deliver `applied:false`. `MOD_NOT_INSTALLED` or `FUSION_API_UNAVAILABLE` provide missing optional mods.
 
-## Freischaltungen und Erfolge
+## Unlocks and Achievements
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py unlock.modes '{"mode":"all","unlocked":true}'
@@ -319,9 +319,9 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py unlocks
 python3 pvzreplanted/debug-mod/tools/debug_api.py achievements
 ```
 
-`mode` akzeptiert `minigames`, `puzzle`, `survival` oder `all`. Die Overrides gelten für Kategorien und ihre Level bis `unlocks.reset`, Profilwechsel oder Spielende. Sie verändern keine nativen Fortschrittswerte. Bereits geöffnete Menüs gegebenenfalls erneut öffnen. `unlocks` liefert Kategorien, alle nativen Saattypen, Objekte und Level sowie die vorhandenen nativen und registrierten Almanachfreischaltungen. `achievements` liefert für jeden nativen Erfolg ID, Namen, `earned` und `shown`; es schaltet keine Erfolge frei.
+`mode` accepts `minigames`, `puzzle`, `survival` or `all`. The overrides apply to categories and their levels until `unlocks.reset`, profile change or end of game. They do not change native progress values. If necessary, reopen menus that are already open. `unlocks` provides categories, all native seed types, objects and levels as well as the existing native and registered almanac unlocks. `achievements` provides ID, name, `earned` and `shown` for each native achievement; it does not unlock achievements.
 
-## Profile verwalten
+## Manage profiles
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py profiles
@@ -331,9 +331,9 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py profile.rename '{"guid":"PROFI
 python3 pvzreplanted/debug-mod/tools/debug_api.py profile.delete '{"guid":"PROFIL-GUID"}'
 ```
 
-`profiles` zeigt alle Profile und den aktiven Index. Mutationen verlangen das Hauptmenü ohne Board und ohne Debug-Sitzung. Profile werden anhand ihrer aktuellen GUID adressiert. Namen müssen eindeutig sein, 1 bis 32 Zeichen enthalten und dürfen keine Steuer- oder Pfadzeichen enthalten. Die nativen Dienste besitzen Erstellung, Auswahl, Speicherung und Löschung. Umbenennen und Löschen stellen danach das vorher aktive Profil wieder her, sofern es noch existiert. Das letzte Profil bleibt geschützt. Vor dem Löschen werden vorhandene native Profildateien unter `UserData/DebugModApi/profile-backups/` gesichert. Diese Befehle ändern dauerhafte native Daten; Laufzeittests dürfen bestehende Benutzerprofile nicht verändern.
+`profiles` shows all profiles and the active index. Mutations require the main menu without a board and without a debug session. Profiles are addressed based on their current GUID. Names must be unique, contain 1 to 32 characters, and must not contain control or path characters. The native services have creation, selection, storage and deletion. Renaming and deleting will then restore the previously active profile if it still exists. The last profile remains protected. Before deletion, existing native profile files are backed up to `UserData/DebugModApi/profile-backups/`. These commands modify persistent native data; Runtime tests are not allowed to change existing user profiles.
 
-## Grabsteine, Rasenmäher und Eingabe
+## Gravestones, lawn mowers and input
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py gravestone.place '{"board":"BOARDKENNUNG","col":6,"row":2}'
@@ -347,13 +347,13 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py controller '{"buttons":["A","L
 python3 pvzreplanted/debug-mod/tools/debug_api.py controller.reset
 ```
 
-Grabsteine verwenden native Platzierungsregeln. Rasenmäher akzeptieren `id`, `row` oder `all:true`; Hinzufügen verwendet `row` oder `all:true`, überspringt vorhandene Mäher und räumt bei Allokationsfehlern die neu erzeugten Mäher auf. Typen: `Lawn`, `Pool`, `Roof`, `SuperMower`. Typänderungen erzeugen vor dem Entfernen des alten Mähers einen Ersatz mit passender nativer Grafik und übertragen Position sowie Laufzustand. Dabei ändert sich die DataID. Änderungen liefern den aktuellen Pool mit vollständigen DataIDs zurück. Alle Board-Mutationen verlangen eine aktuelle Boardkennung.
+Headstones use native placement rules. Lawn mowers accept `id`, `row` or `all:true`; Add uses `row` or `all:true`, skips existing mowers and cleans up the newly created mowers in case of allocation errors. Types: `Lawn`, `Pool`, `Roof`, `SuperMower`. Before removing the old mower, type changes create a replacement with matching native graphics and transfer position and running status. The DataID changes. Changes return the current pool with full DataIDs. All board mutations require a current board ID.
 
-`controller` erzeugt ein eigenes virtuelles Unity-Gamepad. Tasten: `A`, `B`, `X`, `Y`, `LB`, `RB`, `LT`, `RT`, `Back`, `Start`, `LS`, `RS`, `DPadUp`, `DPadDown`, `DPadLeft`, `DPadRight`, `Guide`. `Guide` ist als zusätzlicher Button verfügbar; Unitys normale Gamepad-Aktionen binden ihn nicht automatisch. Beide Sticks akzeptieren `x`/`y` zwischen -1 und 1, `leftTrigger`/`rightTrigger` zwischen 0 und 1. Jeder Aufruf ersetzt den vollständigen simulierten Zustand. Nach 16 bis 10000 Millisekunden (Standard 100) werden alle Tasten losgelassen; `controller.reset` entfernt das eigene Gerät. `controller.status` liest den tatsächlich im nativen Input-System angekommenen Gerätezustand einschließlich aller Tasten und Achsen. `controller.status` zeigt zusätzlich Geräteaktivierung, Hintergrundfähigkeit und den aktuellen Spielfokus. Echte Controller bleiben unverändert. Die native Gerätezuordnung und die vorhandenen Spielaktionen entscheiden über die Wirkung. Aktionen, die im Spiel selbst Fokus verlangen, benötigen weiterhin das aktive Spielfenster.
+`controller` creates its own virtual Unity gamepad. Keys: `A`, `B`, `X`, `Y`, `LB`, `RB`, `LT`, `RT`, `Back`, `Start`, `LS`, `RS`, `DPadUp`, `DPadDown`, `DPadLeft`, `DPadRight`, `Guide`. `Guide` is available as an additional button; Unity's normal gamepad actions do not bind it automatically. Both sticks accept `x`/`y` between -1 and 1, `leftTrigger`/`rightTrigger` between 0 and 1. Each call replaces the complete simulated state. After 16 to 10,000 milliseconds (default 100), all keys are released; `controller.reset` removes your own device. `controller.status` reads the device state that actually arrived in the native input system, including all buttons and axes. `controller.status` additionally shows device activation, background capability and current game focus. Real controllers remain unchanged. The native device mapping and the existing game actions determine the effect. Actions that require focus in the game still require the active game window.
 
-## Zusätzliche Nachweise für die Minenports
+## Additional evidence for the mining ports
 
-`coins` liefert skalare native Felder aller lebenden Münzen, Sonnen und Pflanzenkarten. `debug.treasure.set` markiert oder entfernt ein gespeichertes Schatzfeld ausschließlich im temporären Debug-Level. Das unsichtbare Feld dient dem Originalverhalten der Marigold Mine; es verändert keinen nativen Spielstand.
+`coins` provides scalar native fields of all living coins, suns and plant cards. `debug.treasure.set` only marks or removes a saved treasure field in the temporary debug level. The invisible field serves the original behavior of the Marigold Mine; it does not change the native savegame.
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py coins
@@ -361,39 +361,39 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py debug.treasure.set '{"board":"
 ```
 
 
-## Kartendarstellung und Controller-Navigation (1.3.1)
+## Map display and controller navigation (1.3.1)
 
-Fusion-Pflanzen verwenden im Debug-Katalog die exportierten Saatpakete einschließlich Hintergrund. Pflanzenbibliothek und reguläre Auswahl bleiben Besitzer ihrer eigenen Darstellungen. In beiden Debug-Kartenwahlen blättert eine horizontale Controllerbewegung am Kartenrand weiter beziehungsweise zurück. Die neue Seite erhält den Fokus in der nächsten passenden Zeile. Nach dem Austausch der Karten werden die nativen Rasterverweise erneuert; ein beim Phasenwechsel zerstörter Kartenfokus wird wiederhergestellt. Am Anfang und Ende bleibt die normale native Navigation erhalten.
+Fusion plants use the exported seed packages including background in the debug catalog. Plant library and regular selection remain owners of their own representations. In both debug map options, a horizontal controller movement on the edge of the map scrolls forward or back. The new page receives focus on the next appropriate line. After replacing the cards, the native grid references are renewed; A card focus that was destroyed during a phase change is restored. The normal native navigation remains at the beginning and end.
 
-`chooser` liefert zusätzlich `page`, `lastPage` und `selection` mit dem aktuellen Unity-Objektnamen und dem gewählten Kartenindex. Die Diagnose verändert weder Seite noch Fokus. Sie erlaubt die Prüfung mit dem dokumentierten virtuellen `controller`, einschließlich D-Pad und linkem Stick.
+`chooser` additionally returns `page`, `lastPage` and `selection` with the current Unity object name and the selected map index. The diagnosis does not change either side or focus. It allows testing with the documented virtual `controller`, including D-pad and left stick.
 
 
-`plant.place` akzeptiert zusätzlich `offsetY` zwischen 0 und 79 (Standard 40) als vertikale Position innerhalb des Felds. Verwende `offsetY:70` für eine Fusion mit einem Blumentopf als Unterlage. Die Fusion-Mod setzt ausschließlich für den synchronen API-Aufruf einen eigenen Cursor-Kontext und stellt ihn auch bei Fehlern wieder her. Dadurch hängt die API-Platzierung nicht von einer zufälligen Mausposition ab. Andere Pflanzenmods verwenden weiterhin ihren eigenen Platzierungscallback.
+`plant.place` additionally accepts `offsetY` between 0 and 79 (default 40) as a vertical position within the field. Use `offsetY:70` for a fusion with a flower pot as a base. The Fusion Mod sets its own cursor context exclusively for the synchronous API call and restores it even in the event of errors. This means that API placement does not depend on a random mouse position. Other plant mods still use their own placement callback.
 
-## Sichtungsschutz und Ballon-Landung (1.3.2)
+## Sighting protection and balloon landing (1.3.2)
 
-Debug Mod meldet eigene Boards über `Zombies.SuppressSightings` an Zombie Library 1.2.0. Gesehene native Zombies, Mod-Zombies und Entenvarianten werden dort weder dauerhaft freigeschaltet noch im Sitzungscache als gesehen gespeichert. Die temporäre vollständige Almanachansicht bleibt erhalten. Vorhandene Sichtungen werden nicht verändert.
+Debug Mod reports own boards via `Zombies.SuppressSightings` to Zombie Library 1.2.0. Seen native zombies, mod zombies and duck variants are neither permanently unlocked there nor saved as seen in the session cache. The temporary full almanac view remains. Existing sightings will not be changed.
 
-`debug.balloon.pop` verlangt die aktuelle Boardkennung, eine lebende Zombie-ID und ein temporäres Debug-Level. Der Zombie muss ein fliegender Ballonzombie sein. Der Befehl ruft den echten nativen `LandFlyer`-Pfad auf; Animation, Fall und Wassereintritt bleiben bei den zuständigen Spielsystemen. Andere Zombies und bereits gelandete Ballons liefern `INVALID_ARGUMENT`.
+`debug.balloon.pop` requires the current board ID, a living zombie ID and a temporary debug level. The zombie must be a flying balloon zombie. The command calls the real native `LandFlyer` path; Animation, fall and water entry remain with the responsible game systems. Other zombies and balloons that have already landed deliver `INVALID_ARGUMENT`.
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py debug.balloon.pop '{"board":"BOARDKENNUNG","id":65537}'
 ```
 
-`zombie.place` und `zombie.move` versetzen bei einem nativen Bobteam dessen vorhandene Mitglieder zusammen mit dem Anführer. Dadurch kann der Wassereintritt den vollständig positionierten Verband vom Schlitten lösen.
+`zombie.place` and `zombie.move` move a native bobsleigh team's existing members together with the leader. This allows water entry to dislodge the fully positioned dressing from the carriage.
 
-Positive `freezeTicks` werden vor jeder Mutation abgelehnt, wenn der native Zombie im aktuellen Zustand nicht eingefroren werden kann. Dadurch erhält insbesondere ein fliegender Ballonzombie keinen künstlichen Eis-Timer ohne native Eisgrafik. Verwende für dessen Landetest `debug.balloon.pop`.
+Positive `freezeTicks` are rejected before any mutation if the native zombie cannot be frozen in its current state. This means that a flying balloon zombie in particular does not receive an artificial ice timer without native ice graphics. Use `debug.balloon.pop` for its landing test.
 
-## Projektilgrafik prüfen (1.3.3)
+## Check projectile graphics (1.3.3)
 
-`projectiles` akzeptiert optional `visuals:true`. Jeder Projektil-Snapshot enthält dann zusätzlich `visuals` mit den tatsächlichen Renderern des zugehörigen Controllers. Gemeldet werden Hierarchiepfad, Aktivität, Rendererfreigabe, Sprite, Textur, Renderertyp und Weltposition. Der Befehl verändert keine Renderer. Native Schatten können neben importierter Projektilgrafik aktiv bleiben. Damit lassen sich ein korrekter gespeicherter Projektiltyp und die tatsächlich sichtbare Konversion getrennt prüfen.
+`projectiles` optionally accepts `visuals:true`. Each projectile snapshot then additionally contains `visuals` with the actual renderers of the associated controller. Hierarchy path, activity, renderer share, sprite, texture, renderer type and world position are reported. The command does not change renderers. Native shadows can remain active alongside imported projectile graphics. This allows the correct saved projectile type and the actual visible conversion to be checked separately.
 
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py projectiles '{"visuals":true}'
 ```
 
-## Zombie-Grafikdiagnose (1.3.4)
+## Zombie Graphics Diagnosis (1.3.4)
 
-`zombies` akzeptiert optional `visuals:true`. Die erweiterte Antwort enthält je Zombie `state` mit dem bisherigen Snapshot und `rendering` mit Renderern sowie der tatsächlichen Spine-Zeichenreihenfolge. Slots liefern Attachment, Alpha, Bone-Matrix und verfügbare Regionmaße. Renderer liefern Freigabe, Aktivität, Sortierung, Sprite und Weltmaße. Die Diagnose verändert keine Grafik und wird nur auf ausdrückliche Anfrage berechnet.
+`zombies` optionally accepts `visuals:true`. The extended answer contains Zombie `state` with the previous snapshot and `rendering` with renderers and the actual spine character order. Slots provide current and intended setup attachment, alpha, bone matrix and available region measures. `tracks` lists active animations and track times; `skin` and `skins` list the current skin and available source skins. Renderers provide sharing, activity, sorting, sprite and world dimensions. The diagnosis does not change any graphics and is only calculated upon explicit request.
 
-Alle exportierten nativen Zombieporträts erhalten Debug-Saatpakete, einschließlich zusätzlicher Entenvarianten. Native Bestätigungsknöpfe behalten ihre eigene Zustandsdarstellung; der periodische Dekorationsscan überschreibt ihre Hintergrundgrafik nicht mehr.
+All exported native zombie portraits will receive debug seed packs, including additional duck variants. Native confirmation buttons maintain their own state representation; the periodic decoration scan no longer overwrites your background graphics.

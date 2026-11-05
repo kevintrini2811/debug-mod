@@ -220,7 +220,7 @@ internal static class DebugPlantCards
             next = PageButton(source, staging.transform, anchor, false);
             previousButton = previous.GetComponent<Button>(); nextButton = next.GetComponent<Button>();
             SetPage(page);
-            Mod.Instance.LoggerInstance.Msg($"Debug: native Kartenpfeile bereit; {(cards.Length + PageSize - 1) / PageSize + 1} Tabs.");
+            Mod.Instance.LoggerInstance.Msg($"Debug: Native card arrows ready; {(cards.Length + PageSize - 1) / PageSize + 1} tabs.");
         }
         catch { DestroyButtons(); throw; }
         finally { Object.Destroy(staging); }

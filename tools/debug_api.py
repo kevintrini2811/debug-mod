@@ -33,9 +33,9 @@ def heartbeat(root):
     try:
         status = json.loads((root / 'status.json').read_text())
     except (OSError, ValueError):
-        raise ApiFailure('GAME_NOT_READY', 'Spiel läuft nicht oder Debug API ist noch nicht initialisiert.')
+        raise ApiFailure('GAME_NOT_READY', 'The game is not running or the Debug API has not initialized yet.')
     if status.get('stopped') or time.time() * 1000 - status.get('updatedAt', 0) > 5000:
-        raise ApiFailure('GAME_NOT_READY', 'Kein aktuelles Lebenszeichen. Spiel startet noch, ist beendet oder reagiert nicht.')
+        raise ApiFailure('GAME_NOT_READY', 'No recent heartbeat. The game is still starting, has exited, or is unresponsive.')
     return status
 
 
@@ -52,7 +52,7 @@ def call(root, command, args, timeout=15):
             if response.exists():
                 result = json.loads(response.read_text())
                 if result.get('id') != request_id or result.get('session') != status['session']:
-                    raise ApiFailure('INVALID_RESPONSE', 'Antwort gehört nicht zu dieser Anfrage.')
+                    raise ApiFailure('INVALID_RESPONSE', 'The response does not belong to this request.')
                 response.unlink(missing_ok=True)
                 if command == 'screenshot' and result.get('ok'):
                     image = root / 'screenshots' / result['result']['file']
@@ -64,10 +64,10 @@ def call(root, command, args, timeout=15):
                                 result['result'].update(completed=True, path=str(image))
                                 return result
                         time.sleep(.05)
-                    raise ApiFailure('SCREENSHOT_TIMEOUT', 'PNG noch nicht vollständig geschrieben.', file=str(image))
+                    raise ApiFailure('SCREENSHOT_TIMEOUT', 'The PNG has not been fully written yet.', file=str(image))
                 return result
             time.sleep(.04)
-        raise ApiFailure('TIMEOUT', 'Keine Antwort. Wirkung unklar; Zustand prüfen, Mutation nicht blind wiederholen.', requestId=request_id)
+        raise ApiFailure('TIMEOUT', 'No response. The outcome is unknown; check the state before retrying a mutation.', requestId=request_id)
     finally:
         path.unlink(missing_ok=True)
 
@@ -82,7 +82,7 @@ def main():
     try:
         args = json.loads(options.args)
         if not isinstance(args, dict) or not 1 <= options.timeout <= 120:
-            raise ApiFailure('INVALID_ARGUMENT', 'JSON-Objekt und Timeout 1..120 Sekunden erforderlich.')
+            raise ApiFailure('INVALID_ARGUMENT', 'A JSON object and a timeout of 1..120 seconds are required.')
         result = call(options.game_dir / 'UserData/DebugModApi', options.command, args, options.timeout)
     except ApiFailure as error:
         result = error.payload
