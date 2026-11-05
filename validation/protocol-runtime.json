@@ -1,0 +1,42 @@
+[
+  {
+    "protocol": 1,
+    "id": "82264d9674eb4d9b939fff9c9082a5d8",
+    "session": "781157e8dd5043b4a51f032814773b20",
+    "ok": false,
+    "error": {
+      "code": "PROTOCOL_MISMATCH",
+      "message": "Expected protocol 1."
+    }
+  },
+  {
+    "protocol": 1,
+    "id": "92d0a51c062442f2805834741d31f404",
+    "session": "781157e8dd5043b4a51f032814773b20",
+    "ok": false,
+    "error": {
+      "code": "STALE_SESSION",
+      "message": "Game session has changed."
+    }
+  },
+  {
+    "protocol": 1,
+    "id": "74e64ed0ea6f4afa8e92b8eb4302dd23",
+    "session": "781157e8dd5043b4a51f032814773b20",
+    "ok": false,
+    "error": {
+      "code": "REQUEST_EXPIRED",
+      "message": "Command was not executed."
+    }
+  },
+  {
+    "protocol": 1,
+    "id": "cfbe07692fa34dcd9a4bd9dfae81e78f",
+    "session": "781157e8dd5043b4a51f032814773b20",
+    "ok": false,
+    "error": {
+      "code": "INVALID_ARGUMENT",
+      "message": "args must be an object."
+    }
+  }
+]

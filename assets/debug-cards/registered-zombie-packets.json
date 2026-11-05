@@ -1,0 +1,548 @@
+[
+  {
+    "Resource": "FusionMod.ZombieAlmanac.0.png",
+    "X": 0,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.0-duck.png",
+    "X": 0,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.1.png",
+    "X": 128,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.1-duck.png",
+    "X": 128,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.2.png",
+    "X": 256,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.2-duck.png",
+    "X": 256,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.3.png",
+    "X": 384,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.3-duck.png",
+    "X": 384,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.4.png",
+    "X": 512,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.4-duck.png",
+    "X": 512,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.5.png",
+    "X": 640,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.5-duck.png",
+    "X": 640,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.6.png",
+    "X": 768,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.6-duck.png",
+    "X": 768,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.7.png",
+    "X": 896,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.7-duck.png",
+    "X": 896,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.8.png",
+    "X": 1024,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.8-duck.png",
+    "X": 1024,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.9.png",
+    "X": 1152,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.9-duck.png",
+    "X": 1152,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.10.png",
+    "X": 1280,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.10-duck.png",
+    "X": 1280,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.11.png",
+    "X": 1408,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.11-duck.png",
+    "X": 1408,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.12.png",
+    "X": 1536,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.12-duck.png",
+    "X": 1536,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.13.png",
+    "X": 1664,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.13-duck.png",
+    "X": 1664,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.14.png",
+    "X": 1792,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.14-duck.png",
+    "X": 1792,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.15.png",
+    "X": 1920,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.15-duck.png",
+    "X": 1920,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.16.png",
+    "X": 2048,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.16-duck.png",
+    "X": 2048,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.17.png",
+    "X": 2176,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.17-duck.png",
+    "X": 2176,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.18.png",
+    "X": 2304,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.18-duck.png",
+    "X": 2304,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.19.png",
+    "X": 2432,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.19-duck.png",
+    "X": 2432,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.20.png",
+    "X": 2560,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.20-duck.png",
+    "X": 2560,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.21.png",
+    "X": 2688,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.21-duck.png",
+    "X": 2688,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.22.png",
+    "X": 2816,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.22-duck.png",
+    "X": 2816,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.23.png",
+    "X": 2944,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.23-duck.png",
+    "X": 2944,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.24.png",
+    "X": 3072,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.24-duck.png",
+    "X": 3072,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.25.png",
+    "X": 3200,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.25-duck.png",
+    "X": 3200,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.26.png",
+    "X": 3328,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.26-duck.png",
+    "X": 3328,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.27.png",
+    "X": 3456,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.27-duck.png",
+    "X": 3456,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.28.png",
+    "X": 3584,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.28-duck.png",
+    "X": 3584,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.29.png",
+    "X": 3712,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.29-duck.png",
+    "X": 3712,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.30.png",
+    "X": 3840,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.30-duck.png",
+    "X": 3840,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.31.png",
+    "X": 3968,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.31-duck.png",
+    "X": 3968,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.32.png",
+    "X": 4096,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.32-duck.png",
+    "X": 4096,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.33.png",
+    "X": 4224,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.33-duck.png",
+    "X": 4224,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.34.png",
+    "X": 4352,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.34-duck.png",
+    "X": 4352,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.35.png",
+    "X": 4480,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.35-duck.png",
+    "X": 4480,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.36.png",
+    "X": 4608,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.36-duck.png",
+    "X": 4608,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.eyes.png",
+    "X": 4736,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.eyes-duck.png",
+    "X": 4736,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.hypno.png",
+    "X": 4864,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Resource": "FusionMod.ZombieAlmanac.hypno-duck.png",
+    "X": 4864,
+    "Y": 0,
+    "Width": 128,
+    "Height": 176
+  }
+]

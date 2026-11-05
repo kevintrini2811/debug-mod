@@ -1,0 +1,14 @@
+{
+  "inputs": {
+    "/home/kevin/modding/pvzreplanted/debug-mod/assets/debug-cards/packet-background.png": "1abe6ada954ebd4ab666558c7491855299e5b97e6c1c339a61e4f9b0696cc2ac",
+    "/home/kevin/modding/pvzreplanted/debug-mod/assets/debug-cards/zombie-packets.png": "073b0d5c51622fc955e74476997d405c68d3ee4446ea6defc58cbca22cb62ac3",
+    "/home/kevin/modding/pvzreplanted/debug-mod/assets/debug-cards/zombie-packets.json": "c33004831773e3d18579ed51af9c524e3c5bb75a28aafa244626d37825ff3536",
+    "/home/kevin/modding/pvzreplanted/fusion-mod/assets/debug-cards/eyes-zombie.png": "faa2f66e69e18f909c48f1327cff436a3fd570fb08448a1cf0fcdde4fa8b5781",
+    "/home/kevin/modding/pvzreplanted/fusion-mod/assets/hypno-zombie.png": "5531aa2520b31699a183083f3427a7c33046293de77ddf6d5020c8dad4d8679b",
+    "/home/kevin/modding/pvzreplanted/zombie-library/assets/duck.png": "abb4e3e3de5fcddc371ebee643df48642ec5a71c5e567ae93c44b0d123dfc871"
+  },
+  "outputs": {
+    "registered-zombie-packets.png": "f3ac98c256e82ac02c1b9258752790e27d974f42ea0bd927dca2a38f1f51c978",
+    "registered-zombie-packets.json": "7e072c5e9ece27516c56acc4d1a932169601eaa34a0cce1726b5a42ff7f41a8c"
+  }
+}

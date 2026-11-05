@@ -1,0 +1,594 @@
+[
+  {
+    "Type": 0,
+    "Role": "Portrait",
+    "X": 0,
+    "Y": 1440,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 0,
+    "Role": "Packet",
+    "X": 256,
+    "Y": 1584,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 1,
+    "Role": "Portrait",
+    "X": 512,
+    "Y": 1440,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 1,
+    "Role": "Packet",
+    "X": 768,
+    "Y": 1584,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 2,
+    "Role": "Portrait",
+    "X": 1024,
+    "Y": 1440,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 2,
+    "Role": "Packet",
+    "X": 1280,
+    "Y": 1584,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 3,
+    "Role": "Portrait",
+    "X": 1536,
+    "Y": 1440,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 3,
+    "Role": "Packet",
+    "X": 1792,
+    "Y": 1584,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 4,
+    "Role": "Portrait",
+    "X": 2048,
+    "Y": 1440,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 4,
+    "Role": "Packet",
+    "X": 2304,
+    "Y": 1584,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 5,
+    "Role": "Portrait",
+    "X": 2560,
+    "Y": 1440,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 5,
+    "Role": "Packet",
+    "X": 2816,
+    "Y": 1584,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 6,
+    "Role": "Portrait",
+    "X": 3072,
+    "Y": 1440,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 6,
+    "Role": "Packet",
+    "X": 3328,
+    "Y": 1584,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 7,
+    "Role": "Portrait",
+    "X": 3584,
+    "Y": 1440,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 7,
+    "Role": "Packet",
+    "X": 3840,
+    "Y": 1584,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 8,
+    "Role": "Portrait",
+    "X": 0,
+    "Y": 1088,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 8,
+    "Role": "Packet",
+    "X": 256,
+    "Y": 1232,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 9,
+    "Role": "Portrait",
+    "X": 512,
+    "Y": 1088,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 9,
+    "Role": "Packet",
+    "X": 768,
+    "Y": 1232,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 10,
+    "Role": "Portrait",
+    "X": 1024,
+    "Y": 1088,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 10,
+    "Role": "Packet",
+    "X": 1280,
+    "Y": 1232,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 11,
+    "Role": "Portrait",
+    "X": 1536,
+    "Y": 1088,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 11,
+    "Role": "Packet",
+    "X": 1792,
+    "Y": 1232,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 12,
+    "Role": "Portrait",
+    "X": 2048,
+    "Y": 1088,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 12,
+    "Role": "Packet",
+    "X": 2304,
+    "Y": 1232,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 13,
+    "Role": "Portrait",
+    "X": 2560,
+    "Y": 1088,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 13,
+    "Role": "Packet",
+    "X": 2816,
+    "Y": 1232,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 14,
+    "Role": "Portrait",
+    "X": 3072,
+    "Y": 1088,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 14,
+    "Role": "Packet",
+    "X": 3328,
+    "Y": 1232,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 15,
+    "Role": "Portrait",
+    "X": 3584,
+    "Y": 1088,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 15,
+    "Role": "Packet",
+    "X": 3840,
+    "Y": 1232,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 16,
+    "Role": "Portrait",
+    "X": 0,
+    "Y": 736,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 16,
+    "Role": "Packet",
+    "X": 256,
+    "Y": 880,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 17,
+    "Role": "Portrait",
+    "X": 512,
+    "Y": 736,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 17,
+    "Role": "Packet",
+    "X": 768,
+    "Y": 880,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 18,
+    "Role": "Portrait",
+    "X": 1024,
+    "Y": 736,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 18,
+    "Role": "Packet",
+    "X": 1280,
+    "Y": 880,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 19,
+    "Role": "Portrait",
+    "X": 1536,
+    "Y": 736,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 19,
+    "Role": "Packet",
+    "X": 1792,
+    "Y": 880,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 20,
+    "Role": "Portrait",
+    "X": 2048,
+    "Y": 736,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 20,
+    "Role": "Packet",
+    "X": 2304,
+    "Y": 880,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 21,
+    "Role": "Portrait",
+    "X": 2560,
+    "Y": 736,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 21,
+    "Role": "Packet",
+    "X": 2816,
+    "Y": 880,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 22,
+    "Role": "Portrait",
+    "X": 3072,
+    "Y": 736,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 22,
+    "Role": "Packet",
+    "X": 3328,
+    "Y": 880,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 23,
+    "Role": "Portrait",
+    "X": 3584,
+    "Y": 736,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 23,
+    "Role": "Packet",
+    "X": 3840,
+    "Y": 880,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 24,
+    "Role": "Portrait",
+    "X": 0,
+    "Y": 384,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 24,
+    "Role": "Packet",
+    "X": 256,
+    "Y": 528,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 25,
+    "Role": "Portrait",
+    "X": 512,
+    "Y": 384,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 25,
+    "Role": "Packet",
+    "X": 768,
+    "Y": 528,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 26,
+    "Role": "Portrait",
+    "X": 1024,
+    "Y": 384,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 26,
+    "Role": "Packet",
+    "X": 1280,
+    "Y": 528,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 27,
+    "Role": "Portrait",
+    "X": 1536,
+    "Y": 384,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 27,
+    "Role": "Packet",
+    "X": 1792,
+    "Y": 528,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 28,
+    "Role": "Portrait",
+    "X": 2048,
+    "Y": 384,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 28,
+    "Role": "Packet",
+    "X": 2304,
+    "Y": 528,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 29,
+    "Role": "Portrait",
+    "X": 2560,
+    "Y": 384,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 29,
+    "Role": "Packet",
+    "X": 2816,
+    "Y": 528,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 30,
+    "Role": "Portrait",
+    "X": 3072,
+    "Y": 384,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 30,
+    "Role": "Packet",
+    "X": 3328,
+    "Y": 528,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 31,
+    "Role": "Portrait",
+    "X": 3584,
+    "Y": 384,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 31,
+    "Role": "Packet",
+    "X": 3840,
+    "Y": 528,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 32,
+    "Role": "Portrait",
+    "X": 0,
+    "Y": 32,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 32,
+    "Role": "Packet",
+    "X": 256,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 33,
+    "Role": "Portrait",
+    "X": 512,
+    "Y": 32,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 33,
+    "Role": "Packet",
+    "X": 768,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 34,
+    "Role": "Portrait",
+    "X": 1024,
+    "Y": 32,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 34,
+    "Role": "Packet",
+    "X": 1280,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 35,
+    "Role": "Portrait",
+    "X": 1536,
+    "Y": 32,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 35,
+    "Role": "Packet",
+    "X": 1792,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  },
+  {
+    "Type": 36,
+    "Role": "Portrait",
+    "X": 2048,
+    "Y": 32,
+    "Width": 256,
+    "Height": 320
+  },
+  {
+    "Type": 36,
+    "Role": "Packet",
+    "X": 2304,
+    "Y": 176,
+    "Width": 128,
+    "Height": 176
+  }
+]

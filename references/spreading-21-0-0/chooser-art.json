@@ -1,0 +1,20 @@
+{
+  "bundles": {
+    "/mnt/FastGaming1/SteamLibrary/steamapps/common/PVZ Replanted/Replanted_Data/StreamingAssets/aa/StandaloneWindows64/defaultlocalgroup_assets_ui/sprites_5b5218033ecdc00622a31e94d7a6a379.bundle": "4515929ed5d3ba49c790a443c187966535bbd0ebb00c5d4fedadc0cd1d377a6a",
+    "/mnt/FastGaming1/SteamLibrary/steamapps/common/PVZ Replanted/Replanted_Data/StreamingAssets/aa/StandaloneWindows64/uiatlasalmanac_assets_all.bundle": "24aa47fa328a5fe043d1445f6e3708ca54165cb7ffcbe5d7e988fd3d5571804a",
+    "/mnt/FastGaming1/SteamLibrary/steamapps/common/PVZ Replanted/Replanted_Data/StreamingAssets/aa/StandaloneWindows64/uiatlasfrontend_assets_all.bundle": "a5a8a8760234da4e070db45c9de7b1203b3d29203c6e452b60efff9c7f25a393",
+    "/mnt/FastGaming1/SteamLibrary/steamapps/common/PVZ Replanted/Replanted_Data/StreamingAssets/aa/StandaloneWindows64/uiatlasgameplay_assets_all.bundle": "c87b65761e5a3a13e860ccccfb6f9f4d2be296742eaa642cabafa82f280dd5ec",
+    "/mnt/FastGaming1/SteamLibrary/steamapps/common/PVZ Replanted/Replanted_Data/StreamingAssets/aa/StandaloneWindows64/uiatlasshared_assets_all.bundle": "a1ab874d5f737c422743b8e10b209b3b3ceb3f93d23a9419fe277670387d09a1",
+    "/mnt/FastGaming1/SteamLibrary/steamapps/common/PVZ Replanted/Replanted_Data/StreamingAssets/aa/StandaloneWindows64/uiatlassplash_assets_all.bundle": "926cdfd207779e1bc6bbcfd34a73875f76ec9fca6df4b83f8d9e83b3b1543020"
+  },
+  "brain": "52fc056566a8b7fae937582c13e3dd64b1270d362f95900eb4c3d412839f1d50",
+  "outputs": {
+    "zombie-chooser-SPR_BasicButton02_Background.png": "a5ed8b5c43f21e4ae4991d4ae3473a99cdc09dfbb8d2d1c55835d82721130d60",
+    "zombie-chooser-SPR_BasicButton03_Background.png": "e620f4a1ddd9bf03ed1160c991f872b0f39080a3cca6bc98eef602986a2bcab9",
+    "zombie-chooser-SPR_MainHud_SeedBank_Background.png": "04e8283082f5a61cad0a43a5f678ab321b930fa6da2d338afc69482cf4a62599",
+    "zombie-chooser-SPR_MainHud_SeedBank_SunAmount.png": "99199ae16adb90fed4fea493649eb2562ce4bf8c9ca76e0eaa7208923b74ec19",
+    "zombie-chooser-SPR_MainHud_SeedchooserBackground.png": "7ae46fabfb476c80c87498fb4015c6d1681d611b7b969342d4339819df48b43b",
+    "zombie-chooser-SPR_MainHud_Seedchooser_CostBackground.png": "26fe90f12631ca79b7800a5a4ce06ee150d2d0b6680465d76626c1633c677514",
+    "zombie-chooser-SPR_MainHud_Seedchooser_CostBackground_Discount.png": "1d2829d500127131b56e32f8463f4c0322a2a3c26e71ae56472f3b816233becb"
+  }
+}

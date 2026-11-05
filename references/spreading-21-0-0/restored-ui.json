@@ -1,0 +1,776 @@
+{
+  "protocol": 1,
+  "id": "f13cad849ac54ecd91454d6f11dea575",
+  "session": "38df1b914b9a45558058f1f447c5050b",
+  "ok": true,
+  "result": [
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/ShovelContainer/ShovelBank/ShovelBankVisibility/Shovel/LawnGloveChargedIcon",
+      "sprite": "SPR_Zen_Icon_Glove",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 288,
+      "height": 288
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/BottomRight/AccelerationVisibilityContainer/P_Acceleration/TWVisiblityContainer/FusionGoldenBean/Icon",
+      "sprite": "",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 68.600006,
+      "height": 63.699997
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/BottomRight/AccelerationVisibilityContainer/P_Acceleration/TWVisiblityContainer/FusionGoldenBean/GoldenBeanButton/Background/Speed_01",
+      "sprite": "SPR_MainHud_Acceleration_01",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 69.4848,
+      "height": 70.3991
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/BottomRight/AccelerationVisibilityContainer/P_Acceleration/TWVisiblityContainer/FusionGoldenBean/GoldenBeanButton/Background/Image",
+      "sprite": "SPR_BasicButtonSmallBackground",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 98,
+      "height": 91
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/BottomRight/AccelerationVisibilityContainer/P_Acceleration/TWVisiblityContainer/SpeedModSlowdown/SpeedModSlowdownButton/Background/Speed_02",
+      "sprite": "SPR_MainHud_Acceleration_02",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 69.4848,
+      "height": 70.3991
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/BottomRight/AccelerationVisibilityContainer/P_Acceleration/TWVisiblityContainer/SpeedModSlowdown/SpeedModSlowdownButton/Background/Image",
+      "sprite": "SPR_BasicButtonSmallBackground",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 98,
+      "height": 91
+    },
+    {
+      "path": "FusionDebugUI/Content/ZombieCard/HeadBadge",
+      "sprite": null,
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 34,
+      "height": 34
+    },
+    {
+      "path": "FusionDebugUI/Content/ZombieCard/Button",
+      "sprite": "",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 128,
+      "height": 176
+    },
+    {
+      "path": "FusionDebugUI/Content/ZombieCard/HeadBadge",
+      "sprite": null,
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 34,
+      "height": 34
+    },
+    {
+      "path": "FusionDebugUI/Content/ZombieCard/Button",
+      "sprite": "",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 128,
+      "height": 176
+    },
+    {
+      "path": "FusionDebugUI/Content/Artwork",
+      "sprite": "",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 96.75923,
+      "height": 33.611103
+    },
+    {
+      "path": "FusionDebugUI/Content/Artwork",
+      "sprite": "",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 62.8935,
+      "height": 55.240704
+    },
+    {
+      "path": "FusionDebugUI/Content/Artwork",
+      "sprite": "",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 855,
+      "height": 110.48141
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/Cursor_Container/Cursors/Cursor_P2",
+      "sprite": "Gamepad_Cursor_Indicator",
+      "color": {
+        "r": 0.2784314,
+        "g": 0.7764706,
+        "b": 1,
+        "a": 1
+      },
+      "width": 59.376,
+      "height": 36.4738
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/Cursor_Container/Cursors/Cursor",
+      "sprite": "Gamepad_Cursor_Indicator",
+      "color": {
+        "r": 0.9803922,
+        "g": 0.9294118,
+        "b": 0.050980397,
+        "a": 1
+      },
+      "width": 59.376,
+      "height": 36.4738
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/CostPanel/BackgroundDiscount",
+      "sprite": "SPR_MainHud_Seedchooser_CostBackground_Discount",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 0
+      },
+      "width": 162,
+      "height": 57
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/CostPanel/Background",
+      "sprite": "SPR_MainHud_Seedchooser_CostBackground",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 162,
+      "height": 57
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/SeedBackground",
+      "sprite": "SPR_Almanac_Seedpackets_Scaredy-shroom",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 188.22223,
+      "height": 260.5
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/ControllerSelected_P2",
+      "sprite": "SPR_SelectedItem",
+      "color": {
+        "r": 0.2784314,
+        "g": 0.7764706,
+        "b": 1,
+        "a": 1
+      },
+      "width": 206.9073,
+      "height": 272.4586
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/ControllerSelected",
+      "sprite": "SPR_SelectedItem",
+      "color": {
+        "r": 0.98039216,
+        "g": 0.92941177,
+        "b": 0.039215688,
+        "a": 1
+      },
+      "width": 206.9073,
+      "height": 272.4586
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/Cursor_Container/Cursors/Cursor_P2",
+      "sprite": "Gamepad_Cursor_Indicator",
+      "color": {
+        "r": 0.2784314,
+        "g": 0.7764706,
+        "b": 1,
+        "a": 1
+      },
+      "width": 59.376,
+      "height": 36.4738
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/Cursor_Container/Cursors/Cursor",
+      "sprite": "Gamepad_Cursor_Indicator",
+      "color": {
+        "r": 0.9803922,
+        "g": 0.9294118,
+        "b": 0.050980397,
+        "a": 1
+      },
+      "width": 59.376,
+      "height": 36.4738
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/CostPanel/BackgroundDiscount",
+      "sprite": "SPR_MainHud_Seedchooser_CostBackground_Discount",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 0
+      },
+      "width": 162,
+      "height": 57
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/CostPanel/Background",
+      "sprite": "SPR_MainHud_Seedchooser_CostBackground",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 162,
+      "height": 57
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/SeedBackground",
+      "sprite": "SPR_Almanac_Seedpackets_Fume-shroom",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 188.22223,
+      "height": 260.5
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/ControllerSelected_P2",
+      "sprite": "SPR_SelectedItem",
+      "color": {
+        "r": 0.2784314,
+        "g": 0.7764706,
+        "b": 1,
+        "a": 1
+      },
+      "width": 206.9073,
+      "height": 272.4586
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/ControllerSelected",
+      "sprite": "SPR_SelectedItem",
+      "color": {
+        "r": 0.98039216,
+        "g": 0.92941177,
+        "b": 0.039215688,
+        "a": 1
+      },
+      "width": 206.9073,
+      "height": 272.4586
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/Cursor_Container/Cursors/Cursor_P2",
+      "sprite": "Gamepad_Cursor_Indicator",
+      "color": {
+        "r": 0.2784314,
+        "g": 0.7764706,
+        "b": 1,
+        "a": 1
+      },
+      "width": 59.376,
+      "height": 36.4738
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/Cursor_Container/Cursors/Cursor",
+      "sprite": "Gamepad_Cursor_Indicator",
+      "color": {
+        "r": 0.9803922,
+        "g": 0.9294118,
+        "b": 0.050980397,
+        "a": 1
+      },
+      "width": 59.376,
+      "height": 36.4738
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/CostPanel/BackgroundDiscount",
+      "sprite": "SPR_MainHud_Seedchooser_CostBackground_Discount",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 0
+      },
+      "width": 162,
+      "height": 57
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/CostPanel/Background",
+      "sprite": "SPR_MainHud_Seedchooser_CostBackground",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 162,
+      "height": 57
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/SeedBackground",
+      "sprite": "SPR_Almanac_Seedpackets_Puff-shroom",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 188.22223,
+      "height": 260.5
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/ControllerSelected_P2",
+      "sprite": "SPR_SelectedItem",
+      "color": {
+        "r": 0.2784314,
+        "g": 0.7764706,
+        "b": 1,
+        "a": 1
+      },
+      "width": 206.9073,
+      "height": 272.4586
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/ControllerSelected",
+      "sprite": "SPR_SelectedItem",
+      "color": {
+        "r": 0.98039216,
+        "g": 0.92941177,
+        "b": 0.039215688,
+        "a": 1
+      },
+      "width": 206.9073,
+      "height": 272.4586
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/Cursor_Container/Cursors/Cursor_P2",
+      "sprite": "Gamepad_Cursor_Indicator",
+      "color": {
+        "r": 0.2784314,
+        "g": 0.7764706,
+        "b": 1,
+        "a": 1
+      },
+      "width": 59.376,
+      "height": 36.4738
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/Cursor_Container/Cursors/Cursor",
+      "sprite": "Gamepad_Cursor_Indicator",
+      "color": {
+        "r": 0.9803922,
+        "g": 0.9294118,
+        "b": 0.050980397,
+        "a": 1
+      },
+      "width": 59.376,
+      "height": 36.4738
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/CostPanel/BackgroundDiscount",
+      "sprite": "SPR_MainHud_Seedchooser_CostBackground_Discount",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 0
+      },
+      "width": 162,
+      "height": 57
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/CostPanel/Background",
+      "sprite": "SPR_MainHud_Seedchooser_CostBackground",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 162,
+      "height": 57
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/SeedBackground",
+      "sprite": "SPR_Almanac_Seedpackets_PeaShooter",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 188.22223,
+      "height": 260.5
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/ControllerSelected_P2",
+      "sprite": "SPR_SelectedItem",
+      "color": {
+        "r": 0.2784314,
+        "g": 0.7764706,
+        "b": 1,
+        "a": 1
+      },
+      "width": 206.9073,
+      "height": 272.4586
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/P_GamePlay_SeedChooser_Item(Clone)/Offset/ControllerSelected",
+      "sprite": "SPR_SelectedItem",
+      "color": {
+        "r": 0.98039216,
+        "g": 0.92941177,
+        "b": 0.039215688,
+        "a": 1
+      },
+      "width": 206.9073,
+      "height": 272.4586
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SunAmount_Background/SunBankNormal/SunCollectorRotatingFace",
+      "sprite": "SunCollectorFace",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 130,
+      "height": 130
+    },
+    {
+      "path": "Area2-Night(Clone)/BGButton/Button",
+      "sprite": "UISprite",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 0
+      },
+      "width": 4160,
+      "height": 2223
+    },
+    {
+      "path": "BloomEngine_Templates/SliderTemplate/Handle Slide Area/Handle",
+      "sprite": "SPR_SliderHandle",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 81,
+      "height": 110
+    },
+    {
+      "path": "BloomEngine_Templates/SliderTemplate/Background",
+      "sprite": "SPR_SliderBackground",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 476,
+      "height": 24
+    },
+    {
+      "path": "BloomEngine_Templates/DropdownTemplate/Arrow",
+      "sprite": "SPR_DropdownArrow",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 60,
+      "height": 43
+    },
+    {
+      "path": "BloomEngine_Templates/DropdownTemplate",
+      "sprite": "SPR_Checkbox",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 535.7776,
+      "height": 151
+    },
+    {
+      "path": "BloomEngine_Templates/CheckboxTemplate/Background/Checkmark",
+      "sprite": "SPR_Checkbox_Full",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 165,
+      "height": 151
+    },
+    {
+      "path": "BloomEngine_Templates/CheckboxTemplate/Background",
+      "sprite": "SPR_Checkbox",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 165,
+      "height": 151
+    },
+    {
+      "path": "BloomEngine_Templates/TextboxTemplate/Background",
+      "sprite": "SPR_EditBox",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 1450,
+      "height": 160
+    },
+    {
+      "path": "BloomEngine_Templates/ButtonTemplate/Background/Image",
+      "sprite": "SPR_BasicButtonBackground",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 17,
+      "height": 166
+    },
+    {
+      "path": "P_UltraWidePanelArt/Canvas/FixedWindow/Right",
+      "sprite": "SPR_Ultrawide_SidePanel_Right",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 3000,
+      "height": 2160
+    },
+    {
+      "path": "P_UltraWidePanelArt/Canvas/FixedWindow/Left",
+      "sprite": "SPR_Ultrawide_SidePanel_Left",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 3000,
+      "height": 2160
+    },
+    {
+      "path": "P_UltraWidePanelArt/Canvas/FixedWindow/Right _BG",
+      "sprite": null,
+      "color": {
+        "r": 0.53333336,
+        "g": 0.70980394,
+        "b": 0.6392157,
+        "a": 1
+      },
+      "width": 8000,
+      "height": 2160
+    },
+    {
+      "path": "P_UltraWidePanelArt/Canvas/FixedWindow/Left_BG",
+      "sprite": null,
+      "color": {
+        "r": 0.53333336,
+        "g": 0.7137255,
+        "b": 0.6392157,
+        "a": 1
+      },
+      "width": 8000,
+      "height": 2160
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/ShovelContainer/ShovelBank/ShovelBankVisibility/Shovel",
+      "sprite": "SPR_MainHud_Shovel",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 288,
+      "height": 288
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/GameplayLegend/Bottom Layout/CoinBank_IsNotPaused_Wrapper/P_CoinBank/Background",
+      "sprite": "SPR_MainHud_Coinbank_Background",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 219.95,
+      "height": 100
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/ShovelContainer/ShovelBank/ShovelBankVisibility/Background",
+      "sprite": "SPR_MainHud_ShovelBank",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 252,
+      "height": 259
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SeedPacks_Layout/Seedpacks_Background",
+      "sprite": "SPR_MainHud_SeedBank_Background",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 2155,
+      "height": 314
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/TopLeftLayout/SeedBankContainer/SeedBank/SunAmount_Background/SunBankNormal",
+      "sprite": "SPR_MainHud_SeedBank_SunAmount",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 275,
+      "height": 314
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/MenuButtonVisiblityContainer/Nested_NotVS/NestedMenuButtonVisibilityContainer/P_BasicButton02_Menu/Background/Image",
+      "sprite": "SPR_BasicButtonBackground",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 470.7,
+      "height": 166
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/BottomRight/AccelerationVisibilityContainer/P_Acceleration/TWVisiblityContainer/P_AccelerationButton/Background/Speed_01",
+      "sprite": "SPR_MainHud_Acceleration_01",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 69.4848,
+      "height": 70.3991
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/BottomRight/AccelerationVisibilityContainer/P_Acceleration/TWVisiblityContainer/P_AccelerationButton/Background/Image",
+      "sprite": "SPR_BasicButtonSmallBackground",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "width": 98,
+      "height": 91
+    },
+    {
+      "path": "Panels/P_Gameplay_MainHUD/Canvas/Layout/Center/P_RIPModeVignette/P_RIPModeVignette",
+      "sprite": "RIPModeVignette",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 0
+      },
+      "width": 3840.101,
+      "height": 2160
+    }
+  ]
+}

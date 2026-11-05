@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>DebugMod</AssemblyName>
+    <Version>1.1.1</Version>
+    <GameDir Condition="'$(GameDir)' == ''">/mnt/FastGaming1/SteamLibrary/steamapps/common/PVZ Replanted</GameDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="src/**/*.cs" />
+    <Compile Include="../shared/NativeUi.cs" Link="Shared/NativeUi.cs" />
+    <Compile Include="../shared/NativeLocalization.cs" Link="Shared/NativeLocalization.cs" />
+    <Compile Include="../shared/NativeZombiePortraits.cs" Link="Shared/NativeZombiePortraits.cs" />
+    <Compile Include="../shared/OptionalModApi.cs" Link="Shared/OptionalModApi.cs" />
+    <EmbeddedResource Include="assets/debug-cards/*" LogicalName="FusionMod.DebugCards.%(Filename)%(Extension)" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/Assembly-CSharp.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/Il2CppTekly.Extensions.Runtime.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/Il2Cppspine-unity.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/Il2Cppspine-csharp.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/Il2Cppmscorlib.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/UnityEngine.ScreenCaptureModule.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/UnityEngine.CoreModule.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/UnityEngine.AnimationModule.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/UnityEngine.Physics2DModule.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/UnityEngine.SpriteMaskModule.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/UnityEngine.ImageConversionModule.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/UnityEngine.UIModule.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/Unity.InputSystem.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/Unity.Addressables.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/Unity.ResourceManager.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/Il2CppTekly.PanelViews.Runtime.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/Il2CppTekly.Injectors.Runtime.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/UnityEngine.UI.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/Unity.TextMeshPro.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/Il2CppTekly.DataModels.Runtime.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/Il2CppTekly.Common.Runtime.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/Il2CppTekly.Localizations.Runtime.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/Unity.Mathematics.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/Il2CppAssemblies/Il2CppTekly.TreeState.Runtime.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/net6/MelonLoader.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/net6/0Harmony.dll" Private="false" />
+    <Reference Include="$(GameDir)/MelonLoader/net6/Il2CppInterop.Runtime.dll" Private="false" />
+  </ItemGroup>
+</Project>
