@@ -1,4 +1,6 @@
-# Debug Mod 1.3.10
+# Debug Mod 1.3.11
+
+Version 1.3.11 preserves native almanac entry models and pending sprite handles when refreshing temporary locks after profile/session changes. Debug shutdown retires its borrowed data provider before Unity unloads assets, so cleanup cannot begin new almanac loads. Profile actions also avoid redundant native same-profile notifications.
 
 Version 1.3.10 skips the optional Sun Collector artwork hook when its target is unavailable. Starting Debug Mod without Sun Collector now completes Harmony patch registration.
 

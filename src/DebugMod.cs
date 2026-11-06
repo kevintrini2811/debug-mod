@@ -3,7 +3,7 @@ using ReplantedModUi;
 using Il2CppReloaded.Gameplay;
 using System.Reflection;
 
-[assembly: MelonInfo(typeof(DebugMod.Mod), "Debug Mod", "1.3.10", "Kevin / Codex")]
+[assembly: MelonInfo(typeof(DebugMod.Mod), "Debug Mod", "1.3.11", "Kevin / Codex")]
 [assembly: MelonGame("PopCap Games", "PvZ Replanted")]
 [assembly: MelonOptionalDependencies("FusionMod", "LawnGlove", "PlantLibrary", "ZombieLibrary", "SpeedMod",
     "DifficultyMod", "SunCollector", "BloomEngine", "PvZRepatched", "ReplantAPI")]
@@ -13,6 +13,7 @@ namespace DebugMod;
 public sealed class Mod : MelonMod
 {
     internal static Mod Instance = null!;
+    private static readonly Il2CppSystem.Action BeforeQuit = (Il2CppSystem.Action)(Action)DebugAlmanac.Shutdown;
     private PropertyInfo? externalChooser, revealAlmanac, suppressSightings;
     private Func<Board, bool>? previousChooser, previousSightings;
     private Func<Board, bool> suppress = null!;
@@ -21,7 +22,7 @@ public sealed class Mod : MelonMod
     private Func<bool> active = null!;
 
     public override void OnInitializeMelon()
-    { Instance = this; DebugCommandApi.Start(); }
+    { Instance = this; UnityEngine.Application.quitting += BeforeQuit; DebugCommandApi.Start(); }
 
     public override void OnLateInitializeMelon()
     {
@@ -43,8 +44,11 @@ public sealed class Mod : MelonMod
     public override void OnLateUpdate()
     { DebugMode.UpdateStartup(); DebugMode.Update(); ApiControls.Update(); DebugCommandApi.Update(); }
 
+    public override void OnApplicationQuit() => DebugAlmanac.Shutdown();
+
     public override void OnDeinitializeMelon()
     {
+        UnityEngine.Application.quitting -= BeforeQuit;
         ApiControls.Clear();
         ApiLibraries.Reset();
         DebugCommandApi.Stop();

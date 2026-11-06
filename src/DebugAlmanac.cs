@@ -41,16 +41,17 @@ internal static class DebugAlmanacHiddenEntryPatch
 internal static class DebugAlmanac
 {
     private static bool active;
+    private static bool shuttingDown;
     private static AppDataProvider? provider;
 
     internal static void RefreshCurrent() { if (provider != null) Refresh(provider); }
 
     internal static void Bind(AppDataProvider value)
-    { provider = value; if (DebugMode.Active) Refresh(value); }
+    { if (shuttingDown) return; provider = value; if (DebugMode.Active) Refresh(value); }
 
     internal static void Update()
     {
-        if (active == DebugMode.Active) return;
+        if (shuttingDown || active == DebugMode.Active) return;
         active = DebugMode.Active;
         if (provider != null) Refresh(provider);
     }
@@ -58,16 +59,22 @@ internal static class DebugAlmanac
     internal static void Unbind(Il2CppTekly.Extensions.DataProviders.RootModelDataProvider value)
     { if (provider?.Pointer == value.Pointer) provider = null; }
 
+    // Unity may already have unloaded Addressables by Melon deinitialization.
+    // Retire our borrowed provider before session cleanup can refresh models.
+    internal static void Shutdown() { shuttingDown = true; provider = null; }
+
     internal static void Refresh(AppDataProvider provider)
     {
+        if (shuttingDown) return;
         var platform = provider.m_platformDataModel;
         if (platform?.m_isAlmanacAvailableModel != null)
             platform.m_isAlmanacAvailableModel.Value = DebugMode.Active || platform.m_userService.IsAlmanacAvailable();
         var almanac = provider.m_almanacModel;
         if (almanac?.m_dataService == null) return;
-        // Rebuild the visible list as well as lock flags (notably hidden Yeti).
-        almanac.m_plantsModel?.UpdateEntries(almanac.m_dataService.PlantAlmanacData);
-        almanac.m_zombiesModel?.UpdateEntries(almanac.m_dataService.ZombieAlmanacData);
+        // Native lock refresh also rebuilds visible/hidden entries (Yeti),
+        // while preserving entry models and their owned async sprite handles.
+        almanac.m_plantsModel?.UpdateEntriesLockedState(almanac.m_dataService.PlantAlmanacData);
+        almanac.m_zombiesModel?.UpdateEntriesLockedState(almanac.m_dataService.ZombieAlmanacData);
     }
 }
 

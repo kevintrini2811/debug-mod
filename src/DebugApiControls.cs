@@ -112,13 +112,16 @@ internal static class ApiControls
         if (index < 0) throw new ApiError("PROFILE_NOT_FOUND", "Unknown profile GUID.");
         if (command == "profile.switch")
         {
-            if (!u.SetActiveProfile(index)) throw new ApiError("PROFILE_FAILED", "Native profile switch failed.");
+            // Native SetActiveProfile notifies and reloads UI even for the
+            // already-active index. Keep same-profile API switches idempotent.
+            if (u.ActiveUserIndex != index && !u.SetActiveProfile(index)) throw new ApiError("PROFILE_FAILED", "Native profile switch failed.");
             ApiUnlocks.Reset(); return Profiles();
         }
         if (command == "profile.delete" && u.NumUserProfiles <= 1) throw new ApiError("LAST_PROFILE", "Keep at least one profile.");
-        // DeleteProfile and SetName act on the active profile. Restore previous selection.
+        // DeleteProfile and SetName act on the active profile. DeleteProfile
+        // already selects its native fallback; restore only if it differs.
         string previous = u.ActiveUserProfile.mGuid;
-        if (!u.SetActiveProfile(index)) throw new ApiError("PROFILE_FAILED", "Native profile switch failed.");
+        if (u.ActiveUserIndex != index && !u.SetActiveProfile(index)) throw new ApiError("PROFILE_FAILED", "Native profile switch failed.");
         try
         {
             if (command == "profile.rename") { u.SetName(name!); if (!u.SaveDetails()) throw new ApiError("SAVE_FAILED", "Profile renamed in memory; native save failed."); }
@@ -135,7 +138,7 @@ internal static class ApiControls
         }
         finally
         {
-            for (int i = 0; i < u.NumUserProfiles; ++i) if (u.UserProfiles[i].mGuid == previous) { u.SetActiveProfile(i); break; }
+            for (int i = 0; i < u.NumUserProfiles; ++i) if (u.UserProfiles[i].mGuid == previous) { if (u.ActiveUserIndex != i) u.SetActiveProfile(i); break; }
             ApiUnlocks.Reset();
         }
         return Profiles();
