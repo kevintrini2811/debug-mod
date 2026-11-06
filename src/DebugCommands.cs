@@ -188,7 +188,7 @@ internal static class DebugCommands
             case "coins.level.set": board.mCoinsCollected = Int(args, "amount"); return new { amount = board.mCoinsCollected, field = "mCoinsCollected" };
             case "bank": return Bank(board);
             case "bank.set": return SetBank(board, args);
-            case "plants": return Plants(board);
+            case "plants": return Plants(board, Bool(args, "visuals"));
             case "zombies": return Zombies(board, Bool(args, "visuals"));
             case "projectiles": return Projectiles(board, Bool(args, "visuals"));
             case "coins":
@@ -306,7 +306,21 @@ internal static class DebugCommands
     private static IEnumerable<Zombie> LiveZombies(Board b) { for (int i = 0; i < b.m_zombies.Count; ++i) { var z = b.m_zombies[i]; if (z != null && !z.mDead) yield return z; } }
     private static Plant FindPlant(Board b, uint id) => LivePlants(b).FirstOrDefault(p => p.DataID == (uint)id) ?? throw new ApiError("ENTITY_NOT_FOUND", "No active plant with this ID.");
     private static Zombie FindZombie(Board b, uint id) => LiveZombies(b).FirstOrDefault(z => z.DataID == (uint)id) ?? throw new ApiError("ENTITY_NOT_FOUND", "No active zombie with this ID.");
-    private static object Plants(Board b) => new { board = ApiBoard.Token, items = LivePlants(b).Select(Snapshot).ToArray(), bank = Bank(b) };
+    private static object Plants(Board b, bool visuals = false) => new { board = ApiBoard.Token,
+        items = LivePlants(b).Select(plant => {
+            var state = Snapshot(plant);
+            if (visuals && plant.mController != null)
+                state["visuals"] = new {
+                    renderers = plant.mController.GetComponentsInChildren<Renderer>(true).Select(r => new {
+                        name = r.name, enabled = r.enabled, active = r.gameObject.activeInHierarchy,
+                        order = r.sortingOrder, layer = r.sortingLayerID,
+                        renderer = r.GetIl2CppType().Name }).ToArray(),
+                    groups = plant.mController.GetComponentsInChildren<UnityEngine.Rendering.SortingGroup>(true).Select(g => new {
+                        name = g.name, enabled = g.enabled, active = g.gameObject.activeInHierarchy,
+                        order = g.sortingOrder, layer = g.sortingLayerID }).ToArray()
+                };
+            return state;
+        }).ToArray(), bank = Bank(b) };
     private static object Zombies(Board b, bool visuals = false) => new { board = ApiBoard.Token,
         items = LiveZombies(b).Select(z => visuals ? new { state = ZombieInfo(z), rendering = ZombieVisuals(z) } : ZombieInfo(z)).ToArray() };
     private static object ZombieVisuals(Zombie zombie)

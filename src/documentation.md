@@ -220,6 +220,8 @@ Important error codes are `GAME_NOT_READY`, `BOARD_NOT_READY`, `LEVEL_NOT_READY`
 
 ## Testing and installation
 
+`plants {"visuals":true}` adds a `visuals` object to each existing plant snapshot when its controller is available. `renderers` and `groups` report the actual Unity sorting `layer` and `order`, object name, enabled state and hierarchy visibility. Renderer entries also identify the renderer type. This read-only option verifies visible depth after native sorting compression; logical `mRenderOrder` alone cannot detect ties. The default response is unchanged.
+
 ```sh
 # Build ohne Spielstart:
 rtk proxy pvzreplanted/.tools/dotnet/dotnet build pvzreplanted/debug-mod/DebugMod.csproj -c Release

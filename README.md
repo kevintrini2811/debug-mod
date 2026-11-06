@@ -1,4 +1,6 @@
-# Debug Mod 1.3.5
+# Debug Mod 1.3.6
+
+Version 1.3.6 adds optional `plants {"visuals":true}` diagnostics with actual Unity renderer and SortingGroup layers and orders. Plant snapshots retain their existing shape.
 
 
 Version 1.3.5 removes duck-only entries from the debug chooser. Select the base zombie and let native terrain and Zombie Library choose its swimming appearance. The API adds `debug.zombie.rise` for native grave-rise tests and `speed {"next":true}` for the real speed-button event. See [API documentation](src/documentation.md).
