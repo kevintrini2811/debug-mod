@@ -113,3 +113,9 @@ A clean 1.3.10 minimal control reproduces 368 invalid-operation-handle errors on
 One final fresh profile roundtrip runs without the probe and with the final release DLL. Create, switch and delete again report zero handle errors; menu shutdown reports zero bundle errors and exits after 9.22 seconds. Both profile runs restore the original profile list and remove their disposable profile. The temporary probe is removed and all original mod assemblies are restored.
 
 The Almanac ownership/session/profile/unbind/shutdown regression passes; release build has zero warnings/errors. Evidence: `validation/teardown-addressables-1-3-11.json`; raw logs and API traces remain under `../.test-runs/teardown-review-20261106/`. Three Camera.targetTexture release errors remain during full-mod shutdown and reproduce independently in a minimal configuration. They are a separate unresolved RenderTexture issue, and are not suppressed by this release.
+
+## Debug Mod 1.3.12 — native zombie hits, checked on 2026-11-06
+
+The live Day debug board verifies `debug.zombie.hit` through actual native damage handling: a Normal zombie loses 20 body health; TrafficCone and Pail each absorb 20 in their helmets without body damage, then lose their helmets through another native hit. No armor fields are written by the API. Nine invalid damage/token/ID cases leave the target unchanged; a dead or dying target is rejected. The session uses Normal difficulty, creates no profile and exits normally. Only the previously documented IGNORED RenderTexture messages occur during shutdown.
+
+`DebugZombieHitTests.csproj` separately verifies one native call with zero flags, post-hit snapshots, damage bounds, rejection outside debug ownership, stale tokens, dead/dying targets and same-board identity. Release build has zero warnings/errors. Evidence: `validation/zombie-hit-1-3-12.json`; complete API responses and logs remain under `../.test-runs/zombie-hit-20261106/`.

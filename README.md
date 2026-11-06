@@ -1,4 +1,6 @@
-# Debug Mod 1.3.11
+# Debug Mod 1.3.12
+
+Version 1.3.12 adds `debug.zombie.hit` for real native damage in temporary debug sessions. Board tokens, live zombie IDs and positive bounded damage are validated before native shield/helmet absorption and break/death callbacks run. See [API documentation](src/documentation.md).
 
 Version 1.3.11 preserves native almanac entry models and pending sprite handles when refreshing temporary locks after profile/session changes. Debug shutdown retires its borrowed data provider before Unity unloads assets, so cleanup cannot begin new almanac loads. Profile actions also avoid redundant native same-profile notifications.
 

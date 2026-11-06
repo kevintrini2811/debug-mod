@@ -433,3 +433,14 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py debug.preview '{"cancel":true}
 ```
 
 The response contains `board`, selected `index` (-1 when none), pinned board-pixel `target`, and `rendering`: actual anchor, sprite pivot, active/enabled status, world position, world bounds and the transformed sprite foot. `place:true` uses the normal `MouseDown` placement path and returns the preview snapshot immediately before placement. This API never creates a separate test preview or allocates a zombie merely to display one. The normal board-pause and placement restrictions apply.
+
+
+### Native zombie hit (1.3.12)
+
+`debug.zombie.hit` delivers one normal native `Zombie.TakeDamage(damage, 0)` hit. It requires a temporary debug session, the current `board` token, a living zombie `id` from that board, and integer `damage` from 1 through 1,000,000. Missing/stale board tokens, missing/dead/dying zombies and invalid damage are rejected before the hit. The ordinary board-ready/unpaused restrictions apply.
+
+```sh
+python3 pvzreplanted/debug-mod/tools/debug_api.py debug.zombie.hit '{"board":"CURRENT_BOARD_TOKEN","id":123,"damage":20}'
+```
+
+The result contains `board`, requested `damage`, and the post-hit `zombie` snapshot in the same format as existing zombie mutation commands (`native` scalar fields plus optional Eyes state). Inspect `mHelmHealth`, `mShieldHealth`, `mBodyHealth` and native phase there, or use `zombies {"visuals":true}` afterward. Native shield/helmet absorption, damage stages, armor-break callbacks and death remain authoritative. No damage flags are exposed, no armor/health fields are assigned, and the command is unavailable on normal saved levels (`DEBUG_REQUIRED`). A lethal hit may return a dead/dying post-hit snapshot; later attempts to hit that ID are rejected.

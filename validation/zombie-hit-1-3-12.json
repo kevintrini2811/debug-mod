@@ -1,0 +1,295 @@
+{
+  "rawDirectory": "/home/kevin/modding/pvzreplanted/.test-runs/zombie-hit-20261106",
+  "checks": [
+    {
+      "name": "native-body-hit",
+      "before": {
+        "DataID": 10,
+        "mZombieType": "Normal",
+        "mHasHead": true,
+        "mHelmType": "None",
+        "mBodyHealth": 270,
+        "mBodyMaxHealth": 270,
+        "mHelmHealth": 0,
+        "mHelmMaxHealth": 0,
+        "mShieldHealth": 0,
+        "mDead": false
+      },
+      "after": {
+        "DataID": 10,
+        "mZombieType": "Normal",
+        "mHasHead": true,
+        "mHelmType": "None",
+        "mBodyHealth": 250,
+        "mBodyMaxHealth": 270,
+        "mHelmHealth": 0,
+        "mHelmMaxHealth": 0,
+        "mShieldHealth": 0,
+        "mDead": false
+      }
+    },
+    {
+      "name": "TrafficCone-absorb-break",
+      "before": {
+        "DataID": 11,
+        "mZombieType": "TrafficCone",
+        "mHasHead": true,
+        "mHelmType": "TrafficCone",
+        "mBodyHealth": 270,
+        "mBodyMaxHealth": 270,
+        "mHelmHealth": 370,
+        "mHelmMaxHealth": 370,
+        "mShieldHealth": 0,
+        "mDead": false
+      },
+      "absorbed": {
+        "DataID": 11,
+        "mZombieType": "TrafficCone",
+        "mHasHead": true,
+        "mHelmType": "TrafficCone",
+        "mBodyHealth": 270,
+        "mBodyMaxHealth": 270,
+        "mHelmHealth": 350,
+        "mHelmMaxHealth": 370,
+        "mShieldHealth": 0,
+        "mDead": false
+      },
+      "broken": {
+        "DataID": 11,
+        "mZombieType": "TrafficCone",
+        "mHasHead": true,
+        "mHelmType": "None",
+        "mBodyHealth": 269,
+        "mBodyMaxHealth": 270,
+        "mHelmHealth": 0,
+        "mHelmMaxHealth": 370,
+        "mShieldHealth": 0,
+        "mDead": false
+      }
+    },
+    {
+      "name": "Pail-absorb-break",
+      "before": {
+        "DataID": 12,
+        "mZombieType": "Pail",
+        "mHasHead": true,
+        "mHelmType": "Pail",
+        "mBodyHealth": 270,
+        "mBodyMaxHealth": 270,
+        "mHelmHealth": 1100,
+        "mHelmMaxHealth": 1100,
+        "mShieldHealth": 0,
+        "mDead": false
+      },
+      "absorbed": {
+        "DataID": 12,
+        "mZombieType": "Pail",
+        "mHasHead": true,
+        "mHelmType": "Pail",
+        "mBodyHealth": 270,
+        "mBodyMaxHealth": 270,
+        "mHelmHealth": 1080,
+        "mHelmMaxHealth": 1100,
+        "mShieldHealth": 0,
+        "mDead": false
+      },
+      "broken": {
+        "DataID": 12,
+        "mZombieType": "Pail",
+        "mHasHead": true,
+        "mHelmType": "None",
+        "mBodyHealth": 269,
+        "mBodyMaxHealth": 270,
+        "mHelmHealth": 0,
+        "mHelmMaxHealth": 1100,
+        "mShieldHealth": 0,
+        "mDead": false
+      }
+    },
+    {
+      "name": "invalid-inputs-no-mutation",
+      "cases": [
+        {
+          "damage": 0
+        },
+        {
+          "damage": -1
+        },
+        {
+          "damage": 1000001
+        },
+        {
+          "damage": 1.5
+        },
+        {
+          "damage": "20"
+        },
+        {
+          "damage": true
+        },
+        {
+          "board": "00000000000000000000000000000000",
+          "damage": 20
+        },
+        {
+          "id": -1,
+          "damage": 20
+        },
+        {
+          "id": 4294967295,
+          "damage": 20
+        }
+      ],
+      "before": {
+        "DataID": 10,
+        "mZombieType": "Normal",
+        "mHasHead": true,
+        "mHelmType": "None",
+        "mBodyHealth": 250,
+        "mBodyMaxHealth": 270,
+        "mHelmHealth": 0,
+        "mHelmMaxHealth": 0,
+        "mShieldHealth": 0,
+        "mDead": false
+      },
+      "after": {
+        "DataID": 10,
+        "mZombieType": "Normal",
+        "mHasHead": true,
+        "mHelmType": "None",
+        "mBodyHealth": 250,
+        "mBodyMaxHealth": 270,
+        "mHelmHealth": 0,
+        "mHelmMaxHealth": 0,
+        "mShieldHealth": 0,
+        "mDead": false
+      }
+    },
+    {
+      "name": "dead-or-dying-rejected",
+      "response": {
+        "protocol": 1,
+        "id": "8520b6e443d04a8eb9a04fad4ea3be58",
+        "session": "09b52df0b316455ea6c966bd3b28e663",
+        "ok": false,
+        "error": {
+          "code": "ENTITY_NOT_FOUND",
+          "message": "No living zombie with this ID on the current board."
+        }
+      }
+    }
+  ],
+  "rejectedHits": [
+    {
+      "args": {
+        "board": "ac40ddaf5d9a4ceb8d9a01f03b1a2d86",
+        "id": 10,
+        "damage": 0
+      },
+      "error": {
+        "code": "INVALID_ARGUMENT",
+        "message": "damage: expected integer 1..1000000."
+      }
+    },
+    {
+      "args": {
+        "board": "ac40ddaf5d9a4ceb8d9a01f03b1a2d86",
+        "id": 10,
+        "damage": -1
+      },
+      "error": {
+        "code": "INVALID_ARGUMENT",
+        "message": "damage: expected integer 1..1000000."
+      }
+    },
+    {
+      "args": {
+        "board": "ac40ddaf5d9a4ceb8d9a01f03b1a2d86",
+        "id": 10,
+        "damage": 1000001
+      },
+      "error": {
+        "code": "INVALID_ARGUMENT",
+        "message": "damage: expected integer 1..1000000."
+      }
+    },
+    {
+      "args": {
+        "board": "ac40ddaf5d9a4ceb8d9a01f03b1a2d86",
+        "id": 10,
+        "damage": 1.5
+      },
+      "error": {
+        "code": "INVALID_ARGUMENT",
+        "message": "damage: expected integer 1..1000000."
+      }
+    },
+    {
+      "args": {
+        "board": "ac40ddaf5d9a4ceb8d9a01f03b1a2d86",
+        "id": 10,
+        "damage": "20"
+      },
+      "error": {
+        "code": "INVALID_ARGUMENT",
+        "message": "damage: expected integer 1..1000000."
+      }
+    },
+    {
+      "args": {
+        "board": "ac40ddaf5d9a4ceb8d9a01f03b1a2d86",
+        "id": 10,
+        "damage": true
+      },
+      "error": {
+        "code": "INVALID_ARGUMENT",
+        "message": "damage: expected integer 1..1000000."
+      }
+    },
+    {
+      "args": {
+        "board": "00000000000000000000000000000000",
+        "id": 10,
+        "damage": 20
+      },
+      "error": {
+        "code": "STALE_BOARD",
+        "message": "Entity IDs belong to a different board."
+      }
+    },
+    {
+      "args": {
+        "board": "ac40ddaf5d9a4ceb8d9a01f03b1a2d86",
+        "id": -1,
+        "damage": 20
+      },
+      "error": {
+        "code": "INVALID_ARGUMENT",
+        "message": "id: expected an unsigned 32-bit zombie ID."
+      }
+    },
+    {
+      "args": {
+        "board": "ac40ddaf5d9a4ceb8d9a01f03b1a2d86",
+        "id": 4294967295,
+        "damage": 20
+      },
+      "error": {
+        "code": "ENTITY_NOT_FOUND",
+        "message": "No active zombie with this ID."
+      }
+    },
+    {
+      "args": {
+        "board": "ac40ddaf5d9a4ceb8d9a01f03b1a2d86",
+        "id": 13,
+        "damage": 1
+      },
+      "error": {
+        "code": "ENTITY_NOT_FOUND",
+        "message": "No living zombie with this ID on the current board."
+      }
+    }
+  ],
+  "offlineSuite": "DebugZombieHitTests: native dispatch/zero flags/post-hit snapshot/damage bounds/debug-only/stale token/live same-board identity PASS"
+}
