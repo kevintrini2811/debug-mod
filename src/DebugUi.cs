@@ -330,9 +330,31 @@ internal sealed class DebugZombiePreview : IDisposable
         lane.transform.localPosition = new Vector3((laneX + 360 - x - 40) * 2.82f, rowHeight * 1.41f, 0);
         lane.transform.localScale = new Vector3(720 * 2.82f, rowHeight * 2.82f, 1);
         renderer.enabled = sprite != null;
-        if (sprite != null) root!.transform.localScale = Vector3.one * (110f * 2.82f / sprite.bounds.size.y);
+        if (sprite != null)
+        {
+            var bounds = sprite.bounds;
+            var fit = ZombiePreviewLayout.Fit(bounds.center.x, bounds.min.y, bounds.size.y);
+            root!.transform.localScale = Vector3.one * fit.Scale;
+            root.transform.localPosition = new Vector3(fit.X, fit.Y, 0);
+        }
         controller.UpdatePosition();
     }
+
+    internal object Snapshot()
+    {
+        var sprite = renderer?.sprite;
+        return new { anchor = new { x = anchor.mX, y = anchor.mY },
+            enabled = renderer != null && renderer.enabled,
+            active = root != null && root.activeInHierarchy,
+            sprite = sprite?.name,
+            pivot = sprite == null ? null : new { x = sprite.pivot.x, y = sprite.pivot.y },
+            position = root == null ? null : new { x = root.transform.position.x, y = root.transform.position.y, z = root.transform.position.z },
+            bounds = renderer == null ? null : new { x = renderer.bounds.center.x, y = renderer.bounds.center.y,
+                width = renderer.bounds.size.x, height = renderer.bounds.size.y },
+            foot = sprite == null || root == null ? null : Foot(root.transform.TransformPoint(
+                new Vector3(sprite.bounds.center.x, sprite.bounds.min.y, 0))) };
+    }
+    private static object Foot(Vector3 point) => new { x = point.x, y = point.y, z = point.z };
 
     public void Dispose()
     {

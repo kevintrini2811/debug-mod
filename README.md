@@ -1,4 +1,6 @@
-# Debug Mod 1.3.8
+# Debug Mod 1.3.9
+
+Version 1.3.9 aligns registered zombie preview portraits by their lower center regardless of sprite pivot. `debug.preview` selects real roster cards, targets cells, snapshots actual preview renderers and optionally places through the normal click path. See [API documentation](src/documentation.md).
 
 Version 1.3.8 frames all registered zombie thumbnails dynamically using the native packet background, including future registry variants and atlas sprites. `debug.ui` also reports actual sprite rectangles and texture dimensions for visual verification.
 

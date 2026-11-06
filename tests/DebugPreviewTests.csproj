@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="DebugPreviewTests.cs" />
+    <Compile Include="../src/ZombiePreviewLayout.cs" Link="ZombiePreviewLayout.cs" />
+  </ItemGroup>
+</Project>

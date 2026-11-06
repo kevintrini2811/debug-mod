@@ -330,8 +330,7 @@ internal static partial class DebugMode
             {
                 if (board != null && OptionalGameplay.CarriedPlant(board) == null)
                 {
-                    board.ClearCursor(true, 0);
-                    selectedZombie = index;
+                    SelectZombie(index);
                 }
             }, selectedZombie == index, badge: () => ZombieHeadArt(index));
         }
@@ -433,7 +432,7 @@ internal static partial class DebugMode
         else Clear();
     }
 
-    internal static void CancelZombiePlacement() { selectedZombie = -1; refreshUi = true; }
+    internal static void CancelZombiePlacement() { selectedZombie = -1; apiPreviewPoint = null; refreshUi = true; }
 
     internal static void PlantSelected(SeedPacket packet)
     {
@@ -444,10 +443,10 @@ internal static partial class DebugMode
     {
         if (!Owns(board) || board!.mPaused || board.mApp.GameScene != GameScenes.Playing || selectedZombie < 0)
         { preview?.Dispose(); preview = null; return; }
-        int x = board.mPrevMouseX[0], y = board.mPrevMouseY[0];
+        int x = apiPreviewPoint?.X ?? board.mPrevMouseX[0], y = apiPreviewPoint?.Y ?? board.mPrevMouseY[0];
         bool valid = ZombieCell(board, x, y, out int col, out int row, out bool entrance);
         var mouse = Mouse.current;
-        if (!valid || board.mSeedBank.ContainsPoint(x, y) || mouse == null)
+        if (!valid || board.mSeedBank.ContainsPoint(x, y) || mouse == null && apiPreviewPoint == null)
         { preview?.Dispose(); preview = null; return; }
         preview ??= new DebugZombiePreview(board);
         // GetPosYBasedOnRow is the native actor's top origin. Static portraits
@@ -475,7 +474,7 @@ internal static partial class DebugMode
         if (level != null) Object.Destroy(level);
         ClosePicker();
         level = previousLevel = null; board = null;
-        launching = picking = false; selectedZombie = -1; word = 0;
+        launching = picking = false; selectedZombie = -1; apiPreviewPoint = null; word = 0;
         zombies.Clear(); registeredZombies = Array.Empty<ZombieCard>();
         DebugAlmanac.Update();
         art?.Dispose(); art = null;

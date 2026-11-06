@@ -23,7 +23,7 @@ internal static class DebugCommands
     private static readonly Func<Board, int, int, bool, bool>? treasure = OptionalModApi.Bind<Func<Board, int, int, bool, bool>>("FusionMod", "FusionMod.TreasureMines", "SetTreasure");
     internal static readonly string[] Commands = { "help", "status", "startup.continue", "levels", "level.start", "level.leave", "debug.backgrounds", "debug.start",
         "catalog.plants", "catalog.zombies", "debug.roster", "chooser", "chooser.select", "bank", "bank.set", "board", "plants", "zombies", "waves",
-        "debug.ui", "debug.items", "debug.tools", "debug.treasure.set", "debug.difficulty", "debug.plant.set", "debug.fertilize", "projectiles", "coins", "waves.set", "plant.place", "zombie.place", "plant.move", "zombie.move", "plant.remove", "zombie.remove", "debug.zombie.set", "debug.balloon.pop", "debug.zombie.rise", "sun.set", "coins.level.set",
+        "debug.ui", "debug.preview", "debug.items", "debug.tools", "debug.treasure.set", "debug.difficulty", "debug.plant.set", "debug.fertilize", "projectiles", "coins", "waves.set", "plant.place", "zombie.place", "plant.move", "zombie.move", "plant.remove", "zombie.remove", "debug.zombie.set", "debug.balloon.pop", "debug.zombie.rise", "sun.set", "coins.level.set",
         "coins.profile.set", "unlock.plant", "unlock.almanac", "unlocks.reset", "almanac", "screenshot", "speed", "fps", "settings", "settings.set", "pause" };
 
     internal static object Status()
@@ -153,6 +153,7 @@ internal static class DebugCommands
                 return new { native = Enum.GetValues<ZombieType>().Where(t => t >= ZombieType.Normal && t < ZombieType.NumZombieTypes).Select(t => new { type = t.ToString(), value = (int)t }).ToArray(),
                     registered = LibraryCatalog.Zombies().Select((card, index) => new { index, card.Name, type = card.NativeType.ToString() }).ToArray(),
                     debug = DebugMode.Active ? DebugMode.ApiZombieCatalog() : null };
+            case "debug.preview": return DebugMode.ApiPreview(args);
             case "debug.roster": DebugMode.ApiRoster(Indices(args)); return new { updated = true };
             case "chooser": return ChooserInfo();
             case "chooser.select":

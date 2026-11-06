@@ -419,3 +419,17 @@ Automatic debug cooldown suppression defaults to true. Set `suppressCooldown:fal
 python3 pvzreplanted/debug-mod/tools/debug_api.py debug.tools
 python3 pvzreplanted/debug-mod/tools/debug_api.py debug.tools '{"board":"TOKEN_FROM_STATUS","suppressCooldown":false}'
 ```
+
+
+### Zombie placement preview (1.3.9)
+
+`debug.preview` requires a temporary debug board. With no arguments it reports current selection and the actual preview renderer without selecting or placing a zombie. `index` selects an entry from the current debug roster using the same selection path as its bar card. `col` and `row` pin the cursor to a board cell through the normal preview update; the pin remains until cancellation, placement, another card selection or session end.
+
+```sh
+python3 pvzreplanted/debug-mod/tools/debug_api.py debug.preview '{"index":37,"col":3,"row":2}'
+python3 pvzreplanted/debug-mod/tools/debug_api.py debug.preview
+python3 pvzreplanted/debug-mod/tools/debug_api.py debug.preview '{"place":true}'
+python3 pvzreplanted/debug-mod/tools/debug_api.py debug.preview '{"cancel":true}'
+```
+
+The response contains `board`, selected `index` (-1 when none), pinned board-pixel `target`, and `rendering`: actual anchor, sprite pivot, active/enabled status, world position, world bounds and the transformed sprite foot. `place:true` uses the normal `MouseDown` placement path and returns the preview snapshot immediately before placement. This API never creates a separate test preview or allocates a zombie merely to display one. The normal board-pause and placement restrictions apply.
