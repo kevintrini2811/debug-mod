@@ -408,3 +408,14 @@ All exported native zombie portraits will receive debug seed packs, including ad
 `speed` accepts `next:true` to invoke the actual native speed button event. It cannot be combined with `index`. Poll `speed` again after several frames to verify that the selected and effective speed persist.
 
 The debug zombie chooser excludes native DuckyTube and library duck-only entries. Choose the base zombie; native terrain and Zombie Library select its duck appearance automatically in water. The read-only `catalog.zombies.native` enum list remains complete for API compatibility.
+
+## Tool cooldown diagnostics
+
+`debug.tools` reads the optional Lawn Glove state on a temporary debug board. It returns `board`, `available` (mod loaded), `ready` (mod owns this board), `selectedTool`, `remaining` (seconds), `chargeFraction`, `armed`, `customToolSelected`, and `suppressCooldown`. State fields are null when the mod is unavailable or has not observed this board. Reads never switch tools or modify charges.
+
+Automatic debug cooldown suppression defaults to true. Set `suppressCooldown:false` with the current board token to test actual cooldowns; set true to restore normal debug behavior. This affects only the current temporary debug board and resets on board or session changes. Native levels and profiles are never modified. Missing/wrong board tokens return `STALE_BOARD`; normal levels return `DEBUG_REQUIRED`.
+
+```sh
+python3 pvzreplanted/debug-mod/tools/debug_api.py debug.tools
+python3 pvzreplanted/debug-mod/tools/debug_api.py debug.tools '{"board":"TOKEN_FROM_STATUS","suppressCooldown":false}'
+```

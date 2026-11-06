@@ -23,7 +23,7 @@ internal static class DebugCommands
     private static readonly Func<Board, int, int, bool, bool>? treasure = OptionalModApi.Bind<Func<Board, int, int, bool, bool>>("FusionMod", "FusionMod.TreasureMines", "SetTreasure");
     internal static readonly string[] Commands = { "help", "status", "startup.continue", "levels", "level.start", "level.leave", "debug.backgrounds", "debug.start",
         "catalog.plants", "catalog.zombies", "debug.roster", "chooser", "chooser.select", "bank", "bank.set", "board", "plants", "zombies", "waves",
-        "debug.ui", "debug.items", "debug.treasure.set", "debug.difficulty", "debug.plant.set", "debug.fertilize", "projectiles", "coins", "waves.set", "plant.place", "zombie.place", "plant.move", "zombie.move", "plant.remove", "zombie.remove", "debug.zombie.set", "debug.balloon.pop", "debug.zombie.rise", "sun.set", "coins.level.set",
+        "debug.ui", "debug.items", "debug.tools", "debug.treasure.set", "debug.difficulty", "debug.plant.set", "debug.fertilize", "projectiles", "coins", "waves.set", "plant.place", "zombie.place", "plant.move", "zombie.move", "plant.remove", "zombie.remove", "debug.zombie.set", "debug.balloon.pop", "debug.zombie.rise", "sun.set", "coins.level.set",
         "coins.profile.set", "unlock.plant", "unlock.almanac", "unlocks.reset", "almanac", "screenshot", "speed", "fps", "settings", "settings.set", "pause" };
 
     internal static object Status()
@@ -89,6 +89,7 @@ internal static class DebugCommands
             tickSeconds = Il2CppReloaded.Constants.Gameplay.TIME_FOR_UPDATE, board = ApiBoard.Token };
         switch (command)
         {
+            case "debug.tools": return DebugTools.Execute(args);
             case "debug.difficulty":
                 var difficultyBoard = ApiBoard.Require();
                 if (!DebugMode.Owns(difficultyBoard)) throw new ApiError("DEBUG_REQUIRED", "Difficulty inspection requires a temporary debug session.");

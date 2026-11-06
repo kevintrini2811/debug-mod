@@ -1,4 +1,6 @@
-# Debug Mod 1.3.6
+# Debug Mod 1.3.7
+
+Version 1.3.7 adds `debug.tools` to inspect optional Lawn Glove state and temporarily retain real cooldowns on one debug board. Cooldown suppression remains enabled by default and resets on board/session changes. See [API documentation](src/documentation.md).
 
 Version 1.3.6 adds optional `plants {"visuals":true}` diagnostics with actual Unity renderer and SortingGroup layers and orders. Plant snapshots retain their existing shape.
 

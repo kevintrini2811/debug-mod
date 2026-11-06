@@ -460,6 +460,7 @@ internal static partial class DebugMode
 
     internal static void Clear()
     {
+        DebugTools.Reset();
         ApiSunOverride = false;
         preview?.Dispose(); preview = null;
         DebugBankPreviews.Clear();

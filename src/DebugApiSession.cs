@@ -58,6 +58,7 @@ internal static class ApiBoard
     {
         if (pointer != board.Pointer)
         {
+            DebugTools.Reset();
             ReleasePause();
             pointer = board.Pointer; Token = Guid.NewGuid().ToString("N");
         }
@@ -66,6 +67,7 @@ internal static class ApiBoard
     internal static void Clear(Board board)
     {
         if (pointer != board.Pointer) return;
+        DebugTools.Reset();
         ReleasePause();
         Current = null; pointer = IntPtr.Zero; Token = "";
     }

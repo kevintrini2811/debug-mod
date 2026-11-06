@@ -30,5 +30,5 @@ internal static class DebugGloveCooldownPatch
         AccessTools.Method(glove!, "OnUpdate"), AccessTools.Method(glove!, "HandleBoardClick")
     };
     private static void Postfix(object ___State, Board ___Board)
-    { if (DebugMode.Owns(___Board)) tick!.Invoke(___State, new object[] { double.MaxValue }); }
+    { if (DebugTools.SuppressCooldown(___Board)) tick!.Invoke(___State, new object[] { double.MaxValue }); }
 }
