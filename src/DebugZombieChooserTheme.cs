@@ -110,15 +110,3 @@ internal static class DebugZombieChooserTheme
         replacements.Clear(); textures.Clear(); ownedSprites.Clear();
     }
 }
-
-[HarmonyLib.HarmonyPatch]
-internal static class DebugCollectorSourcePatch
-{
-    private static IEnumerable<System.Reflection.MethodBase> TargetMethods()
-    {
-        var type = ReplantedModUi.OptionalModApi.Type("SunCollector", "SunCollector.SunIndicator");
-        var method = type?.GetMethod("CopyFace", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic);
-        if (method != null) yield return method;
-    }
-    private static void Prefix(ref Sprite source) => source = DebugZombieChooserTheme.CollectorSource(source);
-}

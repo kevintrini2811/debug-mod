@@ -1,4 +1,6 @@
-# Debug Mod 1.3.9
+# Debug Mod 1.3.10
+
+Version 1.3.10 skips the optional Sun Collector artwork hook when its target is unavailable. Starting Debug Mod without Sun Collector now completes Harmony patch registration.
 
 Version 1.3.9 aligns registered zombie preview portraits by their lower center regardless of sprite pivot. `debug.preview` selects real roster cards, targets cells, snapshots actual preview renderers and optionally places through the normal click path. See [API documentation](src/documentation.md).
 
