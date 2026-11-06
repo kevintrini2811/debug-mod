@@ -1,4 +1,6 @@
-# Debug Mod 1.3.12
+# Debug Mod 1.3.13
+
+Version 1.3.13 refreshes the bundled Fusion packet atlas with Squashwood, Torchweed and Roasted Spikeweed. Their original portraits are available in the debug chooser and seed bank through the existing card renderer.
 
 Version 1.3.12 adds `debug.zombie.hit` for real native damage in temporary debug sessions. Board tokens, live zombie IDs and positive bounded damage are validated before native shield/helmet absorption and break/death callbacks run. See [API documentation](src/documentation.md).
 
