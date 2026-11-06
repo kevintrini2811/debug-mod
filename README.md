@@ -1,4 +1,6 @@
-# Debug Mod 1.3.7
+# Debug Mod 1.3.8
+
+Version 1.3.8 frames all registered zombie thumbnails dynamically using the native packet background, including future registry variants and atlas sprites. `debug.ui` also reports actual sprite rectangles and texture dimensions for visual verification.
 
 Version 1.3.7 adds `debug.tools` to inspect optional Lawn Glove state and temporarily retain real cooldowns on one debug board. Cooldown suppression remains enabled by default and resets on board/session changes. See [API documentation](src/documentation.md).
 

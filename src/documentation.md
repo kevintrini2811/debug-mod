@@ -258,7 +258,7 @@ Debug Mod 1.2.2 replaces the native decorations with gray copies during zombie s
 python3 pvzreplanted/debug-mod/tools/debug_api.py debug.ui
 ```
 
-`debug.ui` requires a temporary debug session (`DEBUG_REQUIRED` outside). It delivers active Unity images with `path`, `sprite`, `color` (RGBA), `width` and `height`. The command does not change the UI or game state. Thematic sprites have the prefix `DebugZombieChooser.`. Screenshot and UI snapshot can check the appearance and its restoration separately.
+`debug.ui` requires a temporary debug session (`DEBUG_REQUIRED` outside). It delivers active Unity images with `path`, `sprite`, `color` (RGBA), `width` and `height`. It also reports `enabled`, `active`, the actual sprite `texture` (`name`, `width`, `height`) and `spriteRect` (`x`, `y`, `width`, `height`); the last two fields are null when no sprite is assigned. Dynamically framed registry cards use the prefix `DebugZombiePacket.Dynamic.`. The command does not change the UI or game state. Thematic sprites have the prefix `DebugZombieChooser.`. Screenshot and UI snapshot can check the appearance and its restoration separately.
 
 ## Plant condition and fertilizer in temporary debug level
 

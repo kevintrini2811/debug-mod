@@ -79,3 +79,11 @@ Release build with no warnings or errors; passed three API transport tests. The 
 Receipts: [Controller Answers](../fusion-mod/references/umbrella-ice-21-5-0/controller-runtime.json), [Fusion Cards](../fusion-mod/references/umbrella-ice-21-5-0/fusion-packets.png), [last plant page](../fusion-mod/references/umbrella-ice-21-5-0/last-plant-page.png) and [Zombie Selection](../fusion-mod/references/umbrella-ice-21-5-0/zombie-controller.png). The reproducible test is below `../fusion-mod/tools/smoke_chooser_controller.py`. `plant.place offsetY:70` was tested with both ice cream pot recipe orders via the true fusion path.
 
 The final test session was left, the virtual gamepad was removed and the game was closed normally; the actual end of the process was confirmed. The installed DLLs match the release builds byte-for-byte. During Unity mining, PvZRepatched logs three RenderTexture messages; no exceptions occurred during selection and combat tests.
+
+## Debug Mod 1.3.8 — generic registered zombie packets, checked on 2026-11-06
+
+Before the fix, Conehead and Buckethead Eyes Zombies displayed bare portraits on gray tiles in both the chooser and running roster. The existing normal Eyes packet was complete. After the fix, all three variants and Hypno Pea Zombie display distinct portraits inside complete green 128x176 seed packets. Native Normal and PeaHead cards, initial Peashooter selection, confirmation and the running plant bank remain correct.
+
+The real Debug API run checks the chooser, selected cards and running zombie bar, then repeats after leaving and recreating the debug session. Extended `debug.ui` snapshots confirm four active generated packet sprites in the chooser and four in the running bar, with the expected 128x176 rectangles. The current 40-card zombie catalog occupies one page; no additional pagination check is required for this change. Screenshots were visually inspected. No errors or exceptions occur in the final session log before shutdown.
+
+Release build: zero warnings and errors. Evidence and the local reproduction harness are `validation/zombie-cards-1-3-8.json` and `validation/verify-zombie-cards-1-3-8.py`. Full screenshots and API traces remain under `../.test-runs/zombie-card-review-20261106/`. Placement previews are outside this fix.

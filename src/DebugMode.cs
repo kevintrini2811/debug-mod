@@ -204,7 +204,8 @@ internal static partial class DebugMode
 
     internal static Sprite? ZombiePreviewArt(int index) => index >= zombieTypes.Length ? registeredZombies[index - zombieTypes.Length].Portrait() ?? art!.ZombiePortrait(registeredZombies[index - zombieTypes.Length].NativeType) : art!.ZombiePortrait(zombieTypes[index]);
     internal static Sprite? ZombieArt(int index) => index >= zombieTypes.Length
-        ? registeredZombies[index - zombieTypes.Length].Thumbnail() is { } thumbnail
+        ? (registeredZombies[index - zombieTypes.Length].Portrait()
+            ?? registeredZombies[index - zombieTypes.Length].Thumbnail()) is { } thumbnail
             ? art!.RegisteredPacket(thumbnail) : art!.Zombie(registeredZombies[index - zombieTypes.Length].NativeType)
         : art!.Zombie(zombieTypes[index]);
     private static Sprite? ZombieHeadArt(int index) => index >= zombieTypes.Length ? null : art!.ZombieHead(zombieTypes[index]);

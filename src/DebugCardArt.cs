@@ -22,18 +22,20 @@ internal sealed class DebugCardArt : IDisposable
     private Sprite? eyes;
     private sealed record Packet(string Resource, int X, int Y, int Width, int Height);
     private readonly Dictionary<string, Sprite> fusionPortraits = new();
-    private readonly Dictionary<ZombieType, (Sprite Sprite, Texture2D Texture)> zombieCards = new();
+    private readonly Dictionary<IntPtr, (Sprite Sprite, Texture2D Texture)> zombieCards = new();
     private readonly HashSet<IntPtr> cardSprites = new();
     private Texture2D? atlas, packetTexture;
-    private Texture2D? registeredAtlas;
-    private readonly Dictionary<string, Sprite> registeredPackets = new();
     private Sprite? packet;
     internal Sprite PacketBackground => packet!;
     private readonly List<Sprite> rosterSprites = new();
     private readonly List<Texture2D> rosterTextures = new();
     internal Sprite Roster => rosterSprites[0];
     internal Sprite Counter => rosterSprites[1];
-    internal Sprite RegisteredPacket(Sprite thumbnail) => registeredPackets.TryGetValue(thumbnail.name, out var packet) ? packet : thumbnail;
+    internal Sprite RegisteredPacket(Sprite thumbnail)
+    {
+        if (zombieCards.TryGetValue(thumbnail.Pointer, out var card)) return card.Sprite;
+        return CreateZombiePacket(thumbnail);
+    }
     internal bool OwnsCardSprite(Sprite? sprite) => sprite != null && (cardSprites.Contains(sprite.Pointer) || portraits.Owns(sprite));
 
     private static Stream Resource(string name) => typeof(DebugCardArt).Assembly.GetManifestResourceStream(name)
@@ -75,14 +77,6 @@ internal sealed class DebugCardArt : IDisposable
                 decoration.name = "DebugZombieChooser." + name["zombie-chooser-".Length..^4];
                 rosterSprites.Add(decoration);
             }
-            registeredAtlas = LoadTexture("FusionMod.DebugCards.registered-zombie-packets.png");
-            using (var index = Resource("FusionMod.DebugCards.registered-zombie-packets.json"))
-                foreach (var entry in JsonSerializer.Deserialize<Packet[]>(index) ?? throw new InvalidDataException("Invalid zombie packet index."))
-                {
-                    var sprite = Retain(Sprite.Create(registeredAtlas, new Rect(entry.X, entry.Y, entry.Width, entry.Height), new Vector2(.5f, .5f), 100));
-                    sprite.name = "DebugZombiePacket." + entry.Resource;
-                    registeredPackets.Add(entry.Resource, sprite); cardSprites.Add(sprite.Pointer);
-                }
             atlas = LoadTexture("FusionMod.DebugCards.fusion-packets.png");
             packetTexture = LoadTexture("FusionMod.DebugCards.packet-background.png", true);
             packet = Retain(Sprite.Create(packetTexture, new Rect(0, 0, 128, 176), new Vector2(.5f, .5f), 100));
@@ -170,21 +164,62 @@ internal sealed class DebugCardArt : IDisposable
 
     internal Sprite? ZombiePortrait(ZombieType type) => portraits.Get(type);
     internal Sprite Zombie(ZombieType type) => portraits.Packet(type);
-    internal Sprite EyesPacket()
+    internal Sprite EyesPacket() => RegisteredPacket(Eyes());
+
+    // Registry sprites can be atlas regions on non-readable textures. Read back
+    // their actual rectangle once, without changing or owning the borrowed asset.
+    private static Texture2D ReadPortrait(Sprite portrait)
     {
-        var type = (ZombieType)(-1);
-        if (zombieCards.TryGetValue(type, out var card)) return card.Sprite;
-        Eyes();
-        return CreateZombiePacket(type, eyesTexture!);
+        var source = portrait.texture;
+        var rect = portrait.packed ? portrait.textureRect : portrait.rect;
+        var target = RenderTexture.GetTemporary(source.width, source.height, 0, RenderTextureFormat.ARGB32);
+        var previous = RenderTexture.active;
+        Texture2D? readable = null;
+        try
+        {
+            Graphics.Blit(source, target);
+            RenderTexture.active = target;
+            readable = new Texture2D((int)rect.width, (int)rect.height, TextureFormat.RGBA32, false);
+            readable.ReadPixels(rect, 0, 0, false);
+            if (portrait.packed && portrait.packingRotation != SpritePackingRotation.None)
+            {
+                var pixels = readable.GetPixels().ToArray();
+                var unrotated = (Color[])pixels.Clone();
+                bool flipX = portrait.packingRotation is SpritePackingRotation.FlipHorizontal or SpritePackingRotation.Rotate180;
+                bool flipY = portrait.packingRotation is SpritePackingRotation.FlipVertical or SpritePackingRotation.Rotate180;
+                for (int y = 0; y < readable.height; ++y)
+                    for (int x = 0; x < readable.width; ++x)
+                        unrotated[y * readable.width + x] = pixels[
+                            (flipY ? readable.height - 1 - y : y) * readable.width
+                            + (flipX ? readable.width - 1 - x : x)];
+                readable.SetPixels(unrotated);
+            }
+            readable.Apply(false, false);
+            return readable;
+        }
+        catch { if (readable != null) Object.Destroy(readable); throw; }
+        finally { RenderTexture.active = previous; RenderTexture.ReleaseTemporary(target); }
     }
-    private Sprite CreateZombiePacket(ZombieType type, Texture2D portrait)
+
+    private Sprite CreateZombiePacket(Sprite portrait)
     {
+        var readable = ReadPortrait(portrait);
         var texture = Retain(new Texture2D(128, 176, TextureFormat.RGBA32, false));
         try
         {
             var pixels = packetTexture!.GetPixels().ToArray();
-            var source = portrait.GetPixels().ToArray();
-            int sourceWidth = portrait.width, sourceHeight = portrait.height;
+            var source = readable.GetPixels().ToArray();
+            int stride = readable.width;
+            int minX = stride, minY = readable.height, maxX = -1, maxY = -1;
+            for (int y = 0; y < readable.height; ++y)
+                for (int x = 0; x < stride; ++x)
+                    if (source[y * stride + x].a > 0)
+                    {
+                        minX = Math.Min(minX, x); minY = Math.Min(minY, y);
+                        maxX = Math.Max(maxX, x); maxY = Math.Max(maxY, y);
+                    }
+            if (maxX < 0) { minX = minY = 0; maxX = stride - 1; maxY = readable.height - 1; }
+            int sourceWidth = maxX - minX + 1, sourceHeight = maxY - minY + 1;
             float scale = Math.Min(104f / sourceWidth, 123f / sourceHeight);
             int width = Math.Max(1, (int)(sourceWidth * scale)), height = Math.Max(1, (int)(sourceHeight * scale));
             int left = (128 - width) / 2, bottom = 25 + (123 - height) / 2;
@@ -195,8 +230,8 @@ internal sealed class DebugCardArt : IDisposable
                     int x0 = Math.Clamp((int)sx, 0, sourceWidth - 1), y0 = Math.Clamp((int)sy, 0, sourceHeight - 1);
                     int x1 = Math.Min(x0 + 1, sourceWidth - 1), y1 = Math.Min(y0 + 1, sourceHeight - 1);
                     float fx = Math.Clamp(sx - x0, 0, 1), fy = Math.Clamp(sy - y0, 0, 1);
-                    var a = source[y0 * sourceWidth + x0]; var b = source[y0 * sourceWidth + x1];
-                    var c = source[y1 * sourceWidth + x0]; var d = source[y1 * sourceWidth + x1];
+                    var a = source[(minY + y0) * stride + minX + x0]; var b = source[(minY + y0) * stride + minX + x1];
+                    var c = source[(minY + y1) * stride + minX + x0]; var d = source[(minY + y1) * stride + minX + x1];
                     float mix(float av, float bv, float cv, float dv) => (av + (bv - av) * fx) * (1 - fy) + (cv + (dv - cv) * fx) * fy;
                     var foreground = new Color(mix(a.r, b.r, c.r, d.r), mix(a.g, b.g, c.g, d.g),
                         mix(a.b, b.b, c.b, d.b), mix(a.a, b.a, c.a, d.a));
@@ -209,10 +244,13 @@ internal sealed class DebugCardArt : IDisposable
                 }
             texture.SetPixels(pixels); texture.Apply(false, true);
             var sprite = Retain(Sprite.Create(texture, new Rect(0, 0, 128, 176), new Vector2(.5f, .5f), 100));
-            zombieCards.Add(type, (sprite, texture)); cardSprites.Add(sprite.Pointer);
+            sprite.name = "DebugZombiePacket.Dynamic." + portrait.name;
+            texture.name = sprite.name;
+            zombieCards.Add(portrait.Pointer, (sprite, texture)); cardSprites.Add(sprite.Pointer);
             return sprite;
         }
         catch { Object.Destroy(texture); throw; }
+        finally { Object.Destroy(readable); }
     }
 
     // Complete native portraits already include their variant heads.
@@ -243,10 +281,6 @@ internal sealed class DebugCardArt : IDisposable
         rosterSprites.Clear(); rosterTextures.Clear();
         foreach (var sprite in fusionPortraits.Values) Object.Destroy(sprite);
         fusionPortraits.Clear(); cardSprites.Clear();
-        foreach (var sprite in registeredPackets.Values) Object.Destroy(sprite);
-        registeredPackets.Clear();
-        if (registeredAtlas != null) Object.Destroy(registeredAtlas);
-        registeredAtlas = null;
         foreach (var card in zombieCards.Values) { Object.Destroy(card.Sprite); Object.Destroy(card.Texture); }
         zombieCards.Clear();
         if (atlas != null) Object.Destroy(atlas);

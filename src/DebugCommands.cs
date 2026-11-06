@@ -106,6 +106,11 @@ internal static class DebugCommands
                 return Object.FindObjectsOfType<UnityEngine.UI.Image>().Select(image => new
                 {
                     path = PathOf(image.transform), sprite = image.sprite?.name,
+                    enabled = image.enabled, active = image.gameObject.activeInHierarchy,
+                    texture = image.sprite?.texture is { } uiTexture
+                        ? new { uiTexture.name, uiTexture.width, uiTexture.height } : null,
+                    spriteRect = image.sprite is { } uiSprite
+                        ? new { uiSprite.rect.x, uiSprite.rect.y, uiSprite.rect.width, uiSprite.rect.height } : null,
                     color = new { image.color.r, image.color.g, image.color.b, image.color.a },
                     width = image.rectTransform.rect.width, height = image.rectTransform.rect.height
                 }).ToArray();
