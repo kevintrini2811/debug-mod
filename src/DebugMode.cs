@@ -20,7 +20,7 @@ internal static partial class DebugMode
     private static readonly List<Background> backgrounds = new();
     private static readonly List<int> zombies = new();
     private static readonly ZombieType[] zombieTypes = Enum.GetValues<ZombieType>()
-        .Where(type => type >= ZombieType.Normal && type < ZombieType.NumZombieTypes).ToArray();
+        .Where(type => type >= ZombieType.Normal && type < ZombieType.NumZombieTypes && type != ZombieType.DuckyTube).ToArray();
     private static GameplayChooserActivity? chooser;
     private static DebugUi? ui;
     private static DebugLevelPicker? levelPicker;

@@ -1,4 +1,7 @@
-# Debug Mod 1.3.4
+# Debug Mod 1.3.5
+
+
+Version 1.3.5 removes duck-only entries from the debug chooser. Select the base zombie and let native terrain and Zombie Library choose its swimming appearance. The API adds `debug.zombie.rise` for native grave-rise tests and `speed {"next":true}` for the real speed-button event. See [API documentation](src/documentation.md).
 
 ## Dependencies
 
@@ -7,7 +10,7 @@
 - Optional integrations: `FusionMod`, `LawnGlove`, `PlantLibrary`, `ZombieLibrary`, `SpeedMod`, `DifficultyMod`, `SunCollector`, `BloomEngine`, `PvZRepatched`, `ReplantAPI`.
 - Building: .NET SDK with `net6.0` support and the game/MelonLoader reference assemblies declared in `DebugMod.csproj`.
 
-## Zombie selection and graphics diagnostics (1.3.4)
+## Zombie selection and graphics diagnostics (1.3.5)
 
 All exported native zombie portraits will receive seed pack backgrounds, including the additional duck variants. The periodic gray coloring no longer overwrites the native state images of the start button. `zombies` with `visuals:true` additionally provides spine slots and actual renders for checking the ducks and arms.
 

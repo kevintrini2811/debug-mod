@@ -397,3 +397,12 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py projectiles '{"visuals":true}'
 `zombies` optionally accepts `visuals:true`. The extended answer contains Zombie `state` with the previous snapshot and `rendering` with renderers and the actual spine character order. Slots provide current and intended setup attachment, alpha, bone matrix and available region measures. `tracks` lists active animations and track times; `skin` and `skins` list the current skin and available source skins. Renderers provide sharing, activity, sorting, sprite and world dimensions. The diagnosis does not change any graphics and is only calculated upon explicit request.
 
 All exported native zombie portraits will receive debug seed packs, including additional duck variants. Native confirmation buttons maintain their own state representation; the periodic decoration scan no longer overwrites your background graphics.
+
+
+## Grave rises and native speed-button testing (1.3.5)
+
+`debug.zombie.rise` requires a temporary debug board, current `board`, living zombie `id`, and an existing gravestone at `col`/`row`. It calls native `RiseFromGrave`; the game and Zombie Library own the phase, altitude, duration and clipping. A zombie already rising is rejected before mutation. This command never creates or saves a profile.
+
+`speed` accepts `next:true` to invoke the actual native speed button event. It cannot be combined with `index`. Poll `speed` again after several frames to verify that the selected and effective speed persist.
+
+The debug zombie chooser excludes native DuckyTube and library duck-only entries. Choose the base zombie; native terrain and Zombie Library select its duck appearance automatically in water. The read-only `catalog.zombies.native` enum list remains complete for API compatibility.

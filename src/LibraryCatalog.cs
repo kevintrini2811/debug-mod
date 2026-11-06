@@ -18,7 +18,7 @@ internal static class LibraryCatalog
     private static readonly Func<IEnumerable<(ZombieType NativeType, string Name, Func<Sprite?> Portrait,
         Func<Sprite?> Thumbnail, Func<Board, int, Zombie?> Spawn)>>? zombies =
         OptionalModApi.Bind<Func<IEnumerable<(ZombieType, string, Func<Sprite?>, Func<Sprite?>, Func<Board, int, Zombie?>)>>>(
-            "ZombieLibrary", "ZombieLibrary.DebugCatalog", "Entries");
+            "ZombieLibrary", "ZombieLibrary.DebugCatalog", "SelectionEntries");
     private static readonly Func<Board, SeedType, SeedType, bool, int, int, bool>? fusionPlace =
         OptionalModApi.Bind<Func<Board, SeedType, SeedType, bool, int, int, bool>>("FusionMod", "FusionMod.DebugFusionIntegration", "Place");
     private static readonly Func<Board, IEnumerable<(SeedType NativeType, SeedType Marker, string Name, string Portrait, int Cost)>>? ingredients =

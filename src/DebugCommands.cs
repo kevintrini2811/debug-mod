@@ -23,7 +23,7 @@ internal static class DebugCommands
     private static readonly Func<Board, int, int, bool, bool>? treasure = OptionalModApi.Bind<Func<Board, int, int, bool, bool>>("FusionMod", "FusionMod.TreasureMines", "SetTreasure");
     internal static readonly string[] Commands = { "help", "status", "startup.continue", "levels", "level.start", "level.leave", "debug.backgrounds", "debug.start",
         "catalog.plants", "catalog.zombies", "debug.roster", "chooser", "chooser.select", "bank", "bank.set", "board", "plants", "zombies", "waves",
-        "debug.ui", "debug.items", "debug.treasure.set", "debug.difficulty", "debug.plant.set", "debug.fertilize", "projectiles", "coins", "waves.set", "plant.place", "zombie.place", "plant.move", "zombie.move", "plant.remove", "zombie.remove", "debug.zombie.set", "debug.balloon.pop", "sun.set", "coins.level.set",
+        "debug.ui", "debug.items", "debug.treasure.set", "debug.difficulty", "debug.plant.set", "debug.fertilize", "projectiles", "coins", "waves.set", "plant.place", "zombie.place", "plant.move", "zombie.move", "plant.remove", "zombie.remove", "debug.zombie.set", "debug.balloon.pop", "debug.zombie.rise", "sun.set", "coins.level.set",
         "coins.profile.set", "unlock.plant", "unlock.almanac", "unlocks.reset", "almanac", "screenshot", "speed", "fps", "settings", "settings.set", "pause" };
 
     internal static object Status()
@@ -173,7 +173,7 @@ internal static class DebugCommands
                 return new { amount = user.GetCoins(), persisted = saved, unit = "native profile coin units (one unit = 10 displayed coins)" };
         }
         if (!Commands.Contains(command)) throw new ApiError("UNKNOWN_COMMAND", $"Unknown command: {command}. Use help.");
-        var board = command.EndsWith(".move") || command.EndsWith(".remove") || command is "debug.balloon.pop" or "debug.zombie.set" or "debug.plant.set" or "debug.fertilize" or "debug.treasure.set" ? EntityBoard(args) : ApiBoard.Require(command != "bank");
+        var board = command.EndsWith(".move") || command.EndsWith(".remove") || command is "debug.zombie.rise" or "debug.balloon.pop" or "debug.zombie.set" or "debug.plant.set" or "debug.fertilize" or "debug.treasure.set" ? EntityBoard(args) : ApiBoard.Require(command != "bank");
         switch (command)
         {
             case "pause":
@@ -221,6 +221,16 @@ internal static class DebugCommands
                 MoveZombie(board, zombie, Int(args, "col"), Int(args, "row")); return ZombieInfo(zombie);
             case "plant.remove": FindPlant(board, Id(args)).Die(); return new { removed = true };
             case "zombie.remove": FindZombie(board, Id(args)).DieNoLoot(); return new { removed = true };
+            case "debug.zombie.rise":
+                if (!DebugMode.Owns(board)) throw new ApiError("DEBUG_REQUIRED", "No active debug session.");
+                var rising = FindZombie(board, Id(args));
+                int graveCol = Int(args, "col", 0, 8), graveRow = Int(args, "row", 0, board.GetNumRows() - 1);
+                if (board.GetGraveStoneAt(graveCol, graveRow) == null)
+                    throw new ApiError("INVALID_PLACEMENT", "Expected an existing gravestone.");
+                if (rising.mZombiePhase == ZombiePhase.RisingFromGrave || rising.IsDeadOrDying())
+                    throw new ApiError("INVALID_ARGUMENT", "Expected a living zombie outside a grave rise.");
+                rising.RiseFromGrave(graveCol, graveRow);
+                return ZombieInfo(rising);
             case "debug.balloon.pop":
                 if (!DebugMode.Owns(board)) throw new ApiError("DEBUG_REQUIRED", "No active debug session.");
                 var balloon = FindZombie(board, Id(args));
@@ -595,7 +605,10 @@ internal static class DebugCommands
         ApiBoard.Require();
         var cycler = Object.FindObjectsOfType<Il2Cpp.TimeCycler>().FirstOrDefault(c => c && c.gameObject.activeInHierarchy)
             ?? throw new ApiError("SPEED_NOT_READY", "No active native time cycler.");
+        if (args.TryGetProperty("index", out _) && Bool(args, "next"))
+            throw new ApiError("INVALID_ARGUMENT", "Specify index or next, not both.");
         if (args.TryGetProperty("index", out _)) cycler._setTimeIndex(Int(args, "index", 0, cycler.m_cycles.Length - 1));
+        if (Bool(args, "next")) cycler.m_button.onClick.Invoke();
         return new { selected = cycler.m_cycleIndex, effective = Il2Cpp.TimeUtil.GetFlowingTimeScale(),
             cycles = Enumerable.Range(0, cycler.m_cycles.Length).Select(index => new { index, scale = cycler.m_cycles[index].TimeScale }).ToArray() };
     }
