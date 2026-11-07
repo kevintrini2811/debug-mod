@@ -278,6 +278,8 @@ The zombie bar in the running debug level uses the same exported gray roster and
 
 `debug.items` returns the current board identifier and scalar native fields of all live `GridItem` objects. The command is only available in temporary debug sessions and does not change any values. This allows, for example, saved shield points and their complete receiver DataID to be compared before and after real hits. Field identifiers remain the property of the respective mod.
 
+Debug Mod 1.3.15 also returns `fusionDrops`, a separate array of the current board's live Fusion metal drops. Each entry contains native identity strings `type` and `marker`, `row`, board-pixel coordinates `x` and `y`, and `age` in simulation ticks. This observes existing drops without changing their age, selection, position or lifetime. Missing or older Fusion versions return an empty array; the existing native `items` array remains available. Consumed, expired and other-board drops are excluded by Fusion's owner.
+
 ```sh
 python3 pvzreplanted/debug-mod/tools/debug_api.py debug.items
 ```

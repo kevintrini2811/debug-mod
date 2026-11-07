@@ -203,12 +203,7 @@ internal static partial class DebugCommands
                 var pickups = new List<Dictionary<string, object?>>();
                 for (int i = 0; i < board.m_coins.Count; ++i) if (board.m_coins[i] is { mDead: false } coin) pickups.Add(Snapshot(coin));
                 return new { board = ApiBoard.Token, items = pickups };
-            case "debug.items":
-                if (!DebugMode.Owns(board)) throw new ApiError("DEBUG_REQUIRED", "Item inspection requires a temporary debug session.");
-                var items = new List<Dictionary<string, object?>>();
-                for (int i = 0; i < board.m_gridItems.Count; ++i)
-                    if (board.m_gridItems[i] is { mDead: false } item) items.Add(Snapshot(item));
-                return new { board = ApiBoard.Token, items };
+            case "debug.items": return Items(board);
             case "waves": return Waves(board);
             case "waves.set": return SetWaves(board, args);
             case "board": return BoardInfo(board);

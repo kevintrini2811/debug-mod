@@ -1,4 +1,6 @@
-# Debug Mod 1.3.14
+# Debug Mod 1.3.15
+
+Version 1.3.15 extends `debug.items` with optional Fusion metal-drop snapshots (`fusionDrops`), including type, marker, row, position and age. Existing board validation and optional-mod behavior remain in effect.
 
 Version 1.3.14 refreshes the bundled Fusion packet atlas with Hypno Chomper and Bolt-pult. Both original portraits use the existing chooser and seed-bank renderer.
 
