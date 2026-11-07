@@ -1,4 +1,6 @@
-# Debug Mod 1.3.13
+# Debug Mod 1.3.14
+
+Version 1.3.14 refreshes the bundled Fusion packet atlas with Hypno Chomper and Bolt-pult. Both original portraits use the existing chooser and seed-bank renderer.
 
 Version 1.3.13 refreshes the bundled Fusion packet atlas with Squashwood, Torchweed and Roasted Spikeweed. Their original portraits are available in the debug chooser and seed bank through the existing card renderer.
 

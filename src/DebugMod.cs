@@ -3,7 +3,7 @@ using ReplantedModUi;
 using Il2CppReloaded.Gameplay;
 using System.Reflection;
 
-[assembly: MelonInfo(typeof(DebugMod.Mod), "Debug Mod", "1.3.13", "Kevin / Codex")]
+[assembly: MelonInfo(typeof(DebugMod.Mod), "Debug Mod", "1.3.14", "Kevin / Codex")]
 [assembly: MelonGame("PopCap Games", "PvZ Replanted")]
 [assembly: MelonOptionalDependencies("FusionMod", "LawnGlove", "PlantLibrary", "ZombieLibrary", "SpeedMod",
     "DifficultyMod", "SunCollector", "BloomEngine", "PvZRepatched", "ReplantAPI")]
