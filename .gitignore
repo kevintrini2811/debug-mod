@@ -1,0 +1,31 @@
+# .NET build output, including nested tests and example projects.
+bin/
+obj/
+
+# Python bytecode and local tooling caches.
+__pycache__/
+*.py[cod]
+.cache/
+.codegraph/
+
+# Local runtime evidence and test environments.
+.test-runs/
+test-prefix/
+
+# Research/reference archives and backups kept locally.
+references/
+research/
+backup/
+backups/
+
+# Logs and editor backup files.
+*.log
+*~
+
+# Local planning and provenance files.
+faehigkeiten-und-grenzen.md
+fusionen-quellen.json
+fusionen.txt
+vorgehen-neue-fusionen.md
+workflow-referenz.md
+workflow.md

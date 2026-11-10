@@ -1,0 +1,233 @@
+{
+  "rawDirectory": "/home/kevin/modding/pvzreplanted/.test-runs/teardown-review-20261106",
+  "beforeMinimalProfile": [
+    {
+      "stage": "menu",
+      "errors": {
+        "Attempting to use an invalid operation handle": 0,
+        "Releasing render texture that is set as Camera.targetTexture!": 0,
+        "Unable to load dependent bundle": 0
+      }
+    },
+    {
+      "stage": "create",
+      "errors": {
+        "Attempting to use an invalid operation handle": 0,
+        "Releasing render texture that is set as Camera.targetTexture!": 0,
+        "Unable to load dependent bundle": 0
+      }
+    },
+    {
+      "stage": "switch",
+      "errors": {
+        "Attempting to use an invalid operation handle": 0,
+        "Releasing render texture that is set as Camera.targetTexture!": 0,
+        "Unable to load dependent bundle": 0
+      }
+    },
+    {
+      "stage": "delete",
+      "errors": {
+        "Attempting to use an invalid operation handle": 368,
+        "Releasing render texture that is set as Camera.targetTexture!": 0,
+        "Unable to load dependent bundle": 0
+      }
+    },
+    {
+      "stage": "shutdown",
+      "elapsed": 2.6664090030026273,
+      "errors": {
+        "Attempting to use an invalid operation handle": 368,
+        "Releasing render texture that is set as Camera.targetTexture!": 8,
+        "Unable to load dependent bundle": 0
+      }
+    }
+  ],
+  "afterProfileAndDebug": [
+    {
+      "stage": "menu",
+      "errors": {
+        "Attempting to use an invalid operation handle": 0,
+        "Releasing render texture that is set as Camera.targetTexture!": 0,
+        "Unable to load dependent bundle": 0
+      }
+    },
+    {
+      "stage": "create",
+      "errors": {
+        "Attempting to use an invalid operation handle": 0,
+        "Releasing render texture that is set as Camera.targetTexture!": 0,
+        "Unable to load dependent bundle": 0
+      }
+    },
+    {
+      "stage": "switch",
+      "errors": {
+        "Attempting to use an invalid operation handle": 0,
+        "Releasing render texture that is set as Camera.targetTexture!": 0,
+        "Unable to load dependent bundle": 0
+      }
+    },
+    {
+      "stage": "delete",
+      "errors": {
+        "Attempting to use an invalid operation handle": 0,
+        "Releasing render texture that is set as Camera.targetTexture!": 0,
+        "Unable to load dependent bundle": 0
+      }
+    },
+    {
+      "stage": "debug-start",
+      "errors": {
+        "Attempting to use an invalid operation handle": 0,
+        "Releasing render texture that is set as Camera.targetTexture!": 0,
+        "Unable to load dependent bundle": 0
+      }
+    },
+    {
+      "stage": "debug-leave",
+      "errors": {
+        "Attempting to use an invalid operation handle": 0,
+        "Releasing render texture that is set as Camera.targetTexture!": 0,
+        "Unable to load dependent bundle": 0
+      }
+    },
+    {
+      "stage": "second-debug-start",
+      "errors": {
+        "Attempting to use an invalid operation handle": 0,
+        "Releasing render texture that is set as Camera.targetTexture!": 0,
+        "Unable to load dependent bundle": 0
+      }
+    },
+    {
+      "stage": "debug-shutdown",
+      "errors": {
+        "Attempting to use an invalid operation handle": 0,
+        "Releasing render texture that is set as Camera.targetTexture!": 3,
+        "Unable to load dependent bundle": 0
+      }
+    }
+  ],
+  "uninstrumentedFinalProfile": [
+    {
+      "stage": "menu",
+      "errors": {
+        "Attempting to use an invalid operation handle": 0,
+        "Releasing render texture that is set as Camera.targetTexture!": 0,
+        "Unable to load dependent bundle": 0
+      }
+    },
+    {
+      "stage": "create",
+      "errors": {
+        "Attempting to use an invalid operation handle": 0,
+        "Releasing render texture that is set as Camera.targetTexture!": 0,
+        "Unable to load dependent bundle": 0
+      }
+    },
+    {
+      "stage": "switch",
+      "errors": {
+        "Attempting to use an invalid operation handle": 0,
+        "Releasing render texture that is set as Camera.targetTexture!": 0,
+        "Unable to load dependent bundle": 0
+      }
+    },
+    {
+      "stage": "delete",
+      "errors": {
+        "Attempting to use an invalid operation handle": 0,
+        "Releasing render texture that is set as Camera.targetTexture!": 0,
+        "Unable to load dependent bundle": 0
+      }
+    },
+    {
+      "stage": "shutdown",
+      "elapsed": 9.222301492001861,
+      "errors": {
+        "Attempting to use an invalid operation handle": 0,
+        "Releasing render texture that is set as Camera.targetTexture!": 3,
+        "Unable to load dependent bundle": 0
+      }
+    }
+  ],
+  "originalProfileRestored": true,
+  "testProfileRemoved": true,
+  "almanacRestoredAfterLeave": true,
+  "nativeProfileTrace": [
+    {
+      "kind": "SetActiveProfile.before",
+      "frame": 516,
+      "requested": 1,
+      "active": 0,
+      "count": 2
+    },
+    {
+      "kind": "SetActiveProfile.after",
+      "frame": 516,
+      "requested": null,
+      "active": 1,
+      "count": 2
+    },
+    {
+      "kind": "SetActiveProfile.before",
+      "frame": 582,
+      "requested": 0,
+      "active": 1,
+      "count": 2
+    },
+    {
+      "kind": "SetActiveProfile.after",
+      "frame": 582,
+      "requested": null,
+      "active": 0,
+      "count": 2
+    },
+    {
+      "kind": "SetActiveProfile.before",
+      "frame": 646,
+      "requested": 1,
+      "active": 0,
+      "count": 2
+    },
+    {
+      "kind": "SetActiveProfile.after",
+      "frame": 646,
+      "requested": null,
+      "active": 1,
+      "count": 2
+    },
+    {
+      "kind": "DeleteProfile.before",
+      "frame": 646,
+      "requested": null,
+      "active": 1,
+      "count": 2
+    },
+    {
+      "kind": "SetActiveProfile.before",
+      "frame": 646,
+      "requested": 0,
+      "active": 1,
+      "count": 1
+    },
+    {
+      "kind": "SetActiveProfile.after",
+      "frame": 646,
+      "requested": null,
+      "active": 0,
+      "count": 1
+    },
+    {
+      "kind": "DeleteProfile.after",
+      "frame": 646,
+      "requested": null,
+      "active": 0,
+      "count": 1
+    }
+  ],
+  "probeRemoved": true,
+  "installedDebugSHA256": "b45a5c3b0475fa608de0f21033af99e8c4ea1a39a1a16e65ea15f3b6306dc950",
+  "remainingRenderTextureIssue": true
+}

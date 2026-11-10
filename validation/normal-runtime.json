@@ -1,0 +1,2211 @@
+[
+  {
+    "command": "levels",
+    "args": {},
+    "response": {
+      "protocol": 1,
+      "id": "8c22b58ac7da4202a4b432b3faf9b767",
+      "session": "781157e8dd5043b4a51f032814773b20",
+      "ok": true,
+      "result": [
+        {
+          "index": 0,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 1-1",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 1,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 1,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 1-2",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 2,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 2,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 1-3",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 3,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 3,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 1-4",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 4,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 4,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 1-5",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 5,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 5,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 1-6",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 6,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 6,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 1-7",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 7,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 7,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 1-8",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 8,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 8,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 1-9",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 9,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 9,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 1-10",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 10,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 10,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 2-1",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 11,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 11,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 2-2",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 12,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 12,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 2-3",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 13,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 13,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 2-4",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 14,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 14,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 2-5",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 15,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 15,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 2-6",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 16,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 16,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 2-7",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 17,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 17,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 2-8",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 18,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 18,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 2-9",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 19,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 19,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 2-10",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 20,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 20,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 3-1",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 21,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 21,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 3-2",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 22,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 22,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 3-3",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 23,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 23,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 3-4",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 24,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 24,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 3-5",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 25,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 25,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 3-6",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 26,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 26,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 3-7",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 27,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 27,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 3-8",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 28,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 28,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 3-9",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 29,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 29,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 3-10",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 30,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 30,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 4-1",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 31,
+          "area": "Fog",
+          "SubIndex": 0
+        },
+        {
+          "index": 31,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 4-2",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 32,
+          "area": "Fog",
+          "SubIndex": 0
+        },
+        {
+          "index": 32,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 4-3",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 33,
+          "area": "Fog",
+          "SubIndex": 0
+        },
+        {
+          "index": 33,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 4-4",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 34,
+          "area": "Fog",
+          "SubIndex": 0
+        },
+        {
+          "index": 34,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 4-5",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 35,
+          "area": "Fog",
+          "SubIndex": 0
+        },
+        {
+          "index": 35,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 4-6",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 36,
+          "area": "Fog",
+          "SubIndex": 0
+        },
+        {
+          "index": 36,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 4-7",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 37,
+          "area": "Fog",
+          "SubIndex": 0
+        },
+        {
+          "index": 37,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 4-8",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 38,
+          "area": "Fog",
+          "SubIndex": 0
+        },
+        {
+          "index": 38,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 4-9",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 39,
+          "area": "Fog",
+          "SubIndex": 0
+        },
+        {
+          "index": 39,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 4-10",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 40,
+          "area": "Fog",
+          "SubIndex": 0
+        },
+        {
+          "index": 40,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 5-1",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 41,
+          "area": "Roof",
+          "SubIndex": 0
+        },
+        {
+          "index": 41,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 5-2",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 42,
+          "area": "Roof",
+          "SubIndex": 0
+        },
+        {
+          "index": 42,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 5-3",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 43,
+          "area": "Roof",
+          "SubIndex": 0
+        },
+        {
+          "index": 43,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 5-4",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 44,
+          "area": "Roof",
+          "SubIndex": 0
+        },
+        {
+          "index": 44,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 5-5",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 45,
+          "area": "Roof",
+          "SubIndex": 0
+        },
+        {
+          "index": 45,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 5-6",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 46,
+          "area": "Roof",
+          "SubIndex": 0
+        },
+        {
+          "index": 46,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 5-7",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 47,
+          "area": "Roof",
+          "SubIndex": 0
+        },
+        {
+          "index": 47,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 5-8",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 48,
+          "area": "Roof",
+          "SubIndex": 0
+        },
+        {
+          "index": 48,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 5-9",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 49,
+          "area": "Roof",
+          "SubIndex": 0
+        },
+        {
+          "index": 49,
+          "LevelName": "$LEVEL",
+          "FullLevelName": "Level 5-10",
+          "mode": "Adventure",
+          "reloadedMode": "None",
+          "LevelNumber": 50,
+          "area": "Boss",
+          "SubIndex": 0
+        },
+        {
+          "index": 50,
+          "LevelName": "$ZEN_GARDEN",
+          "FullLevelName": "Zen-Garten",
+          "mode": "ChallengeZenGarden",
+          "reloadedMode": "None",
+          "LevelNumber": 1,
+          "area": "ZenGarden",
+          "SubIndex": 0
+        },
+        {
+          "index": 51,
+          "LevelName": "$WAR_AND_PEAS",
+          "FullLevelName": "ZomBotanik",
+          "mode": "ChallengeWarAndPeas",
+          "reloadedMode": "None",
+          "LevelNumber": 1,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 52,
+          "LevelName": "$WALL_NUT_BOWLING",
+          "FullLevelName": "Nuss-Bowling",
+          "mode": "ChallengeWallnutBowling",
+          "reloadedMode": "None",
+          "LevelNumber": 2,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 53,
+          "LevelName": "$SLOT_MACHINE",
+          "FullLevelName": "Spielautomat",
+          "mode": "ChallengeSlotMachine",
+          "reloadedMode": "None",
+          "LevelNumber": 3,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 54,
+          "LevelName": "$ITS_RAINING_SEEDS",
+          "FullLevelName": "Es regnet Pflanzen",
+          "mode": "ChallengeRainingSeeds",
+          "reloadedMode": "None",
+          "LevelNumber": 4,
+          "area": "Fog",
+          "SubIndex": 0
+        },
+        {
+          "index": 55,
+          "LevelName": "$BEGHOULED",
+          "FullLevelName": "Beghouled",
+          "mode": "ChallengeBeghouled",
+          "reloadedMode": "None",
+          "LevelNumber": 5,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 56,
+          "LevelName": "$INVISIGHOUL",
+          "FullLevelName": "Geisterhaft",
+          "mode": "ChallengeInvisighoul",
+          "reloadedMode": "None",
+          "LevelNumber": 6,
+          "area": "Fog",
+          "SubIndex": 0
+        },
+        {
+          "index": 57,
+          "LevelName": "$SEEING_STARS",
+          "FullLevelName": "Ich seh Sternchen",
+          "mode": "ChallengeSeeingStars",
+          "reloadedMode": "None",
+          "LevelNumber": 7,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 58,
+          "LevelName": "$ZOMBIQUARIUM",
+          "FullLevelName": "Zombiquarium",
+          "mode": "ChallengeZombiquarium",
+          "reloadedMode": "None",
+          "LevelNumber": 8,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 59,
+          "LevelName": "$BEGHOULED_TWIST",
+          "FullLevelName": "Beghouled mit Twist",
+          "mode": "ChallengeBeghouledTwist",
+          "reloadedMode": "None",
+          "LevelNumber": 9,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 60,
+          "LevelName": "$LITTLE_TROUBLE",
+          "FullLevelName": "Problem gro\u00df, Zombie klein",
+          "mode": "ChallengeLittleTrouble",
+          "reloadedMode": "None",
+          "LevelNumber": 10,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 61,
+          "LevelName": "$PORTAL_COMBAT",
+          "FullLevelName": "Portal Combat",
+          "mode": "ChallengePortalCombat",
+          "reloadedMode": "None",
+          "LevelNumber": 11,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 62,
+          "LevelName": "$COLUMN_AS_YOU_SEE_EM",
+          "FullLevelName": "Reihenweise Zombie-Greise",
+          "mode": "ChallengeColumn",
+          "reloadedMode": "None",
+          "LevelNumber": 12,
+          "area": "Roof",
+          "SubIndex": 0
+        },
+        {
+          "index": 63,
+          "LevelName": "$BOBSLED_BONANZA",
+          "FullLevelName": "Schlittenfahrt",
+          "mode": "ChallengeBobsledBonanza",
+          "reloadedMode": "None",
+          "LevelNumber": 13,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 64,
+          "LevelName": "$ZOMBIES_ON_SPEED",
+          "FullLevelName": "Zombastisch",
+          "mode": "ChallengeSpeed",
+          "reloadedMode": "None",
+          "LevelNumber": 14,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 65,
+          "LevelName": "$WHACK_A_ZOMBIE",
+          "FullLevelName": "Hau den Zombie",
+          "mode": "ChallengeWhackAZombie",
+          "reloadedMode": "None",
+          "LevelNumber": 15,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 66,
+          "LevelName": "$LAST_STAND",
+          "FullLevelName": "Das letzte Gefecht",
+          "mode": "ChallengeLastStand",
+          "reloadedMode": "None",
+          "LevelNumber": 16,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 67,
+          "LevelName": "$WAR_AND_PEAS_2",
+          "FullLevelName": "ZomBotanik 2",
+          "mode": "ChallengeWarAndPeas2",
+          "reloadedMode": "None",
+          "LevelNumber": 17,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 68,
+          "LevelName": "$WALL_NUT_BOWLING_EXTREME",
+          "FullLevelName": "Nuss-Bowling 2",
+          "mode": "ChallengeWallnutBowling2",
+          "reloadedMode": "None",
+          "LevelNumber": 18,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 69,
+          "LevelName": "$POGO_PARTY",
+          "FullLevelName": "Pogo-Party",
+          "mode": "ChallengePogoParty",
+          "reloadedMode": "None",
+          "LevelNumber": 19,
+          "area": "Roof",
+          "SubIndex": 0
+        },
+        {
+          "index": 70,
+          "LevelName": "$FINAL_BOSS",
+          "FullLevelName": "Rache des Dr. Zomboss",
+          "mode": "ChallengeFinalBoss",
+          "reloadedMode": "None",
+          "LevelNumber": 20,
+          "area": "Boss",
+          "SubIndex": 0
+        },
+        {
+          "index": 71,
+          "LevelName": "$ART_CHALLENGE_WALL_NUT",
+          "FullLevelName": "Knack die Wall-Nuss",
+          "mode": "ChallengeArtChallenge1",
+          "reloadedMode": "None",
+          "LevelNumber": 21,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 72,
+          "LevelName": "$SUNNY_DAY",
+          "FullLevelName": "Sonniger Tag",
+          "mode": "ChallengeSunnyDay",
+          "reloadedMode": "None",
+          "LevelNumber": 22,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 73,
+          "LevelName": "$UNSODDED",
+          "FullLevelName": "Entwurzelt",
+          "mode": "ChallengeResodded",
+          "reloadedMode": "None",
+          "LevelNumber": 23,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 74,
+          "LevelName": "$BIG_TIME",
+          "FullLevelName": "Echt klasse",
+          "mode": "ChallengeBigTime",
+          "reloadedMode": "None",
+          "LevelNumber": 24,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 75,
+          "LevelName": "$ART_CHALLENGE_SUNFLOWER",
+          "FullLevelName": "Kunstzugabe Sonnenblume",
+          "mode": "ChallengeArtChallenge2",
+          "reloadedMode": "None",
+          "LevelNumber": 25,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 76,
+          "LevelName": "$AIR_RAID",
+          "FullLevelName": "Luftangriff",
+          "mode": "ChallengeAirRaid",
+          "reloadedMode": "None",
+          "LevelNumber": 26,
+          "area": "Fog",
+          "SubIndex": 0
+        },
+        {
+          "index": 77,
+          "LevelName": "$ICE_LEVEL",
+          "FullLevelName": "Eis-Level",
+          "mode": "ChallengeIce",
+          "reloadedMode": "None",
+          "LevelNumber": 27,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 78,
+          "LevelName": "$ZEN_GARDEN",
+          "FullLevelName": "Zen-Garten",
+          "mode": "ChallengeZenGarden",
+          "reloadedMode": "None",
+          "LevelNumber": 28,
+          "area": "Invalid",
+          "SubIndex": 0
+        },
+        {
+          "index": 79,
+          "LevelName": "$HIGH_GRAVITY",
+          "FullLevelName": "Starke Schwerkraft",
+          "mode": "ChallengeHighGravity",
+          "reloadedMode": "None",
+          "LevelNumber": 29,
+          "area": "Roof",
+          "SubIndex": 0
+        },
+        {
+          "index": 80,
+          "LevelName": "$GRAVE_DANGER",
+          "FullLevelName": "Grabesstille",
+          "mode": "ChallengeGraveDanger",
+          "reloadedMode": "None",
+          "LevelNumber": 30,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 81,
+          "LevelName": "$CAN_YOU_DIG_IT",
+          "FullLevelName": "Hast du's drauf?",
+          "mode": "ChallengeShovel",
+          "reloadedMode": "None",
+          "LevelNumber": 31,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 82,
+          "LevelName": "$DARK_STORMY_NIGHT",
+          "FullLevelName": "Dunkle, st\u00fcrmische Nacht",
+          "mode": "ChallengeStormyNight",
+          "reloadedMode": "None",
+          "LevelNumber": 32,
+          "area": "Fog",
+          "SubIndex": 0
+        },
+        {
+          "index": 83,
+          "LevelName": "$BUNGEE_BLITZ",
+          "FullLevelName": "Bungee-Blitz",
+          "mode": "ChallengeBungeeBlitz",
+          "reloadedMode": "None",
+          "LevelNumber": 33,
+          "area": "Roof",
+          "SubIndex": 0
+        },
+        {
+          "index": 84,
+          "LevelName": "$SQUIRREL",
+          "FullLevelName": "Eichh\u00f6rnchen",
+          "mode": "ChallengeSquirrel",
+          "reloadedMode": "None",
+          "LevelNumber": 34,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 85,
+          "LevelName": "$SURVIVAL_DAY_NORMAL",
+          "FullLevelName": "\u00dcberleben: Tag",
+          "mode": "SurvivalNormalStage1",
+          "reloadedMode": "None",
+          "LevelNumber": 1,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 86,
+          "LevelName": "$SURVIVAL_NIGHT_NORMAL",
+          "FullLevelName": "\u00dcberleben: Nacht",
+          "mode": "SurvivalNormalStage2",
+          "reloadedMode": "None",
+          "LevelNumber": 2,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 87,
+          "LevelName": "$SURVIVAL_POOL_NORMAL",
+          "FullLevelName": "\u00dcberleben: Pool",
+          "mode": "SurvivalNormalStage3",
+          "reloadedMode": "None",
+          "LevelNumber": 3,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 88,
+          "LevelName": "$SURVIVAL_FOG_NORMAL",
+          "FullLevelName": "\u00dcberleben: Nebel",
+          "mode": "SurvivalNormalStage4",
+          "reloadedMode": "None",
+          "LevelNumber": 4,
+          "area": "Fog",
+          "SubIndex": 0
+        },
+        {
+          "index": 89,
+          "LevelName": "$SURVIVAL_ROOF_NORMAL",
+          "FullLevelName": "\u00dcberleben: Dach",
+          "mode": "SurvivalNormalStage5",
+          "reloadedMode": "None",
+          "LevelNumber": 5,
+          "area": "Roof",
+          "SubIndex": 0
+        },
+        {
+          "index": 90,
+          "LevelName": "$SURVIVAL_DAY_HARD",
+          "FullLevelName": "\u00dcberleben: Tag (Schwer)",
+          "mode": "SurvivalHardStage1",
+          "reloadedMode": "None",
+          "LevelNumber": 6,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 91,
+          "LevelName": "$SURVIVAL_NIGHT_HARD",
+          "FullLevelName": "\u00dcberleben: Nacht (Schwer)",
+          "mode": "SurvivalHardStage2",
+          "reloadedMode": "None",
+          "LevelNumber": 7,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 92,
+          "LevelName": "$SURVIVAL_POOL_HARD",
+          "FullLevelName": "\u00dcberleben: Pool (Schwer)",
+          "mode": "SurvivalHardStage3",
+          "reloadedMode": "None",
+          "LevelNumber": 8,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 93,
+          "LevelName": "$SURVIVAL_FOG_HARD",
+          "FullLevelName": "\u00dcberleben: Nebel (Schwer)",
+          "mode": "SurvivalHardStage4",
+          "reloadedMode": "None",
+          "LevelNumber": 9,
+          "area": "Fog",
+          "SubIndex": 0
+        },
+        {
+          "index": 94,
+          "LevelName": "$SURVIVAL_ROOF_HARD",
+          "FullLevelName": "\u00dcberleben: Dach (Schwer)",
+          "mode": "SurvivalHardStage5",
+          "reloadedMode": "None",
+          "LevelNumber": 10,
+          "area": "Roof",
+          "SubIndex": 0
+        },
+        {
+          "index": 95,
+          "LevelName": "$SURVIVAL_POOL_ENDLESS",
+          "FullLevelName": "\u00dcberleben: Pool (Endlos)",
+          "mode": "SurvivalEndlessStage3",
+          "reloadedMode": "None",
+          "LevelNumber": 13,
+          "area": "Pool",
+          "SubIndex": 0
+        },
+        {
+          "index": 96,
+          "LevelName": "$SCARY_POTTER_1",
+          "FullLevelName": "Vasenbrecher",
+          "mode": "ScaryPotter1",
+          "reloadedMode": "None",
+          "LevelNumber": 1,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 97,
+          "LevelName": "$SCARY_POTTER_2",
+          "FullLevelName": "Nach links",
+          "mode": "ScaryPotter2",
+          "reloadedMode": "None",
+          "LevelNumber": 2,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 98,
+          "LevelName": "$SCARY_POTTER_3",
+          "FullLevelName": "Dritte Vase",
+          "mode": "ScaryPotter3",
+          "reloadedMode": "None",
+          "LevelNumber": 3,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 99,
+          "LevelName": "$SCARY_POTTER_4",
+          "FullLevelName": "Kettenreaktion",
+          "mode": "ScaryPotter4",
+          "reloadedMode": "None",
+          "LevelNumber": 4,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 100,
+          "LevelName": "$SCARY_POTTER_5",
+          "FullLevelName": "M steht f\u00fcr Metall",
+          "mode": "ScaryPotter5",
+          "reloadedMode": "None",
+          "LevelNumber": 5,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 101,
+          "LevelName": "$SCARY_POTTER_6",
+          "FullLevelName": "Scary Potter",
+          "mode": "ScaryPotter6",
+          "reloadedMode": "None",
+          "LevelNumber": 6,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 102,
+          "LevelName": "$SCARY_POTTER_7",
+          "FullLevelName": "Hokus Pokus",
+          "mode": "ScaryPotter7",
+          "reloadedMode": "None",
+          "LevelNumber": 7,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 103,
+          "LevelName": "$SCARY_POTTER_8",
+          "FullLevelName": "Eine weitere Kettenreaktion",
+          "mode": "ScaryPotter8",
+          "reloadedMode": "None",
+          "LevelNumber": 8,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 104,
+          "LevelName": "$SCARY_POTTER_9",
+          "FullLevelName": "Ace of Vase",
+          "mode": "ScaryPotter9",
+          "reloadedMode": "None",
+          "LevelNumber": 9,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 105,
+          "LevelName": "$SCARY_POTTER_ENDLESS",
+          "FullLevelName": "Vasenbrecher (Endlos)",
+          "mode": "ScaryPotterEndless",
+          "reloadedMode": "None",
+          "LevelNumber": 10,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 106,
+          "LevelName": "$I_ZOMBIE",
+          "FullLevelName": "Ich, Zombie",
+          "mode": "PuzzleIZombie1",
+          "reloadedMode": "None",
+          "LevelNumber": 11,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 107,
+          "LevelName": "$I_ZOMBIE_TOO",
+          "FullLevelName": "Ich, ein zweiter Zombie",
+          "mode": "PuzzleIZombie2",
+          "reloadedMode": "None",
+          "LevelNumber": 12,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 108,
+          "LevelName": "$I_ZOMBIE_3",
+          "FullLevelName": "Hast du's drauf?",
+          "mode": "PuzzleIZombie3",
+          "reloadedMode": "None",
+          "LevelNumber": 13,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 109,
+          "LevelName": "$I_ZOMBIE_4",
+          "FullLevelName": "Nussini",
+          "mode": "PuzzleIZombie4",
+          "reloadedMode": "None",
+          "LevelNumber": 14,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 110,
+          "LevelName": "$I_ZOMBIE_5",
+          "FullLevelName": "Dead Zeppelin",
+          "mode": "PuzzleIZombie5",
+          "reloadedMode": "None",
+          "LevelNumber": 15,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 111,
+          "LevelName": "$I_ZOMBIE_6",
+          "FullLevelName": "Ich kaputtmachen!",
+          "mode": "PuzzleIZombie6",
+          "reloadedMode": "None",
+          "LevelNumber": 16,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 112,
+          "LevelName": "$I_ZOMBIE_7",
+          "FullLevelName": "ZomBoogie",
+          "mode": "PuzzleIZombie7",
+          "reloadedMode": "None",
+          "LevelNumber": 17,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 113,
+          "LevelName": "$I_ZOMBIE_8",
+          "FullLevelName": "3-Trefferado",
+          "mode": "PuzzleIZombie8",
+          "reloadedMode": "None",
+          "LevelNumber": 18,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 114,
+          "LevelName": "$I_ZOMBIE_9",
+          "FullLevelName": "All eure Geh\u00fcrne sind unser",
+          "mode": "PuzzleIZombie9",
+          "reloadedMode": "None",
+          "LevelNumber": 19,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 115,
+          "LevelName": "$I_ZOMBIE_ENDLESS",
+          "FullLevelName": "Ich, Zombie (Endlos)",
+          "mode": "PuzzleIZombieEndless",
+          "reloadedMode": "None",
+          "LevelNumber": 20,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 116,
+          "LevelName": "$CLOUDY_DAY_1",
+          "FullLevelName": "Leicht bew\u00f6lkt \u2013 Level 1",
+          "mode": "Adventure",
+          "reloadedMode": "CloudyDay",
+          "LevelNumber": 6,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 117,
+          "LevelName": "$CLOUDY_DAY_2",
+          "FullLevelName": "Leicht bew\u00f6lkt \u2013 Level 2",
+          "mode": "Adventure",
+          "reloadedMode": "CloudyDay",
+          "LevelNumber": 7,
+          "area": "Day",
+          "SubIndex": 1
+        },
+        {
+          "index": 118,
+          "LevelName": "$CLOUDY_DAY_3",
+          "FullLevelName": "Leicht bew\u00f6lkt \u2013 Level 3",
+          "mode": "Adventure",
+          "reloadedMode": "CloudyDay",
+          "LevelNumber": 8,
+          "area": "Day",
+          "SubIndex": 2
+        },
+        {
+          "index": 119,
+          "LevelName": "$CLOUDY_DAY_4",
+          "FullLevelName": "Leicht bew\u00f6lkt \u2013 Level 4",
+          "mode": "Adventure",
+          "reloadedMode": "CloudyDay",
+          "LevelNumber": 9,
+          "area": "Day",
+          "SubIndex": 3
+        },
+        {
+          "index": 120,
+          "LevelName": "$CLOUDY_DAY_5",
+          "FullLevelName": "Leicht bew\u00f6lkt \u2013 Level 5",
+          "mode": "Adventure",
+          "reloadedMode": "CloudyDay",
+          "LevelNumber": 26,
+          "area": "Pool",
+          "SubIndex": 4
+        },
+        {
+          "index": 121,
+          "LevelName": "$CLOUDY_DAY_6",
+          "FullLevelName": "Leicht bew\u00f6lkt \u2013 Level 6",
+          "mode": "Adventure",
+          "reloadedMode": "CloudyDay",
+          "LevelNumber": 27,
+          "area": "Pool",
+          "SubIndex": 5
+        },
+        {
+          "index": 122,
+          "LevelName": "$CLOUDY_DAY_7",
+          "FullLevelName": "Leicht bew\u00f6lkt \u2013 Level 7",
+          "mode": "Adventure",
+          "reloadedMode": "CloudyDay",
+          "LevelNumber": 28,
+          "area": "Pool",
+          "SubIndex": 6
+        },
+        {
+          "index": 123,
+          "LevelName": "$CLOUDY_DAY_8",
+          "FullLevelName": "Leicht bew\u00f6lkt \u2013 Level 8",
+          "mode": "Adventure",
+          "reloadedMode": "CloudyDay",
+          "LevelNumber": 29,
+          "area": "Pool",
+          "SubIndex": 7
+        },
+        {
+          "index": 124,
+          "LevelName": "$CLOUDY_DAY_9",
+          "FullLevelName": "Leicht bew\u00f6lkt \u2013 Level 9",
+          "mode": "Adventure",
+          "reloadedMode": "CloudyDay",
+          "LevelNumber": 46,
+          "area": "Roof",
+          "SubIndex": 8
+        },
+        {
+          "index": 125,
+          "LevelName": "$CLOUDY_DAY_10",
+          "FullLevelName": "Leicht bew\u00f6lkt \u2013 Level 10",
+          "mode": "Adventure",
+          "reloadedMode": "CloudyDay",
+          "LevelNumber": 47,
+          "area": "Roof",
+          "SubIndex": 9
+        },
+        {
+          "index": 126,
+          "LevelName": "$CLOUDY_DAY_11",
+          "FullLevelName": "Leicht bew\u00f6lkt \u2013 Level 11",
+          "mode": "Adventure",
+          "reloadedMode": "CloudyDay",
+          "LevelNumber": 48,
+          "area": "Roof",
+          "SubIndex": 10
+        },
+        {
+          "index": 127,
+          "LevelName": "$CLOUDY_DAY_12",
+          "FullLevelName": "Leicht bew\u00f6lkt \u2013 Level 12",
+          "mode": "Adventure",
+          "reloadedMode": "CloudyDay",
+          "LevelNumber": 49,
+          "area": "Roof",
+          "SubIndex": 11
+        },
+        {
+          "index": 128,
+          "LevelName": "$COOP_DAY",
+          "FullLevelName": "Koop \u2013 Tag",
+          "mode": "Coop",
+          "reloadedMode": "Cooperative",
+          "LevelNumber": 1,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 129,
+          "LevelName": "$COOP_NIGHT",
+          "FullLevelName": "Koop \u2013 Nacht",
+          "mode": "Coop",
+          "reloadedMode": "Cooperative",
+          "LevelNumber": 3,
+          "area": "Night",
+          "SubIndex": 2
+        },
+        {
+          "index": 130,
+          "LevelName": "$COOP_POOL",
+          "FullLevelName": "Koop \u2013 Pool",
+          "mode": "Coop",
+          "reloadedMode": "Cooperative",
+          "LevelNumber": 5,
+          "area": "Pool",
+          "SubIndex": 4
+        },
+        {
+          "index": 131,
+          "LevelName": "$COOP_ROOF",
+          "FullLevelName": "Koop \u2013 Dach",
+          "mode": "Coop",
+          "reloadedMode": "Cooperative",
+          "LevelNumber": 7,
+          "area": "Roof",
+          "SubIndex": 6
+        },
+        {
+          "index": 132,
+          "LevelName": "$WALL_NUT_BOWLING",
+          "FullLevelName": "Nuss-Bowling",
+          "mode": "ChallengeWallnutBowling",
+          "reloadedMode": "Cooperative",
+          "LevelNumber": 9,
+          "area": "Day",
+          "SubIndex": 8
+        },
+        {
+          "index": 133,
+          "LevelName": "$COOP_DAY_HARD",
+          "FullLevelName": "Koop \u2013 Tag (schwer)",
+          "mode": "SurvivalHardStage1",
+          "reloadedMode": "Cooperative",
+          "LevelNumber": 2,
+          "area": "Day",
+          "SubIndex": 1
+        },
+        {
+          "index": 134,
+          "LevelName": "$COOP_NIGHT_HARD",
+          "FullLevelName": "Koop \u2013 Nacht (schwer)",
+          "mode": "SurvivalHardStage2",
+          "reloadedMode": "Cooperative",
+          "LevelNumber": 4,
+          "area": "Night",
+          "SubIndex": 3
+        },
+        {
+          "index": 135,
+          "LevelName": "$COOP_POOL_HARD",
+          "FullLevelName": "Koop \u2013 Pool (schwer)",
+          "mode": "SurvivalHardStage3",
+          "reloadedMode": "Cooperative",
+          "LevelNumber": 6,
+          "area": "Pool",
+          "SubIndex": 5
+        },
+        {
+          "index": 136,
+          "LevelName": "$COOP_ROOF_HARD",
+          "FullLevelName": "Koop \u2013 Dach (schwer)",
+          "mode": "SurvivalHardStage5",
+          "reloadedMode": "Cooperative",
+          "LevelNumber": 8,
+          "area": "Roof",
+          "SubIndex": 7
+        },
+        {
+          "index": 137,
+          "LevelName": "$FINAL_BOSS",
+          "FullLevelName": "Rache des Dr. Zomboss",
+          "mode": "ChallengeFinalBoss",
+          "reloadedMode": "Cooperative",
+          "LevelNumber": 10,
+          "area": "Boss",
+          "SubIndex": 9
+        },
+        {
+          "index": 138,
+          "LevelName": "$SURVIVAL_POOL_ENDLESS",
+          "FullLevelName": "\u00dcberleben: Pool (Endlos)",
+          "mode": "SurvivalEndlessStage3",
+          "reloadedMode": "Cooperative",
+          "LevelNumber": 13,
+          "area": "Pool",
+          "SubIndex": 12
+        },
+        {
+          "index": 139,
+          "LevelName": "$TREE_OF_WISDOM",
+          "FullLevelName": "Baum der Weisheit",
+          "mode": "TreeOfWisdom",
+          "reloadedMode": "None",
+          "LevelNumber": 1,
+          "area": "TreeOfWisdom",
+          "SubIndex": 0
+        },
+        {
+          "index": 140,
+          "LevelName": "$GREAT_WALL",
+          "FullLevelName": "Die gro\u00dfe Mauer",
+          "mode": "BonusChina",
+          "reloadedMode": "China",
+          "LevelNumber": 1,
+          "area": "China",
+          "SubIndex": 0
+        },
+        {
+          "index": 141,
+          "LevelName": "$VS_MODE_VS_MODE",
+          "FullLevelName": "Vs.-Modus",
+          "mode": "Versus",
+          "reloadedMode": "Versus",
+          "LevelNumber": 6,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 142,
+          "LevelName": "$SURVIVAL_DAY_ENDLESS",
+          "FullLevelName": "\u00dcberleben: Tag (Endlos)",
+          "mode": "SurvivalEndlessStage1",
+          "reloadedMode": "None",
+          "LevelNumber": 11,
+          "area": "Day",
+          "SubIndex": 0
+        },
+        {
+          "index": 143,
+          "LevelName": "$SURVIVAL_NIGHT_ENDLESS",
+          "FullLevelName": "\u00dcberleben: Nacht (Endlos)",
+          "mode": "SurvivalEndlessStage2",
+          "reloadedMode": "None",
+          "LevelNumber": 12,
+          "area": "Night",
+          "SubIndex": 0
+        },
+        {
+          "index": 144,
+          "LevelName": "$SURVIVAL_FOG_ENDLESS",
+          "FullLevelName": "\u00dcberleben: Nebel (Endlos)",
+          "mode": "SurvivalEndlessStage4",
+          "reloadedMode": "None",
+          "LevelNumber": 14,
+          "area": "Fog",
+          "SubIndex": 0
+        },
+        {
+          "index": 145,
+          "LevelName": "$SURVIVAL_ROOF_ENDLESS",
+          "FullLevelName": "\u00dcberleben: Dach (Endlos)",
+          "mode": "SurvivalEndlessStage5",
+          "reloadedMode": "None",
+          "LevelNumber": 15,
+          "area": "Roof",
+          "SubIndex": 0
+        },
+        {
+          "index": 146,
+          "LevelName": "$CLOUDY_DAY_ENDLESS",
+          "FullLevelName": "Leicht bew\u00f6lkt: Endlos",
+          "mode": "SurvivalEndlessStage1",
+          "reloadedMode": "CloudyDay",
+          "LevelNumber": 6,
+          "area": "Day",
+          "SubIndex": 12
+        },
+        {
+          "index": 147,
+          "LevelName": "$SURVIVAL_DAY_ENDLESS",
+          "FullLevelName": "\u00dcberleben: Tag (Endlos)",
+          "mode": "SurvivalEndlessStage1",
+          "reloadedMode": "Cooperative",
+          "LevelNumber": 11,
+          "area": "Day",
+          "SubIndex": 10
+        },
+        {
+          "index": 148,
+          "LevelName": "$SURVIVAL_NIGHT_ENDLESS",
+          "FullLevelName": "\u00dcberleben: Nacht (Endlos)",
+          "mode": "SurvivalEndlessStage2",
+          "reloadedMode": "Cooperative",
+          "LevelNumber": 12,
+          "area": "Night",
+          "SubIndex": 11
+        },
+        {
+          "index": 149,
+          "LevelName": "$SURVIVAL_FOG_ENDLESS",
+          "FullLevelName": "\u00dcberleben: Nebel (Endlos)",
+          "mode": "SurvivalEndlessStage4",
+          "reloadedMode": "Cooperative",
+          "LevelNumber": 14,
+          "area": "Fog",
+          "SubIndex": 13
+        },
+        {
+          "index": 150,
+          "LevelName": "$SURVIVAL_ROOF_ENDLESS",
+          "FullLevelName": "\u00dcberleben: Dach (Endlos)",
+          "mode": "SurvivalEndlessStage5",
+          "reloadedMode": "Cooperative",
+          "LevelNumber": 15,
+          "area": "Roof",
+          "SubIndex": 14
+        }
+      ]
+    }
+  },
+  {
+    "command": "level.start",
+    "args": {
+      "index": 85
+    },
+    "response": {
+      "protocol": 1,
+      "id": "0e8c3cc5877449b6ad78162d142fd711",
+      "session": "781157e8dd5043b4a51f032814773b20",
+      "ok": true,
+      "result": {
+        "accepted": true,
+        "level": "\u00dcberleben: Tag",
+        "note": "Native level transition; poll status/chooser. Existing native saves may be resumed."
+      }
+    }
+  },
+  {
+    "command": "chooser.select",
+    "args": {
+      "indices": [
+        0,
+        1,
+        3
+      ],
+      "confirm": true
+    },
+    "response": {
+      "protocol": 1,
+      "id": "b0e17fb49e16413e9d087af4667c072f",
+      "session": "781157e8dd5043b4a51f032814773b20",
+      "ok": true,
+      "result": {
+        "selected": [
+          0,
+          1,
+          3
+        ],
+        "confirmed": true
+      }
+    }
+  },
+  {
+    "command": "waves.set",
+    "args": {
+      "budget": 30,
+      "types": [
+        "Normal",
+        "TrafficCone",
+        "Football"
+      ]
+    },
+    "response": {
+      "protocol": 1,
+      "id": "8fa88f0ddf7f48338c0e4b6fa44c79ce",
+      "session": "781157e8dd5043b4a51f032814773b20",
+      "ok": true,
+      "result": {
+        "firstWave": 0,
+        "budget": 30,
+        "spent": 30,
+        "remaining": 0,
+        "perWave": [
+          "Normal",
+          "TrafficCone",
+          "Football",
+          "Normal",
+          "TrafficCone",
+          "Football",
+          "Normal",
+          "TrafficCone",
+          "Football"
+        ],
+        "waves": {
+          "mCurrentWave": 0,
+          "mNumWaves": 10,
+          "mZombieCountDown": 1777,
+          "automaticSpawning": true,
+          "waves": [
+            {
+              "wave": 0,
+              "zombies": [
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football"
+              ]
+            },
+            {
+              "wave": 1,
+              "zombies": [
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football"
+              ]
+            },
+            {
+              "wave": 2,
+              "zombies": [
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football"
+              ]
+            },
+            {
+              "wave": 3,
+              "zombies": [
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football"
+              ]
+            },
+            {
+              "wave": 4,
+              "zombies": [
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football"
+              ]
+            },
+            {
+              "wave": 5,
+              "zombies": [
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football"
+              ]
+            },
+            {
+              "wave": 6,
+              "zombies": [
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football"
+              ]
+            },
+            {
+              "wave": 7,
+              "zombies": [
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football"
+              ]
+            },
+            {
+              "wave": 8,
+              "zombies": [
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football"
+              ]
+            },
+            {
+              "wave": 9,
+              "zombies": [
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football",
+                "Normal",
+                "TrafficCone",
+                "Football"
+              ]
+            }
+          ],
+          "note": "Future zombies have no health, status or phase until instantiated; wave table can change for endless/special modes."
+        }
+      }
+    }
+  },
+  {
+    "command": "bank.set",
+    "args": {
+      "plants": [
+        "Peashooter",
+        "Sunflower",
+        "Wallnut"
+      ]
+    },
+    "response": {
+      "protocol": 1,
+      "id": "6074c69de0484306a1a4fbae7a18627d",
+      "session": "781157e8dd5043b4a51f032814773b20",
+      "ok": true,
+      "result": [
+        {
+          "index": 0,
+          "state": {
+            "mRefreshCounter": 0,
+            "mRefreshTime": 0,
+            "mIndex": 0,
+            "mOffsetX": 0,
+            "mPacketType": "Peashooter",
+            "mImitaterType": "None",
+            "mSlotMachineCountDown": 0,
+            "mSlotMachiningNextSeed": "None",
+            "mSlotMachiningPosition": 0,
+            "mActive": true,
+            "mRefreshing": false,
+            "mTimesUsed": 0,
+            "mInTutorial": false,
+            "mFlashReady": false,
+            "mFlying": false,
+            "mBackgroundVisible": true,
+            "m_lastUpdateCounter": 28,
+            "m_lastCooldownScale": 1,
+            "mX": 85,
+            "mY": 869.25,
+            "mWidth": 50,
+            "mHeight": 70,
+            "mVisible": true,
+            "mRow": -1,
+            "mRenderOrder": 400000,
+            "mSquished": false,
+            "mImageOffsetX": 0,
+            "mImageOffsetY": 0,
+            "mShadowOffsetX": 0,
+            "mShadowOffsetY": 0,
+            "mShadowScaleX": 1,
+            "mShadowScaleY": 1,
+            "mShadowRenderOrder": 0,
+            "mShadowType": "None",
+            "mShadowImageIndex": 0,
+            "mBungeeOffsetX": 0,
+            "mBungeeOffsetY": 0
+          }
+        },
+        {
+          "index": 1,
+          "state": {
+            "mRefreshCounter": 0,
+            "mRefreshTime": 0,
+            "mIndex": 1,
+            "mOffsetX": 0,
+            "mPacketType": "Sunflower",
+            "mImitaterType": "None",
+            "mSlotMachineCountDown": 0,
+            "mSlotMachiningNextSeed": "None",
+            "mSlotMachiningPosition": 0,
+            "mActive": true,
+            "mRefreshing": false,
+            "mTimesUsed": 0,
+            "mInTutorial": false,
+            "mFlashReady": false,
+            "mFlying": false,
+            "mBackgroundVisible": true,
+            "m_lastUpdateCounter": 28,
+            "m_lastCooldownScale": 1,
+            "mX": 144,
+            "mY": 869.25,
+            "mWidth": 50,
+            "mHeight": 70,
+            "mVisible": true,
+            "mRow": -1,
+            "mRenderOrder": 400000,
+            "mSquished": false,
+            "mImageOffsetX": 0,
+            "mImageOffsetY": 0,
+            "mShadowOffsetX": 0,
+            "mShadowOffsetY": 0,
+            "mShadowScaleX": 1,
+            "mShadowScaleY": 1,
+            "mShadowRenderOrder": 0,
+            "mShadowType": "None",
+            "mShadowImageIndex": 0,
+            "mBungeeOffsetX": 0,
+            "mBungeeOffsetY": 0
+          }
+        },
+        {
+          "index": 2,
+          "state": {
+            "mRefreshCounter": 0,
+            "mRefreshTime": 2000,
+            "mIndex": 2,
+            "mOffsetX": 0,
+            "mPacketType": "Wallnut",
+            "mImitaterType": "None",
+            "mSlotMachineCountDown": 0,
+            "mSlotMachiningNextSeed": "None",
+            "mSlotMachiningPosition": 0,
+            "mActive": false,
+            "mRefreshing": true,
+            "mTimesUsed": 0,
+            "mInTutorial": false,
+            "mFlashReady": false,
+            "mFlying": false,
+            "mBackgroundVisible": true,
+            "m_lastUpdateCounter": 28,
+            "m_lastCooldownScale": 1,
+            "mX": 203,
+            "mY": 869.25,
+            "mWidth": 50,
+            "mHeight": 70,
+            "mVisible": true,
+            "mRow": -1,
+            "mRenderOrder": 400000,
+            "mSquished": false,
+            "mImageOffsetX": 0,
+            "mImageOffsetY": 0,
+            "mShadowOffsetX": 0,
+            "mShadowOffsetY": 0,
+            "mShadowScaleX": 1,
+            "mShadowScaleY": 1,
+            "mShadowRenderOrder": 0,
+            "mShadowType": "None",
+            "mShadowImageIndex": 0,
+            "mBungeeOffsetX": 0,
+            "mBungeeOffsetY": 0
+          }
+        },
+        {
+          "index": 3,
+          "state": {
+            "mRefreshCounter": 0,
+            "mRefreshTime": 0,
+            "mIndex": 3,
+            "mOffsetX": 0,
+            "mPacketType": "None",
+            "mImitaterType": "None",
+            "mSlotMachineCountDown": 0,
+            "mSlotMachiningNextSeed": "None",
+            "mSlotMachiningPosition": 0,
+            "mActive": true,
+            "mRefreshing": false,
+            "mTimesUsed": 0,
+            "mInTutorial": false,
+            "mFlashReady": false,
+            "mFlying": false,
+            "mBackgroundVisible": true,
+            "m_lastUpdateCounter": 28,
+            "m_lastCooldownScale": 1,
+            "mX": 262,
+            "mY": 869.25,
+            "mWidth": 50,
+            "mHeight": 70,
+            "mVisible": true,
+            "mRow": -1,
+            "mRenderOrder": 400000,
+            "mSquished": false,
+            "mImageOffsetX": 0,
+            "mImageOffsetY": 0,
+            "mShadowOffsetX": 0,
+            "mShadowOffsetY": 0,
+            "mShadowScaleX": 1,
+            "mShadowScaleY": 1,
+            "mShadowRenderOrder": 0,
+            "mShadowType": "None",
+            "mShadowImageIndex": 0,
+            "mBungeeOffsetX": 0,
+            "mBungeeOffsetY": 0
+          }
+        },
+        {
+          "index": 4,
+          "state": {
+            "mRefreshCounter": 0,
+            "mRefreshTime": 0,
+            "mIndex": 4,
+            "mOffsetX": 0,
+            "mPacketType": "None",
+            "mImitaterType": "None",
+            "mSlotMachineCountDown": 0,
+            "mSlotMachiningNextSeed": "None",
+            "mSlotMachiningPosition": 0,
+            "mActive": true,
+            "mRefreshing": false,
+            "mTimesUsed": 0,
+            "mInTutorial": false,
+            "mFlashReady": false,
+            "mFlying": false,
+            "mBackgroundVisible": true,
+            "m_lastUpdateCounter": 28,
+            "m_lastCooldownScale": 1,
+            "mX": 321,
+            "mY": 869.25,
+            "mWidth": 50,
+            "mHeight": 70,
+            "mVisible": true,
+            "mRow": -1,
+            "mRenderOrder": 400000,
+            "mSquished": false,
+            "mImageOffsetX": 0,
+            "mImageOffsetY": 0,
+            "mShadowOffsetX": 0,
+            "mShadowOffsetY": 0,
+            "mShadowScaleX": 1,
+            "mShadowScaleY": 1,
+            "mShadowRenderOrder": 0,
+            "mShadowType": "None",
+            "mShadowImageIndex": 0,
+            "mBungeeOffsetX": 0,
+            "mBungeeOffsetY": 0
+          }
+        },
+        {
+          "index": 5,
+          "state": {
+            "mRefreshCounter": 0,
+            "mRefreshTime": 0,
+            "mIndex": 5,
+            "mOffsetX": 0,
+            "mPacketType": "None",
+            "mImitaterType": "None",
+            "mSlotMachineCountDown": 0,
+            "mSlotMachiningNextSeed": "None",
+            "mSlotMachiningPosition": 0,
+            "mActive": true,
+            "mRefreshing": false,
+            "mTimesUsed": 0,
+            "mInTutorial": false,
+            "mFlashReady": false,
+            "mFlying": false,
+            "mBackgroundVisible": true,
+            "m_lastUpdateCounter": 28,
+            "m_lastCooldownScale": 1,
+            "mX": 380,
+            "mY": 869.25,
+            "mWidth": 50,
+            "mHeight": 70,
+            "mVisible": true,
+            "mRow": -1,
+            "mRenderOrder": 400000,
+            "mSquished": false,
+            "mImageOffsetX": 0,
+            "mImageOffsetY": 0,
+            "mShadowOffsetX": 0,
+            "mShadowOffsetY": 0,
+            "mShadowScaleX": 1,
+            "mShadowScaleY": 1,
+            "mShadowRenderOrder": 0,
+            "mShadowType": "None",
+            "mShadowImageIndex": 0,
+            "mBungeeOffsetX": 0,
+            "mBungeeOffsetY": 0
+          }
+        },
+        {
+          "index": 6,
+          "state": {
+            "mRefreshCounter": 0,
+            "mRefreshTime": 0,
+            "mIndex": 6,
+            "mOffsetX": 0,
+            "mPacketType": "None",
+            "mImitaterType": "None",
+            "mSlotMachineCountDown": 0,
+            "mSlotMachiningNextSeed": "None",
+            "mSlotMachiningPosition": 0,
+            "mActive": true,
+            "mRefreshing": false,
+            "mTimesUsed": 0,
+            "mInTutorial": false,
+            "mFlashReady": false,
+            "mFlying": false,
+            "mBackgroundVisible": true,
+            "m_lastUpdateCounter": 28,
+            "m_lastCooldownScale": 1,
+            "mX": 439,
+            "mY": 869.25,
+            "mWidth": 50,
+            "mHeight": 70,
+            "mVisible": true,
+            "mRow": -1,
+            "mRenderOrder": 400000,
+            "mSquished": false,
+            "mImageOffsetX": 0,
+            "mImageOffsetY": 0,
+            "mShadowOffsetX": 0,
+            "mShadowOffsetY": 0,
+            "mShadowScaleX": 1,
+            "mShadowScaleY": 1,
+            "mShadowRenderOrder": 0,
+            "mShadowType": "None",
+            "mShadowImageIndex": 0,
+            "mBungeeOffsetX": 0,
+            "mBungeeOffsetY": 0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "command": "plant.place",
+    "args": {
+      "type": "Peashooter",
+      "col": 2,
+      "row": 1
+    },
+    "response": {
+      "protocol": 1,
+      "id": "83480f42fab54fa5b19a5ee590675633",
+      "session": "781157e8dd5043b4a51f032814773b20",
+      "ok": true,
+      "result": {
+        "col": 2,
+        "row": 1,
+        "plants": [
+          {
+            "DataID": 1,
+            "mSeedType": "Peashooter",
+            "mPlantCol": 2,
+            "mAnimCounter": 0,
+            "mFrame": 0,
+            "mFrameLength": 12,
+            "mNumFrames": 5,
+            "mState": "Notready",
+            "mPlantHealth": 300,
+            "mPlantMaxHealth": 300,
+            "mSubclass": "Shooter",
+            "mDisappearCountdown": 200,
+            "mDoSpecialCountdown": 0,
+            "mStateCountdown": 0,
+            "mLaunchCounter": 45,
+            "mLaunchRate": 150,
+            "mTargetX": -1,
+            "mTargetY": -1,
+            "mStartRow": 1,
+            "mShootingCounter": 0,
+            "mBlinkCountdown": 626,
+            "mRecentlyEatenCountdown": 0,
+            "mEatenFlashCountdown": 0,
+            "mBeghouledFlashCountdown": 0,
+            "mShakeOffsetX": 0,
+            "mShakeOffsetY": 0,
+            "mWakeUpCounter": 0,
+            "mOnBungeeState": "NotOnBungee",
+            "mImitaterType": "None",
+            "mPottedPlantIndex": -1,
+            "mAnimPing": true,
+            "mDead": false,
+            "mIsAsleep": false,
+            "mIsOnBoard": true,
+            "mHighlighted": false,
+            "mIsImitation": false,
+            "mX": 200,
+            "mY": 180,
+            "mWidth": 80,
+            "mHeight": 80,
+            "mVisible": true,
+            "mRow": 1,
+            "mRenderOrder": 312605,
+            "mSquished": false,
+            "mImageOffsetX": 0,
+            "mImageOffsetY": 0,
+            "mShadowOffsetX": 0,
+            "mShadowOffsetY": 0,
+            "mShadowScaleX": 1,
+            "mShadowScaleY": 1,
+            "mShadowRenderOrder": 0,
+            "mShadowType": "None",
+            "mShadowImageIndex": 0,
+            "mBungeeOffsetX": 0,
+            "mBungeeOffsetY": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "command": "sun.set",
+    "args": {
+      "amount": 50
+    },
+    "response": {
+      "protocol": 1,
+      "id": "e9518814f94a4f43bb0a8438cc9ca222",
+      "session": "781157e8dd5043b4a51f032814773b20",
+      "ok": true,
+      "result": {
+        "player": 0,
+        "amount": 50
+      }
+    }
+  },
+  {
+    "command": "level.leave",
+    "args": {},
+    "response": {
+      "protocol": 1,
+      "id": "a825986525f943c284c620db6c6c9c61",
+      "session": "781157e8dd5043b4a51f032814773b20",
+      "ok": true,
+      "result": {
+        "accepted": true
+      }
+    }
+  },
+  {
+    "command": "level.start",
+    "args": {
+      "index": 65
+    },
+    "response": {
+      "protocol": 1,
+      "id": "80d561b6beb44b1ba85efaddbfbaac0f",
+      "session": "781157e8dd5043b4a51f032814773b20",
+      "ok": true,
+      "result": {
+        "accepted": true,
+        "level": "Hau den Zombie",
+        "note": "Native level transition; poll status/chooser. Existing native saves may be resumed."
+      }
+    }
+  },
+  {
+    "command": "zombies",
+    "args": {},
+    "response": {
+      "protocol": 1,
+      "id": "fcc387bef96b4c65a634a55307efa14b",
+      "session": "781157e8dd5043b4a51f032814773b20",
+      "ok": true,
+      "result": {
+        "board": "a4ed56dff49145c1bf51771473f8cf64",
+        "items": []
+      }
+    }
+  },
+  {
+    "command": "level.leave",
+    "args": {},
+    "response": {
+      "protocol": 1,
+      "id": "b41c1d0937524ef2a26c3bf17ab85f22",
+      "session": "781157e8dd5043b4a51f032814773b20",
+      "ok": true,
+      "result": {
+        "accepted": true
+      }
+    }
+  }
+]

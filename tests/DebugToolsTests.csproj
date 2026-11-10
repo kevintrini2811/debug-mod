@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="DebugToolsTests.cs" />
+    <Compile Include="../src/DebugTools.cs" Link="DebugTools.cs" />
+    <Compile Include="../../shared/OptionalModApi.cs" Link="OptionalModApi.cs" />
+    <Compile Include="../../glove-mod/src/GloveState.cs" Link="GloveState.cs" />
+  </ItemGroup>
+</Project>

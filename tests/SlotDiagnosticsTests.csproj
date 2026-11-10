@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net9.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><EnableDefaultCompileItems>false</EnableDefaultCompileItems><NoWarn>0649</NoWarn><OutputPath>bin/slot-diagnostics/</OutputPath></PropertyGroup><ItemGroup>
+<Compile Include="SlotDiagnosticsTests.cs"/><Compile Include="SlotDiagnosticsStubs.cs"/>
+<Compile Include="../src/LibraryCatalog.cs"/><Compile Include="../../shared/OptionalModApi.cs"/>
+<Compile Include="../../fusion-mod/src/DebugSlotDiagnostics.cs"/><Compile Include="../../fusion-mod/src/ShroomSlots.cs"/>
+<Compile Include="../../fusion-mod/src/FusionPlant.cs"/><Compile Include="../../fusion-mod/tests/Adapters/SeedType.cs"/>
+<Compile Include="../../fusion-mod/src/PlantQueryHide.cs"/></ItemGroup></Project>

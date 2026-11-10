@@ -1,0 +1,937 @@
+{
+  "rawDirectory": "/home/kevin/modding/pvzreplanted/.test-runs/eyes-preview-review-20261106",
+  "runs": {
+    "before": [
+      {
+        "entry": {
+          "index": 0,
+          "name": "Zombie",
+          "type": "Normal"
+        },
+        "row": 0,
+        "preview": {
+          "board": "0de9ae6a9d05412c9386aa800933d1f1",
+          "index": 0,
+          "target": {
+            "x": 320,
+            "y": 120
+          },
+          "rendering": {
+            "anchor": {
+              "x": 320,
+              "y": 165
+            },
+            "enabled": true,
+            "active": true,
+            "sprite": "",
+            "pivot": {
+              "x": 128,
+              "y": 0
+            },
+            "position": {
+              "x": 1892.3999,
+              "y": -830.3,
+              "z": -10
+            },
+            "bounds": {
+              "x": 1892.3999,
+              "y": -675.2,
+              "width": 248.15997,
+              "height": 310.19998
+            },
+            "foot": {
+              "x": 1892.3999,
+              "y": -830.3,
+              "z": -10
+            }
+          }
+        },
+        "placed": {
+          "DataID": 11,
+          "mZombieType": "Normal",
+          "mPosX": 278.02295,
+          "mPosY": 50,
+          "mGraveX": 0,
+          "mGraveY": 0,
+          "mInPool": false,
+          "mHelmType": "None",
+          "mBodyHealth": 270,
+          "mHelmHealth": 0,
+          "mRow": 0
+        }
+      },
+      {
+        "entry": {
+          "index": 36,
+          "name": "Augenzombie",
+          "type": "Normal"
+        },
+        "row": 0,
+        "preview": {
+          "board": "0de9ae6a9d05412c9386aa800933d1f1",
+          "index": 36,
+          "target": {
+            "x": 320,
+            "y": 120
+          },
+          "rendering": {
+            "anchor": {
+              "x": 320,
+              "y": 165
+            },
+            "enabled": true,
+            "active": true,
+            "sprite": "",
+            "pivot": {
+              "x": 111,
+              "y": 168
+            },
+            "position": {
+              "x": 1892.3999,
+              "y": -830.3,
+              "z": -10
+            },
+            "bounds": {
+              "x": 1892.3999,
+              "y": -830.3,
+              "width": 204.95357,
+              "height": 310.19998
+            },
+            "foot": {
+              "x": 1892.3999,
+              "y": -985.39996,
+              "z": -10
+            }
+          }
+        },
+        "placed": {
+          "DataID": 12,
+          "mZombieType": "Normal",
+          "mPosX": 279.85004,
+          "mPosY": 50,
+          "mGraveX": -521012,
+          "mGraveY": 512,
+          "mInPool": false,
+          "mHelmType": "None",
+          "mBodyHealth": 270,
+          "mHelmHealth": 0,
+          "mRow": 0
+        }
+      },
+      {
+        "entry": {
+          "index": 37,
+          "name": "Pylonen-Augenzombie",
+          "type": "TrafficCone"
+        },
+        "row": 0,
+        "preview": {
+          "board": "0de9ae6a9d05412c9386aa800933d1f1",
+          "index": 37,
+          "target": {
+            "x": 320,
+            "y": 120
+          },
+          "rendering": {
+            "anchor": {
+              "x": 320,
+              "y": 165
+            },
+            "enabled": true,
+            "active": true,
+            "sprite": "FusionMod.EyesArmor.eyes-cone.png",
+            "pivot": {
+              "x": 111,
+              "y": 203
+            },
+            "position": {
+              "x": 1892.3999,
+              "y": -830.3,
+              "z": -10
+            },
+            "bounds": {
+              "x": 1892.3999,
+              "y": -830.3,
+              "width": 169.61674,
+              "height": 310.19998
+            },
+            "foot": {
+              "x": 1892.3999,
+              "y": -985.39996,
+              "z": -10
+            }
+          }
+        },
+        "placed": {
+          "DataID": 13,
+          "mZombieType": "TrafficCone",
+          "mPosX": 277.12067,
+          "mPosY": 50,
+          "mGraveX": -521012,
+          "mGraveY": 4608,
+          "mInPool": false,
+          "mHelmType": "TrafficCone",
+          "mBodyHealth": 270,
+          "mHelmHealth": 370,
+          "mRow": 0
+        }
+      },
+      {
+        "entry": {
+          "index": 38,
+          "name": "Eimer-Augenzombie",
+          "type": "Pail"
+        },
+        "row": 0,
+        "preview": {
+          "board": "0de9ae6a9d05412c9386aa800933d1f1",
+          "index": 38,
+          "target": {
+            "x": 320,
+            "y": 120
+          },
+          "rendering": {
+            "anchor": {
+              "x": 320,
+              "y": 165
+            },
+            "enabled": true,
+            "active": true,
+            "sprite": "FusionMod.EyesArmor.eyes-bucket.png",
+            "pivot": {
+              "x": 111,
+              "y": 203
+            },
+            "position": {
+              "x": 1892.3999,
+              "y": -830.3,
+              "z": -10
+            },
+            "bounds": {
+              "x": 1892.3999,
+              "y": -830.3,
+              "width": 169.61674,
+              "height": 310.19998
+            },
+            "foot": {
+              "x": 1892.3999,
+              "y": -985.39996,
+              "z": -10
+            }
+          }
+        },
+        "placed": {
+          "DataID": 14,
+          "mZombieType": "Pail",
+          "mPosX": 276.30988,
+          "mPosY": 50,
+          "mGraveX": -521012,
+          "mGraveY": 5632,
+          "mInPool": false,
+          "mHelmType": "Pail",
+          "mBodyHealth": 270,
+          "mHelmHealth": 1100,
+          "mRow": 0
+        }
+      },
+      {
+        "entry": {
+          "index": 0,
+          "name": "Zombie",
+          "type": "Normal"
+        },
+        "row": 2,
+        "preview": {
+          "board": "0de9ae6a9d05412c9386aa800933d1f1",
+          "index": 0,
+          "target": {
+            "x": 320,
+            "y": 290
+          },
+          "rendering": {
+            "anchor": {
+              "x": 320,
+              "y": 335
+            },
+            "enabled": true,
+            "active": true,
+            "sprite": "",
+            "pivot": {
+              "x": 128,
+              "y": 0
+            },
+            "position": {
+              "x": 1892.3999,
+              "y": -1309.7,
+              "z": -10
+            },
+            "bounds": {
+              "x": 1892.3999,
+              "y": -1154.6,
+              "width": 248.15997,
+              "height": 310.19998
+            },
+            "foot": {
+              "x": 1892.3999,
+              "y": -1309.7,
+              "z": -10
+            }
+          }
+        },
+        "placed": {
+          "DataID": 15,
+          "mZombieType": "Normal",
+          "mPosX": 276.456,
+          "mPosY": 220,
+          "mGraveX": 0,
+          "mGraveY": 0,
+          "mInPool": true,
+          "mHelmType": "None",
+          "mBodyHealth": 270,
+          "mHelmHealth": 0,
+          "mRow": 2
+        }
+      },
+      {
+        "entry": {
+          "index": 36,
+          "name": "Augenzombie",
+          "type": "Normal"
+        },
+        "row": 2,
+        "preview": {
+          "board": "0de9ae6a9d05412c9386aa800933d1f1",
+          "index": 36,
+          "target": {
+            "x": 320,
+            "y": 290
+          },
+          "rendering": {
+            "anchor": {
+              "x": 320,
+              "y": 335
+            },
+            "enabled": true,
+            "active": true,
+            "sprite": "",
+            "pivot": {
+              "x": 111,
+              "y": 168
+            },
+            "position": {
+              "x": 1892.3999,
+              "y": -1309.7,
+              "z": -10
+            },
+            "bounds": {
+              "x": 1892.3999,
+              "y": -1309.7,
+              "width": 204.95357,
+              "height": 310.19998
+            },
+            "foot": {
+              "x": 1892.3999,
+              "y": -1464.7999,
+              "z": -10
+            }
+          }
+        },
+        "placed": {
+          "DataID": 16,
+          "mZombieType": "Normal",
+          "mPosX": 277.75983,
+          "mPosY": 220,
+          "mGraveX": -521012,
+          "mGraveY": 4608,
+          "mInPool": true,
+          "mHelmType": "None",
+          "mBodyHealth": 270,
+          "mHelmHealth": 0,
+          "mRow": 2
+        }
+      },
+      {
+        "entry": {
+          "index": 37,
+          "name": "Pylonen-Augenzombie",
+          "type": "TrafficCone"
+        },
+        "row": 2,
+        "preview": {
+          "board": "0de9ae6a9d05412c9386aa800933d1f1",
+          "index": 37,
+          "target": {
+            "x": 320,
+            "y": 290
+          },
+          "rendering": {
+            "anchor": {
+              "x": 320,
+              "y": 335
+            },
+            "enabled": true,
+            "active": true,
+            "sprite": "FusionMod.EyesArmor.eyes-cone.png",
+            "pivot": {
+              "x": 111,
+              "y": 203
+            },
+            "position": {
+              "x": 1892.3999,
+              "y": -1309.7,
+              "z": -10
+            },
+            "bounds": {
+              "x": 1892.3999,
+              "y": -1309.7,
+              "width": 169.61674,
+              "height": 310.19998
+            },
+            "foot": {
+              "x": 1892.3999,
+              "y": -1464.7999,
+              "z": -10
+            }
+          }
+        },
+        "placed": {
+          "DataID": 17,
+          "mZombieType": "TrafficCone",
+          "mPosX": 278.1178,
+          "mPosY": 220,
+          "mGraveX": -521012,
+          "mGraveY": 4608,
+          "mInPool": true,
+          "mHelmType": "TrafficCone",
+          "mBodyHealth": 270,
+          "mHelmHealth": 370,
+          "mRow": 2
+        }
+      },
+      {
+        "entry": {
+          "index": 38,
+          "name": "Eimer-Augenzombie",
+          "type": "Pail"
+        },
+        "row": 2,
+        "preview": {
+          "board": "0de9ae6a9d05412c9386aa800933d1f1",
+          "index": 38,
+          "target": {
+            "x": 320,
+            "y": 290
+          },
+          "rendering": {
+            "anchor": {
+              "x": 320,
+              "y": 335
+            },
+            "enabled": true,
+            "active": true,
+            "sprite": "FusionMod.EyesArmor.eyes-bucket.png",
+            "pivot": {
+              "x": 111,
+              "y": 203
+            },
+            "position": {
+              "x": 1892.3999,
+              "y": -1309.7,
+              "z": -10
+            },
+            "bounds": {
+              "x": 1892.3999,
+              "y": -1309.7,
+              "width": 169.61674,
+              "height": 310.19998
+            },
+            "foot": {
+              "x": 1892.3999,
+              "y": -1464.7999,
+              "z": -10
+            }
+          }
+        },
+        "placed": {
+          "DataID": 18,
+          "mZombieType": "Pail",
+          "mPosX": 277.87228,
+          "mPosY": 220,
+          "mGraveX": -521012,
+          "mGraveY": 4608,
+          "mInPool": true,
+          "mHelmType": "Pail",
+          "mBodyHealth": 270,
+          "mHelmHealth": 1100,
+          "mRow": 2
+        }
+      }
+    ],
+    "after": [
+      {
+        "entry": {
+          "index": 0,
+          "name": "Zombie",
+          "type": "Normal"
+        },
+        "row": 0,
+        "preview": {
+          "board": "10998dad4abe48e2b24d4f3dc4476281",
+          "index": 0,
+          "target": {
+            "x": 320,
+            "y": 120
+          },
+          "rendering": {
+            "anchor": {
+              "x": 320,
+              "y": 165
+            },
+            "enabled": true,
+            "active": true,
+            "sprite": "",
+            "pivot": {
+              "x": 128,
+              "y": 0
+            },
+            "position": {
+              "x": 1892.3999,
+              "y": -830.3,
+              "z": -10
+            },
+            "bounds": {
+              "x": 1892.3999,
+              "y": -675.2,
+              "width": 248.15997,
+              "height": 310.19998
+            },
+            "foot": {
+              "x": 1892.3999,
+              "y": -830.3,
+              "z": -10
+            }
+          }
+        },
+        "placed": {
+          "DataID": 11,
+          "mZombieType": "Normal",
+          "mPosX": 277.86774,
+          "mPosY": 50,
+          "mGraveX": 0,
+          "mGraveY": 0,
+          "mInPool": false,
+          "mHelmType": "None",
+          "mBodyHealth": 270,
+          "mHelmHealth": 0,
+          "mRow": 0
+        }
+      },
+      {
+        "entry": {
+          "index": 36,
+          "name": "Augenzombie",
+          "type": "Normal"
+        },
+        "row": 0,
+        "preview": {
+          "board": "10998dad4abe48e2b24d4f3dc4476281",
+          "index": 36,
+          "target": {
+            "x": 320,
+            "y": 120
+          },
+          "rendering": {
+            "anchor": {
+              "x": 320,
+              "y": 165
+            },
+            "enabled": true,
+            "active": true,
+            "sprite": "",
+            "pivot": {
+              "x": 111,
+              "y": 168
+            },
+            "position": {
+              "x": 1892.3999,
+              "y": -675.2,
+              "z": -10
+            },
+            "bounds": {
+              "x": 1892.3999,
+              "y": -675.2,
+              "width": 204.95357,
+              "height": 310.19998
+            },
+            "foot": {
+              "x": 1892.3999,
+              "y": -830.3,
+              "z": -10
+            }
+          }
+        },
+        "placed": {
+          "DataID": 12,
+          "mZombieType": "Normal",
+          "mPosX": 279.84735,
+          "mPosY": 50,
+          "mGraveX": -521012,
+          "mGraveY": 512,
+          "mInPool": false,
+          "mHelmType": "None",
+          "mBodyHealth": 270,
+          "mHelmHealth": 0,
+          "mRow": 0
+        }
+      },
+      {
+        "entry": {
+          "index": 37,
+          "name": "Pylonen-Augenzombie",
+          "type": "TrafficCone"
+        },
+        "row": 0,
+        "preview": {
+          "board": "10998dad4abe48e2b24d4f3dc4476281",
+          "index": 37,
+          "target": {
+            "x": 320,
+            "y": 120
+          },
+          "rendering": {
+            "anchor": {
+              "x": 320,
+              "y": 165
+            },
+            "enabled": true,
+            "active": true,
+            "sprite": "FusionMod.EyesArmor.eyes-cone.png",
+            "pivot": {
+              "x": 92.5,
+              "y": 165
+            },
+            "position": {
+              "x": 1892.3999,
+              "y": -675.2,
+              "z": -10
+            },
+            "bounds": {
+              "x": 1892.3999,
+              "y": -675.2,
+              "width": 173.9,
+              "height": 310.19998
+            },
+            "foot": {
+              "x": 1892.3999,
+              "y": -830.3,
+              "z": -10
+            }
+          }
+        },
+        "placed": {
+          "DataID": 13,
+          "mZombieType": "TrafficCone",
+          "mPosX": 277.56787,
+          "mPosY": 50,
+          "mGraveX": -521012,
+          "mGraveY": 4608,
+          "mInPool": false,
+          "mHelmType": "TrafficCone",
+          "mBodyHealth": 270,
+          "mHelmHealth": 370,
+          "mRow": 0
+        }
+      },
+      {
+        "entry": {
+          "index": 38,
+          "name": "Eimer-Augenzombie",
+          "type": "Pail"
+        },
+        "row": 0,
+        "preview": {
+          "board": "10998dad4abe48e2b24d4f3dc4476281",
+          "index": 38,
+          "target": {
+            "x": 320,
+            "y": 120
+          },
+          "rendering": {
+            "anchor": {
+              "x": 320,
+              "y": 165
+            },
+            "enabled": true,
+            "active": true,
+            "sprite": "FusionMod.EyesArmor.eyes-bucket.png",
+            "pivot": {
+              "x": 103.5,
+              "y": 167
+            },
+            "position": {
+              "x": 1892.3999,
+              "y": -675.2,
+              "z": -10
+            },
+            "bounds": {
+              "x": 1892.3999,
+              "y": -675.2,
+              "width": 192.24968,
+              "height": 310.19998
+            },
+            "foot": {
+              "x": 1892.3999,
+              "y": -830.3,
+              "z": -10
+            }
+          }
+        },
+        "placed": {
+          "DataID": 14,
+          "mZombieType": "Pail",
+          "mPosX": 277.28714,
+          "mPosY": 50,
+          "mGraveX": -521012,
+          "mGraveY": 6144,
+          "mInPool": false,
+          "mHelmType": "Pail",
+          "mBodyHealth": 270,
+          "mHelmHealth": 1100,
+          "mRow": 0
+        }
+      },
+      {
+        "entry": {
+          "index": 0,
+          "name": "Zombie",
+          "type": "Normal"
+        },
+        "row": 2,
+        "preview": {
+          "board": "10998dad4abe48e2b24d4f3dc4476281",
+          "index": 0,
+          "target": {
+            "x": 320,
+            "y": 290
+          },
+          "rendering": {
+            "anchor": {
+              "x": 320,
+              "y": 335
+            },
+            "enabled": true,
+            "active": true,
+            "sprite": "",
+            "pivot": {
+              "x": 128,
+              "y": 0
+            },
+            "position": {
+              "x": 1892.3999,
+              "y": -1309.7,
+              "z": -10
+            },
+            "bounds": {
+              "x": 1892.3999,
+              "y": -1154.6,
+              "width": 248.15997,
+              "height": 310.19998
+            },
+            "foot": {
+              "x": 1892.3999,
+              "y": -1309.7,
+              "z": -10
+            }
+          }
+        },
+        "placed": {
+          "DataID": 15,
+          "mZombieType": "Normal",
+          "mPosX": 277.06827,
+          "mPosY": 220,
+          "mGraveX": 0,
+          "mGraveY": 0,
+          "mInPool": true,
+          "mHelmType": "None",
+          "mBodyHealth": 270,
+          "mHelmHealth": 0,
+          "mRow": 2
+        }
+      },
+      {
+        "entry": {
+          "index": 36,
+          "name": "Augenzombie",
+          "type": "Normal"
+        },
+        "row": 2,
+        "preview": {
+          "board": "10998dad4abe48e2b24d4f3dc4476281",
+          "index": 36,
+          "target": {
+            "x": 320,
+            "y": 290
+          },
+          "rendering": {
+            "anchor": {
+              "x": 320,
+              "y": 335
+            },
+            "enabled": true,
+            "active": true,
+            "sprite": "",
+            "pivot": {
+              "x": 111,
+              "y": 168
+            },
+            "position": {
+              "x": 1892.3999,
+              "y": -1154.6,
+              "z": -10
+            },
+            "bounds": {
+              "x": 1892.3999,
+              "y": -1154.6,
+              "width": 204.95357,
+              "height": 310.19998
+            },
+            "foot": {
+              "x": 1892.3999,
+              "y": -1309.7,
+              "z": -10
+            }
+          }
+        },
+        "placed": {
+          "DataID": 16,
+          "mZombieType": "Normal",
+          "mPosX": 277.49628,
+          "mPosY": 220,
+          "mGraveX": -521012,
+          "mGraveY": 4608,
+          "mInPool": true,
+          "mHelmType": "None",
+          "mBodyHealth": 270,
+          "mHelmHealth": 0,
+          "mRow": 2
+        }
+      },
+      {
+        "entry": {
+          "index": 37,
+          "name": "Pylonen-Augenzombie",
+          "type": "TrafficCone"
+        },
+        "row": 2,
+        "preview": {
+          "board": "10998dad4abe48e2b24d4f3dc4476281",
+          "index": 37,
+          "target": {
+            "x": 320,
+            "y": 290
+          },
+          "rendering": {
+            "anchor": {
+              "x": 320,
+              "y": 335
+            },
+            "enabled": true,
+            "active": true,
+            "sprite": "FusionMod.EyesArmor.eyes-cone.png",
+            "pivot": {
+              "x": 92.5,
+              "y": 165
+            },
+            "position": {
+              "x": 1892.3999,
+              "y": -1154.6,
+              "z": -10
+            },
+            "bounds": {
+              "x": 1892.3999,
+              "y": -1154.6,
+              "width": 173.9,
+              "height": 310.19998
+            },
+            "foot": {
+              "x": 1892.3999,
+              "y": -1309.7,
+              "z": -10
+            }
+          }
+        },
+        "placed": {
+          "DataID": 17,
+          "mZombieType": "TrafficCone",
+          "mPosX": 277.28253,
+          "mPosY": 220,
+          "mGraveX": -521012,
+          "mGraveY": 4608,
+          "mInPool": true,
+          "mHelmType": "TrafficCone",
+          "mBodyHealth": 270,
+          "mHelmHealth": 370,
+          "mRow": 2
+        }
+      },
+      {
+        "entry": {
+          "index": 38,
+          "name": "Eimer-Augenzombie",
+          "type": "Pail"
+        },
+        "row": 2,
+        "preview": {
+          "board": "10998dad4abe48e2b24d4f3dc4476281",
+          "index": 38,
+          "target": {
+            "x": 320,
+            "y": 290
+          },
+          "rendering": {
+            "anchor": {
+              "x": 320,
+              "y": 335
+            },
+            "enabled": true,
+            "active": true,
+            "sprite": "FusionMod.EyesArmor.eyes-bucket.png",
+            "pivot": {
+              "x": 103.5,
+              "y": 167
+            },
+            "position": {
+              "x": 1892.3999,
+              "y": -1154.6,
+              "z": -10
+            },
+            "bounds": {
+              "x": 1892.3999,
+              "y": -1154.6,
+              "width": 192.24968,
+              "height": 310.19998
+            },
+            "foot": {
+              "x": 1892.3999,
+              "y": -1309.7,
+              "z": -10
+            }
+          }
+        },
+        "placed": {
+          "DataID": 18,
+          "mZombieType": "Pail",
+          "mPosX": 278.38455,
+          "mPosY": 220,
+          "mGraveX": -521012,
+          "mGraveY": 4096,
+          "mInPool": true,
+          "mHelmType": "Pail",
+          "mBodyHealth": 270,
+          "mHelmHealth": 1100,
+          "mRow": 2
+        }
+      }
+    ]
+  }
+}

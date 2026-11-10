@@ -1,0 +1,62 @@
+{
+  "rawDirectory": "/home/kevin/modding/pvzreplanted/.test-runs/optional-sun-start-20261106",
+  "runs": {
+    "absent": {
+      "status": {
+        "ready": true,
+        "code": "READY",
+        "board": "8dc2722dedcb468885ae8145d55c4676",
+        "scene": "Playing",
+        "debug": true,
+        "paused": false,
+        "fps": 60.06006
+      },
+      "apiCommands": {
+        "status": true,
+        "help": true,
+        "plants": true,
+        "zombies": true,
+        "debug.ui": true,
+        "game.shutdown": true
+      },
+      "plantCount": 0,
+      "zombieCount": 0,
+      "uiImageCount": 40,
+      "harmonyInitErrors": 0,
+      "undefinedTargetErrors": 0,
+      "processExited": true,
+      "shutdownSeconds": 9.938659703002486
+    },
+    "present": {
+      "status": {
+        "ready": true,
+        "code": "READY",
+        "board": "1c7832ba127e44af93f2b325678647cb",
+        "scene": "Playing",
+        "debug": true,
+        "paused": false,
+        "fps": 60.06006
+      },
+      "apiCommands": {
+        "status": true,
+        "help": true,
+        "plants": true,
+        "zombies": true,
+        "debug.ui": true,
+        "game.shutdown": true
+      },
+      "plantCount": 0,
+      "zombieCount": 0,
+      "uiImageCount": 41,
+      "harmonyInitErrors": 0,
+      "undefinedTargetErrors": 0,
+      "processExited": true,
+      "shutdownSeconds": 9.983112652000273
+    }
+  },
+  "offlineModes": [
+    "absent",
+    "missing",
+    "present"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "response": {
+    "protocol": 1,
+    "id": "6f9d95c9a73d45b497cfb8d7741dd06d",
+    "session": "920d167175d843aa8b6b399f0d9c6aa9",
+    "ok": true,
+    "result": {
+      "accepted": true
+    }
+  },
+  "pid": 72518,
+  "processExited": true,
+  "seconds": 9.41
+}
