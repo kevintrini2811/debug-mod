@@ -1,4 +1,6 @@
-# Debug Mod 1.3.28
+# Debug Mod 1.3.29
+
+Version 1.3.29 keeps the page arrows visible when the debug chooser changes from plant selection to zombie selection.
 
 Version 1.3.28 records Basketball plant/projectile getter rectangles after all getter postfixes. Completed skipped originals retain their actual fallback result and `originalRan=false`; missing completion and getter/postfix exceptions remain unverified. Observation does not change gameplay or suppress exceptions.
 

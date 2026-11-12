@@ -30,12 +30,6 @@ internal static class DebugPlantCards
     internal static void ZombiesStarted()
     {
         page = 0; RefreshChoices(true);
-        // The native Imitator wrapper is hidden during zombie selection.
-        // Keep page controls in the visible chooser while preserving their position.
-        var panel = chooser == null ? null : DebugSeedChooser.BoundPanel(chooser);
-        if (panel != null)
-            foreach (var control in new[] { previous, next })
-                if (control != null) control.transform.SetParent(panel.transform, true);
         if (previousButton != null) previousButton.interactable = false;
         if (nextButton != null) nextButton.interactable = LastPage > 0;
     }
@@ -189,10 +183,21 @@ internal static class DebugPlantCards
     {
         DebugChooserNavigation.Update();
         bool visible = DebugSeedChooser.SelectionScreen != null;
-        if (visible && chooser != null && DebugSeedChooser.BoundPanel(chooser) is { } bound)
+        var bound = visible && chooser != null ? DebugSeedChooser.BoundPanel(chooser) : null;
+        if (bound != null)
+        {
             foreach (var text in bound.GetComponentsInChildren<Il2CppTMPro.TMP_Text>(true))
                 if (!string.IsNullOrEmpty(text.text) && text.text.StartsWith("$", StringComparison.Ordinal))
                     text.text = text.text.TrimStart('$');
+            // Zombie selection is entered while the panel is hidden, so the
+            // active binding is only available after the panel appears again.
+            // Move controls out of the now-hidden Imitater wrapper at that point.
+            if (DebugSeedChooser.ZombiePhase)
+            {
+                ReparentZombieButton(previous, bound.transform);
+                ReparentZombieButton(next, bound.transform);
+            }
+        }
         if (previous != null) previous.SetActive(visible);
         if (next != null) next.SetActive(visible);
         if (!visible || previous != null || chooser == null) return;
@@ -240,6 +245,26 @@ internal static class DebugPlantCards
                     if (child.name == cycle.CurrentSpeedIndicator.name) child.gameObject.SetActive(child.name == icon.name);
         var layout = control.GetComponent<LayoutElement>();
         if (layout != null) layout.ignoreLayout = true;
+        PositionPageButton(control, back);
+        control.transform.SetAsLastSibling();
+        control.SetActive(true);
+        return control;
+    }
+
+    private static void ReparentZombieButton(GameObject? control, Transform panel)
+    {
+        if (control == null) return;
+        // Images render only below their Canvas. The PanelView itself sits
+        // above that Canvas, while the hidden Imitater wrapper sits below it.
+        var canvas = control.GetComponentInParent<Canvas>(true);
+        if (canvas == null || !canvas.transform.IsChildOf(panel)
+            || control.transform.parent?.Pointer == canvas.transform.Pointer) return;
+        control.transform.SetParent(canvas.transform, true);
+        control.transform.SetAsLastSibling();
+    }
+
+    private static void PositionPageButton(GameObject control, bool back)
+    {
         var rect = control.GetComponent<RectTransform>();
         rect.anchorMin = rect.anchorMax = new Vector2(.5f, 1);
         rect.pivot = new Vector2(.5f, .5f);
@@ -247,9 +272,6 @@ internal static class DebugPlantCards
         rect.sizeDelta = new Vector2(100, 80);
         rect.localRotation = Quaternion.identity;
         var scale = rect.localScale; scale.x = (back ? -1 : 1) * Math.Abs(scale.x); rect.localScale = scale;
-        control.transform.SetAsLastSibling();
-        control.SetActive(true);
-        return control;
     }
 
     internal static PlantingReason Placement(Board board, Card card, int col, int row)
