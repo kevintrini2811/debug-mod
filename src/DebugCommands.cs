@@ -32,9 +32,17 @@ internal static partial class DebugCommands
         bool ready = DebugMode.ApiMenuReady || board?.mApp != null;
         return new { ready, code = ready ? "READY" : "GAME_NOT_READY", board = ApiBoard.Token,
             scene = board?.mApp?.GameScene.ToString(), debug = DebugMode.Active,
+            level = LevelInfo(board?.mApp?.LevelData),
             paused = board != null ? (bool?)Il2Cpp.TimeUtil.IsTimePaused() : null,
             fps = Time.unscaledDeltaTime > 0 ? 1f / Time.unscaledDeltaTime : 0 };
     }
+
+    private static object? LevelInfo(LevelEntryData? level) => level == null ? null : new
+    {
+        level.Order, level.LevelName, level.FullLevelName, mode = level.GameMode.ToString(),
+        reloadedMode = level.ReloadedGameMode.ToString(), level.LevelNumber,
+        area = level.GameArea.ToString(), level.SubIndex
+    };
 
     internal static int Int(JsonElement args, string key, int min = 0, int max = int.MaxValue)
     {
@@ -131,7 +139,7 @@ internal static partial class DebugCommands
                 var data = Data();
                 var levels = data.AllLevelsData.Cast<Il2CppSystem.Collections.Generic.IReadOnlyCollection<LevelEntryData>>();
                 return Enumerable.Range(0, levels.Count).Select(index =>
-                { var level = data.AllLevelsData[index]; return new { index, level.LevelName, level.FullLevelName, mode = level.GameMode.ToString(), reloadedMode = level.ReloadedGameMode.ToString(), level.LevelNumber, area = level.GameArea.ToString(), level.SubIndex }; }).ToArray();
+                { var level = data.AllLevelsData[index]; return new { index, level.Order, level.LevelName, level.FullLevelName, mode = level.GameMode.ToString(), reloadedMode = level.ReloadedGameMode.ToString(), level.LevelNumber, area = level.GameArea.ToString(), level.SubIndex }; }).ToArray();
             case "level.start":
                 if (DebugMode.Active) throw new ApiError("DEBUG_ACTIVE", "Leave the debug session first.");
                 var chooser = DebugMode.ApiChooser(allowLevelSelection: true);

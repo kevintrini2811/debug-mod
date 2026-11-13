@@ -155,6 +155,16 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py fps
 
 `board` outputs all playing field cells with water status and IDs of the plants and zombies there. Additionally, the answer includes sun per active player, profile coins and the level coin counter. Full unit lists are included; Zombies outside the visible grid remain in the list.
 
+Since Debug Mod 1.3.30, `status.level` copies the current board owner's existing
+`LevelData`: `Order`, `LevelName`, `FullLevelName`, `mode`, `reloadedMode`,
+`LevelNumber`, `area`, and `SubIndex`. It is null when the current board, its
+owner, or that owner's level data is absent, including the main menu. This reads
+no menu selection, does not resolve or inject chooser services, and never selects
+or refreshes a level. Compare these fields with the current `levels` catalogue,
+which also includes `Order`. `Order` is the native data entry's ordering field;
+it is not the catalogue index or a promised save-header identity. A current level
+is not evidence that a save or load completed.
+
 Since Debug Mod 1.3.27, `board` also includes `projectiles` with the existing scalar `{ board, items }` response shape and the same live/dead filtering as the `projectiles` command. Plants, zombies, projectiles and `native.mMainCounter` are captured during one main-thread command without simulation advancing between those reads. The existing fields and standalone commands retain their shapes. This inspection does not change pause, create or move entities, or invoke collision and damage methods. A projectile missing from a later snapshot does not by itself identify its retirement cause or a specific native caller.
 
 ### Opt-in native Basketball observation (1.3.27)
