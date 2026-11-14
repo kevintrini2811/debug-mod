@@ -1,21 +1,22 @@
 namespace UnityEngine {
  public class Object {
   static long next; static readonly List<Object> objects = new();
+  public static bool throwOnFindObjects;
   public readonly IntPtr Pointer = (IntPtr)(++next);
-  public Object(){objects.Add(this);} public static void Reset()=>objects.Clear();
+  public Object(){objects.Add(this);} public static void Reset(){objects.Clear();throwOnFindObjects=false;}
   public T? TryCast<T>() where T:class=>this as T;
   public static implicit operator bool(Object? value)=>value!=null;
-  public static T[] FindObjectsOfType<T>(bool includeInactive=false) where T:Object =>objects.OfType<T>().ToArray();
+  public static T[] FindObjectsOfType<T>(bool includeInactive=false) where T:Object =>throwOnFindObjects?throw new InvalidOperationException("native enumeration unavailable"):objects.OfType<T>().ToArray();
  }
- public sealed class GameObject:Object {public string name="";public bool activeInHierarchy=true;public Transform transform;public GameObject(){transform=new Transform();}public T[] GetComponents<T>() where T:Component=>FindObjectsOfType<T>(true).Where(c=>c.gameObject==this).ToArray();public T[] GetComponentsInChildren<T>(bool includeInactive) where T:Component=>FindObjectsOfType<T>(true).Where(c=>c.transform.IsChildOf(transform)).ToArray();}
- public sealed class Transform:Object {public Transform? Parent;public bool IsChildOf(Transform parent)=>this==parent || Parent?.IsChildOf(parent)==true;}
+ public sealed class GameObject:Object {private string objectName="";public string name{get=>objectName;set{objectName=value;transform.name=value;}}public bool activeInHierarchy=true;public Transform transform;public GameObject(){transform=new Transform();}public T[] GetComponents<T>() where T:Component=>FindObjectsOfType<T>(true).Where(c=>c.gameObject==this).ToArray();public T[] GetComponentsInChildren<T>(bool includeInactive) where T:Component=>FindObjectsOfType<T>(true).Where(c=>c.transform.IsChildOf(transform)).ToArray();}
+ public sealed class Transform:Object {public string name="";public Transform? Parent;public Transform? parent{get=>Parent;set=>Parent=value;}public bool IsChildOf(Transform parent)=>this==parent || Parent?.IsChildOf(parent)==true;}
  public class Component:Object {
   public GameObject gameObject=new();public bool isActiveAndEnabled=true;public string name=>gameObject.name;public Transform transform=>gameObject.transform;
   public T? GetComponent<T>() where T:Component=>FindObjectsOfType<T>(true).FirstOrDefault(c=>c.gameObject==gameObject);
   public T[] GetComponentsInChildren<T>(bool includeInactive) where T:Component =>FindObjectsOfType<T>(true).Where(c=>c.transform.IsChildOf(transform)).ToArray();
  }
 }
-namespace UnityEngine.UI {public class Button:UnityEngine.Component {public bool interactable=true;public bool IsInteractable()=>interactable;}}
+namespace UnityEngine.UI {public class Button:UnityEngine.Component {public bool interactable=true,throwOnInteractable;public bool IsInteractable()=>throwOnInteractable?throw new InvalidOperationException("native interaction state unavailable"):interactable;}}
 namespace Il2CppTekly.Common.Presentables {public enum PresentableState {Hidden,Showing,Shown,Hiding}}
 namespace Il2CppTekly.TreeState {
  public enum ActivityMode {Inactive,Loading,ReadyToActivate,Active,PreUnload,Unloading}

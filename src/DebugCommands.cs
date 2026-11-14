@@ -29,8 +29,10 @@ internal static partial class DebugCommands
     internal static object Status()
     {
         var board = ApiBoard.Current;
-        bool ready = DebugMode.ApiMenuReady || board?.mApp != null;
-        return new { ready, code = ready ? "READY" : "GAME_NOT_READY", board = ApiBoard.Token,
+        bool menuReady = DebugMode.ApiMenuReady;
+        bool ready = menuReady || board?.mApp != null;
+        bool startupContinueReady = board == null && !menuReady && StartupContinueReadiness.FindInteractiveLoadBar() != null;
+        return new { ready, startupContinueReady, code = ready ? "READY" : "GAME_NOT_READY", board = ApiBoard.Token,
             scene = board?.mApp?.GameScene.ToString(), debug = DebugMode.Active,
             level = LevelInfo(board?.mApp?.LevelData),
             paused = board != null ? (bool?)Il2Cpp.TimeUtil.IsTimePaused() : null,
@@ -128,12 +130,10 @@ internal static partial class DebugCommands
             case "startup.continue":
                 if (ApiBoard.Current != null) throw new ApiError("INVALID_STATE", "Leave the current level before entering the main menu.");
                 if (DebugMode.ApiMenuReady) return new { accepted = false, alreadyReady = true };
-                var startButtons = Object.FindObjectsOfType<UnityEngine.UI.Button>()
-                    .Where(button => button && button.gameObject.activeInHierarchy && button.name == "LoadBar"
-                        && InSplashPanel(button.transform)).ToArray();
-                if (startButtons.Length != 1 || !startButtons[0].isActiveAndEnabled || !startButtons[0].IsInteractable())
+                var startButton = StartupContinueReadiness.FindInteractiveLoadBar();
+                if (startButton == null)
                     throw new ApiError("STARTUP_NOT_READY", "The native splash start button is not available or is still loading.");
-                startButtons[0].onClick.Invoke();
+                startButton.onClick.Invoke();
                 return new { accepted = true, alreadyReady = false };
             case "levels":
                 var data = Data();
@@ -289,13 +289,6 @@ internal static partial class DebugCommands
                 return new { applied = fertilize(board, col, row) };
         }
         throw new ApiError("UNKNOWN_COMMAND", command);
-    }
-
-    private static bool InSplashPanel(Transform transform)
-    {
-        for (var parent = transform.parent; parent != null; parent = parent.parent)
-            if (parent.name == "SplashScreenPanel" || parent.name == "SplashScreenPanel(Clone)") return true;
-        return false;
     }
 
     // Scalar-only snapshots avoid traversing IL2CPP object graphs. These include

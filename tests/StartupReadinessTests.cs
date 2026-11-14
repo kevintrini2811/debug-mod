@@ -24,6 +24,9 @@ static class Tests {
   && Object.FindObjectsOfType<MainMenuActivity>().Any(menu=>menu.m_container!=null && menu.TreeState?.Manager!=null);
  static Fixture Selection(){var f=Fresh();var screen=new LevelSelectScreen{m_levelSelectIsActive=true,ReachedCarousel=true,m_backButton=new(),m_selectedCarouselGroup=new(){levelCarousel=new Component()}};f.view.LevelSelect=screen;screen.transform.Parent=f.view.transform;screen.m_backButton.transform.Parent=f.view.transform;screen.m_selectedCarouselGroup.levelCarousel.transform.Parent=screen.transform;InputNavigationManager._Instance_k__BackingField!.CurrentLayer!.gameObject.transform.Parent=screen.transform;return f;}
  static void RejectSelection(Action<Fixture> mutate,string name){var f=Selection();mutate(f);Assert(!Ready(true),name);}
+ static UnityEngine.UI.Button AddStartButton(string panel="SplashScreenPanel",string name="LoadBar",bool active=true,bool enabled=true,bool interactable=true,bool throwOnInteractable=false){
+  var root=new GameObject{name=panel};var button=new UnityEngine.UI.Button();button.gameObject.name=name;button.gameObject.activeInHierarchy=active;button.isActiveAndEnabled=enabled;button.interactable=interactable;button.throwOnInteractable=throwOnInteractable;button.transform.Parent=root.transform;return button;
+ }
  static (GameObject root,PanelViewContainer container,PanelView[] panels) DismissedSplash(){
   var root=new GameObject{name="SplashScreenPanel(Clone)"};var container=new PanelViewContainer{gameObject=root};
   var names=new[]{"Splash1","P_LegalScreen","P_LegalScreen_MustAccept","P_LegalScreen_PCP","P_LegalScreen_UA"};
@@ -32,6 +35,18 @@ static class Tests {
   container.m_panels=panels;return(root,container,panels);
  }
  static void Main(){
+  Fresh();Assert(StartupContinueReadiness.FindInteractiveLoadBar()==null,"missing splash LoadBar");
+  Fresh();var startButton=AddStartButton();Assert(StartupContinueReadiness.FindInteractiveLoadBar()==startButton,"unique active interactive splash LoadBar");
+  Fresh();AddStartButton(panel:"SplashScreenPanel(Clone)");Assert(StartupContinueReadiness.FindInteractiveLoadBar()!=null,"cloned splash LoadBar");
+  Fresh();AddStartButton(name:"StartButton");Assert(StartupContinueReadiness.FindInteractiveLoadBar()==null,"wrong splash button name");
+  Fresh();AddStartButton(panel:"ForeignPanel");Assert(StartupContinueReadiness.FindInteractiveLoadBar()==null,"LoadBar outside splash");
+  Fresh();AddStartButton(active:false);Assert(StartupContinueReadiness.FindInteractiveLoadBar()==null,"inactive splash LoadBar");
+  Fresh();AddStartButton(enabled:false);Assert(StartupContinueReadiness.FindInteractiveLoadBar()==null,"disabled splash LoadBar");
+  Fresh();AddStartButton(interactable:false);Assert(StartupContinueReadiness.FindInteractiveLoadBar()==null,"non-interactable splash LoadBar");
+  Fresh();AddStartButton();AddStartButton();Assert(StartupContinueReadiness.FindInteractiveLoadBar()==null,"ambiguous splash LoadBars");
+  Fresh();AddStartButton();AddStartButton(active:false);Assert(StartupContinueReadiness.FindInteractiveLoadBar()!=null,"inactive duplicate does not block unique active LoadBar");
+  Fresh();Object.throwOnFindObjects=true;Assert(StartupContinueReadiness.FindInteractiveLoadBar()==null,"native enumeration failure closes readiness");
+  Fresh();AddStartButton(throwOnInteractable:true);Assert(StartupContinueReadiness.FindInteractiveLoadBar()==null,"native interactability failure closes readiness");
   var f=Fresh();Assert(Ready(),"fully ready native menu");Assert(NativeMenuReadiness.TryGet(out var owner,out _) && owner==f.menu,"exact owner returned");
   new GameObject{name="SplashScreenPanel"};Assert(OldReady(),"old gate reproduces splash race");Assert(!Ready(),"visible splash blocks launch");
   Reject(_=>new GameObject{name="SplashScreenPanel(Clone)"},"clone splash");
@@ -85,6 +100,6 @@ static class Tests {
   for(int i=0;i<5;i++){Fresh();splash=DismissedSplash();splash.panels[i].State=PresentableState.Hiding;Assert(!Ready(),"each registered native panel remains guarded "+i);}
   Fresh();splash=DismissedSplash();splash.panels[0].throwOnState=true;Assert(!Ready(),"unknown native splash state fails closed");
   var faultSnapshot=System.Text.Json.JsonSerializer.Serialize(NativeMenuReadiness.Snapshot());Assert(faultSnapshot.Contains("native getter unavailable") && faultSnapshot.Contains("managerActive") && faultSnapshot.Contains("canvasRenderers"),"per-field getter failure preserves unrelated raw signals");
-  Console.WriteLine($"PASS {checks} actual NativeMenuReadiness assertions");
+  Console.WriteLine($"PASS {checks} startup and native menu readiness assertions");
  }
 }

@@ -19,7 +19,7 @@ python3 pvzreplanted/debug-mod/tools/debug_api.py startup.continue
 python3 pvzreplanted/debug-mod/tools/debug_api.py status
 ```
 
-The command only triggers the active, operable `LoadBar` button in the native `SplashScreenPanel`. Loading, profile and state changes remain in the game. `STARTUP_NOT_READY` means that the button is missing or cannot yet be operated. After `accepted: true` wait for `status.ready: true`. Repeat in the finished main menu delivers `alreadyReady: true`; `INVALID_STATE` is reported during a level. License and profile dialogs are not automatically confirmed.
+The command only triggers the active, operable `LoadBar` button in the native `SplashScreenPanel`. `status.state.startupContinueReady` is a read-only gate: it is true only when no board or ready main menu exists and exactly one active, enabled, interactable splash `LoadBar` button is available. Reading it does not click or send input. Loading, profile and state changes remain in the game. `STARTUP_NOT_READY` means that the button is missing or cannot yet be operated. After `accepted: true` wait for `status.ready: true`. Repeat in the finished main menu delivers `alreadyReady: true`; `INVALID_STATE` is reported during a level. License and profile dialogs are not automatically confirmed.
 
 `accepted: true` acknowledges a requested state change. Level changes, intros and card selection then run through the game. Then check `status` or `chooser`. A timeout does not prove that a mutation has not occurred. Check the condition before repeating.
 
