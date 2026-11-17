@@ -1,4 +1,6 @@
-# Debug Mod 1.3.32
+# Debug Mod 1.3.33
+
+Version 1.3.33 includes the missing debug seed packets for Magnet Blover and Lumos Magnet (Fusion portraits 1100 and 1102). Existing packet artwork is preserved.
 
 Version 1.3.32 adds the read-only `griditems` API for inspecting a normal Playing board's shared native item pool. It requires the current board token and returns full native IDs, marker fields and allocation/capacity information. The existing debug-only item/drop query retains its scope.
 
