@@ -560,3 +560,8 @@ Refresh, a rebuild, an asset export, or another rendering write.
 A successful native UI witness requires the expected cursor identity after the
 packet click and actual input/preview movement before the screenshot. An X11
 pointer readback alone does not prove either condition.
+
+
+### Native GridItem inspection (1.3.32)
+
+`griditems {"board":"<current token>"}` reads the current Playing board without requiring a temporary debug session. A missing or stale board token is rejected. The response contains `board`, native `allocated` count and `capacity`, plus live `items` with full unsigned `DataID`, type/state, marker/counter, position/payload and visibility fields. The allocated count can include dead entries awaiting native cleanup; live items omit dead and null entries. This read does not allocate slots, update items, invoke mod callbacks or change native state. The existing `debug.items` endpoint retains its temporary-debug-session requirement.

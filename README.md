@@ -1,4 +1,7 @@
-# Debug Mod 1.3.29
+# Debug Mod 1.3.32
+
+Version 1.3.32 adds the read-only `griditems` API for inspecting a normal Playing board's shared native item pool. It requires the current board token and returns full native IDs, marker fields and allocation/capacity information. The existing debug-only item/drop query retains its scope.
+
 
 Version 1.3.29 keeps the page arrows visible when the debug chooser changes from plant selection to zombie selection.
 

@@ -22,7 +22,7 @@ internal static partial class DebugCommands
         "FusionMod", "FusionMod.Fertilizer", "Apply");
     private static readonly Func<Board, int, int, bool, bool>? treasure = OptionalModApi.Bind<Func<Board, int, int, bool, bool>>("FusionMod", "FusionMod.TreasureMines", "SetTreasure");
     internal static readonly string[] Commands = { "help", "status", "startup.continue", "levels", "level.start", "level.leave", "debug.backgrounds", "debug.start",
-        "catalog.plants", "catalog.zombies", "debug.roster", "chooser", "chooser.select", "bank", "bank.set", "board", "plants", "zombies", "waves",
+        "catalog.plants", "catalog.zombies", "debug.roster", "chooser", "chooser.select", "bank", "bank.set", "board", "plants", "zombies", "waves", "griditems",
         "debug.plant.slots", "debug.cursor", "debug.basketball", "debug.ui", "debug.preview", "debug.items", "debug.tools", "debug.timing", "debug.treasure.set", "debug.difficulty", "debug.plant.set", "debug.fertilize", "projectiles", "coins", "waves.set", "plant.place", "zombie.place", "plant.move", "zombie.move", "plant.remove", "zombie.remove", "debug.zombie.set", "debug.zombie.hit", "debug.balloon.pop", "debug.zombie.rise", "sun.set", "coins.level.set",
         "coins.profile.set", "unlock.plant", "unlock.almanac", "unlocks.reset", "almanac", "screenshot", "speed", "fps", "settings", "settings.set", "pause" };
 
@@ -101,6 +101,7 @@ internal static partial class DebugCommands
         switch (command)
         {
             case "debug.tools": return DebugTools.Execute(args);
+            case "griditems": return GridItemInspection.Read(EntityBoard(args), ApiBoard.Token);
             case "debug.timing": return DebugTiming.Execute(args);
             case "debug.basketball": return DebugBasketball.Execute(args);
             case "debug.difficulty":
