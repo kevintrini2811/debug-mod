@@ -1,4 +1,6 @@
-# Debug Mod 1.3.33
+# Debug Mod 1.3.34
+
+Version 1.3.34 removes the plant rectangle hook that could terminate the game during ordinary plant collision checks. The Basketball command still records the projectile rectangle, returned target, and owner snapshots. Its response reports that geometric candidate rectangles are unavailable.
 
 Version 1.3.33 includes the missing debug seed packets for Magnet Blover and Lumos Magnet (Fusion portraits 1100 and 1102). Existing packet artwork is preserved.
 

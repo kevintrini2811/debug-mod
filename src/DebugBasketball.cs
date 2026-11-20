@@ -86,7 +86,7 @@ internal static class DebugBasketball
                 nativeBodyPostfixReached = PostfixReached, originalRan = OriginalRan,
                 exceptionAtDiagnosticFinalizer = error?.GetType().FullName,
                 nestedSameShotObserved = NestedSameShotObserved,
-                hookEvidenceComplete = PostfixReached && OriginalRan && error == null && !NestedSameShotObserved && Claim?.Complete == true,
+                hookEvidenceComplete = false,
                 note = "Observed hook boundaries only. Raw postfix precedes Harmony finalizers; inspect a later atomic board response for final HP. No automatic contact/pass verdict." };
             active = null;
         }
@@ -102,22 +102,19 @@ internal static class DebugBasketball
     {
         internal readonly Owner Owner;
         internal readonly Projectile Shot;
-        internal object? ProjectileRect, Candidate;
-        internal bool ProjectileRectRan, CandidateRectRan;
+        internal object? ProjectileRect;
         internal Plant? Target;
         private uint targetId;
         private IntPtr targetPointer, targetBoard;
         internal object? Evidence;
-        internal bool Complete;
         internal Query(Owner owner, Projectile shot) { Owner = owner; Shot = shot; }
         internal void Return(Plant? target, bool originalRan)
         {
             if (!Owner.Matches(Shot)) return;
             Target = target;
             if (target != null) { targetId = target.DataID; targetPointer = target.Pointer; targetBoard = target.mBoard?.Pointer ?? IntPtr.Zero; }
-            Complete = originalRan && ProjectileRectRan && CandidateRectRan;
             Evidence = new { tick = Shot.mBoard.mMainCounter, originalRan, shot = ShotState(Shot),
-                projectileRect = ProjectileRect, lastGeometricCandidate = Candidate,
+                projectileRect = ProjectileRect, lastGeometricCandidate = (object?)null,
                 effectiveReturn = target == null ? null : PlantState(target),
                 expectedReturn = target != null && active is { } value && target.Pointer == value.PlantPointer
                     && target.DataID == value.PlantId && target.mBoard?.Pointer == value.BoardPointer };
@@ -188,7 +185,7 @@ internal static class DebugBasketball
             inactiveReason = null; active = new(board, shot, expected);
         }
         else if (reset) Reset();
-        return new { board = ApiBoard.Token, armed = active != null, maximumTicks = MaximumTicks,
+        return new { board = ApiBoard.Token, armed = active != null, maximumTicks = MaximumTicks, candidateRectangleAvailable = false,
             ownerCalls = active?.OwnerCalls ?? 0, lastNullQuery = active?.LastNullQuery, outcome = result, inactiveReason };
     }
 
@@ -258,23 +255,10 @@ internal static class DebugBasketball
             {
                 if (getterError != null || !originalRan.HasValue)
                 { Failed("projectile-rectangle", getterError ?? new InvalidOperationException("Getter postfix did not complete.")); return; }
-                query.ProjectileRect = Rectangle(rect, originalRan.Value); query.ProjectileRectRan = originalRan.Value;
+                query.ProjectileRect = Rectangle(rect, originalRan.Value);
             }
         }
         catch (Exception error) { Failed("projectile-rectangle", error); }
-    }
-    internal static void ObservePlantRect(Plant plant, Rect rect, bool? originalRan, Exception? getterError)
-    {
-        try
-        {
-            if (queryCurrent is { } query && query.Owner.Matches(query.Shot) && plant.mBoard?.Pointer == query.Shot.mBoard?.Pointer)
-            {
-                if (getterError != null || !originalRan.HasValue)
-                { Failed("plant-rectangle", getterError ?? new InvalidOperationException("Getter postfix did not complete.")); return; }
-                query.Candidate = new { plant = PlantState(plant), rectangle = Rectangle(rect, originalRan.Value) }; query.CandidateRectRan = originalRan.Value;
-            }
-        }
-        catch (Exception error) { Failed("plant-rectangle", error); }
     }
 }
 
@@ -300,11 +284,4 @@ internal static class DebugBasketballProjectileRectPatch
     internal static void Postfix(bool __runOriginal, out bool? __state) => __state = __runOriginal;
     internal static void Finalizer(Projectile __instance, Rect __result, bool? __state, Exception? __exception) =>
         DebugBasketball.ObserveProjectileRect(__instance, __result, __state, __exception);
-}
-[HarmonyPatch(typeof(Plant), nameof(Plant.GetPlantRect))]
-internal static class DebugBasketballPlantRectPatch
-{
-    internal static void Postfix(bool __runOriginal, out bool? __state) => __state = __runOriginal;
-    internal static void Finalizer(Plant __instance, Rect __result, bool? __state, Exception? __exception) =>
-        DebugBasketball.ObservePlantRect(__instance, __result, __state, __exception);
 }
